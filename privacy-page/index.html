@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Ho Van Dai</title>
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --fg: #1e1d1b;
+    --muted: #5a584f;
+    --accent: #1552c9;
+    --rule: #dcd9cf;
+    --max: 680px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14151c;
+      --fg: #ece9e2;
+      --muted: #9a9890;
+      --accent: #5a8bff;
+      --rule: #2a2b33;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", system-ui, sans-serif;
+  }
+  main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: -.5px;
+    margin: 0 0 6px;
+  }
+  .sub { color: var(--muted); font-size: 13px; }
+  .lang {
+    float: right;
+    font-size: 13px;
+    display: inline-flex;
+    gap: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px;
+  }
+  .lang button {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    padding: 4px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .lang button.on {
+    background: var(--accent);
+    color: #fff;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 32px 0 10px;
+  }
+  p, li { color: var(--fg); }
+  a { color: var(--accent); }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: rgba(127,127,127,.15);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding-top: 16px;
+  }
+  [data-lang] { display: none; }
+  [data-lang].on { display: block; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="lang">
+      <button data-set="en" class="on">English</button>
+      <button data-set="vi">Tiếng Việt</button>
+    </div>
+    <h1>Privacy Policy</h1>
+    <div class="sub">
+      Ho Van Dai · <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>
+    </div>
+  </header>
+
+  <!-- ============== ENGLISH ============== -->
+  <section data-lang="en" class="on">
+    <p>
+      This privacy policy applies to every mobile application published by
+      <strong>Ho Van Dai</strong> ("we", "us", the "apps") on the App Store
+      and Google Play. It explains what data our apps collect, why, and who
+      it is shared with.
+    </p>
+
+    <h2>1. What our apps collect</h2>
+    <p>
+      Our apps do <strong>not</strong> collect, store, or transmit personal
+      data to our own servers. We operate no server and hold no database of
+      users. There is no account, no sign-in, no cloud sync.
+    </p>
+    <p>
+      Game state — scores, saves, settings, preferences — is stored
+      <strong>locally on your device</strong> via the operating system's
+      standard storage API (<code>shared_preferences</code> / <code>UserDefaults</code>
+      / <code>SharedPreferences</code>). This data never leaves your device
+      unless you opt in to the OS-level backup feature (iCloud Backup /
+      Google One), which you control.
+    </p>
+
+    <h2>2. Diagnostics &amp; analytics (Firebase)</h2>
+    <p>
+      To keep our apps stable and to understand which features are used,
+      we use Google Firebase, a service operated by Google LLC:
+    </p>
+    <ul>
+      <li>
+        <strong>Firebase Crashlytics</strong> — automatically uploads a
+        report when an app crashes. Each report contains the crash stack
+        trace, the device model, OS version, app version, and a generated
+        installation ID. Crashlytics does not collect the contents of your
+        game, saves, or any text you type.
+      </li>
+      <li>
+        <strong>Firebase Analytics</strong> — collects aggregated,
+        non-personalized event data such as "game started", "level
+        cleared", session length, device model, OS version, country /
+        region, and the app's language setting. Events are associated
+        with a pseudo-random installation ID, not with you personally.
+      </li>
+    </ul>
+    <p>
+      We read this data only in aggregate to improve the apps. Google
+      processes it under
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy and security page</a>.
+      You can opt out of analytics collection from your device's system
+      settings (iOS: Settings → Privacy &amp; Security → Analytics &amp;
+      Improvements; Android: Settings → Google → Ads).
+    </p>
+    <p>
+      Some apps may not include Firebase at launch. When an app embeds
+      Firebase, its store listing and in-app "Data Safety" description
+      declare it.
+    </p>
+
+    <h2>3. Third-party advertising (Google AdMob)</h2>
+    <p>
+      Apps that display advertisements use <strong>Google AdMob</strong>, a
+      service operated by Google LLC. To serve ads, AdMob may collect and
+      process:
+    </p>
+    <ul>
+      <li>
+        <strong>Advertising identifier</strong> — IDFA on iOS, AAID on
+        Android. On iOS 14.5+, the system shows Apple's App Tracking
+        Transparency prompt before any identifier is used. If you decline,
+        ads are still shown, but non-personalized.
+      </li>
+      <li>
+        <strong>Device &amp; usage data</strong> — OS version, device model,
+        coarse region, ad interactions — used by AdMob to select, deliver,
+        and measure ads.
+      </li>
+    </ul>
+    <p>
+      We do not see your raw advertising identifier or interaction data.
+      Google processes it as an independent controller under
+      <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's own privacy policy</a>.
+    </p>
+    <p>
+      For users in the EEA, the UK, Switzerland, and California, the apps
+      show a Google UMP (User Messaging Platform) consent form before any
+      ads are loaded. You can:
+    </p>
+    <ul>
+      <li>Accept personalized ads,</li>
+      <li>Accept non-personalized ads only, or</li>
+      <li>
+        Manage your choices later from the in-app Privacy options (when
+        available), or by uninstalling the app.
+      </li>
+    </ul>
+    <p>
+      Without consent, ads fall back to non-personalized contextual serving
+      where available, or are not served at all.
+    </p>
+
+    <h2>4. What we do not do</h2>
+    <ul>
+      <li>We do not sell your personal data to anyone.</li>
+      <li>
+        We do not run our own server, user database, or cloud-sync
+        service. All gameplay state stays on your device.
+      </li>
+      <li>We do not contact, email, or message you.</li>
+      <li>We do not require an account or any sign-in.</li>
+      <li>We do not ship in-app purchases unless an app's store listing says so.</li>
+    </ul>
+
+    <h2>5. Children's privacy</h2>
+    <p>
+      Our apps are rated for general audiences (4+ / Everyone) and are not
+      directed at children under 13. We do not knowingly collect personal
+      data from children. Ads served are standard AdMob inventory and are
+      not targeted as "child-directed" under COPPA. Parents may wish to
+      enable iOS Screen Time or Android Family Link to limit ads if
+      preferred.
+    </p>
+
+    <h2>6. Your rights</h2>
+    <p>
+      We do not hold personal data on our own infrastructure, so there is
+      nothing on our side to export or delete. Data processed by Google
+      (AdMob, Firebase Analytics, Firebase Crashlytics) is governed by
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.
+      You can control it from your device or from Google:
+    </p>
+    <ul>
+      <li>
+        Reset or disable the advertising identifier in system settings
+        (iOS: Settings → Privacy → Tracking; Android: Settings → Google
+        → Ads).
+      </li>
+      <li>
+        Adjust personalization at
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener">adssettings.google.com</a>.
+      </li>
+      <li>
+        Opt out of device analytics sharing (iOS: Settings → Privacy
+        &amp; Security → Analytics &amp; Improvements; Android: Settings
+        → Google → Usage &amp; diagnostics).
+      </li>
+      <li>
+        Uninstalling the app removes all local saves and stops any further
+        data collection by its SDKs.
+      </li>
+    </ul>
+
+    <h2>7. Changes to this policy</h2>
+    <p>
+      If we change how data is handled (for example, by adding a crash
+      reporter or an in-app purchase flow), we will update this page and
+      revise the "Last updated" date below before the change reaches users.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      Questions about this policy? Email
+      <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- ============== TIẾNG VIỆT ============== -->
+  <section data-lang="vi">
+    <p>
+      Chính sách bảo mật này áp dụng cho tất cả ứng dụng di động do
+      <strong>Ho Van Dai</strong> ("chúng tôi", "ứng dụng") phát hành trên
+      App Store và Google Play. Tài liệu giải thích ứng dụng thu thập dữ
+      liệu gì, vì sao, và chia sẻ với ai.
+    </p>
+
+    <h2>1. Ứng dụng thu thập gì</h2>
+    <p>
+      Ứng dụng <strong>không</strong> thu thập, lưu trữ hay gửi dữ liệu cá
+      nhân về máy chủ của chúng tôi. Chúng tôi không vận hành máy chủ nào,
+      không lưu cơ sở dữ liệu người dùng. Không có tài khoản, đăng nhập
+      hay đồng bộ cloud.
+    </p>
+    <p>
+      Trạng thái trong game — điểm số, ván đã lưu, cài đặt, tuỳ chọn — được
+      lưu <strong>cục bộ trên máy bạn</strong> thông qua API lưu trữ chuẩn
+      của hệ điều hành (<code>shared_preferences</code> /
+      <code>UserDefaults</code> / <code>SharedPreferences</code>). Dữ liệu
+      này không rời khỏi máy bạn trừ khi bạn bật tính năng sao lưu hệ thống
+      (iCloud Backup / Google One), và đó là tuỳ chọn do bạn kiểm soát.
+    </p>
+
+    <h2>2. Phân tích &amp; báo lỗi (Firebase)</h2>
+    <p>
+      Để giữ ứng dụng ổn định và hiểu tính năng nào đang được dùng, chúng
+      tôi sử dụng Google Firebase — dịch vụ của Google LLC:
+    </p>
+    <ul>
+      <li>
+        <strong>Firebase Crashlytics</strong> — tự động gửi báo cáo khi
+        ứng dụng bị crash. Mỗi báo cáo gồm stack trace, model máy, phiên
+        bản OS, phiên bản ứng dụng và một ID cài đặt ngẫu nhiên.
+        Crashlytics không thu thập nội dung trong game, dữ liệu lưu, hay
+        nội dung bạn nhập.
+      </li>
+      <li>
+        <strong>Firebase Analytics</strong> — thu thập dữ liệu sự kiện
+        tổng hợp, không gắn danh tính như "bắt đầu ván", "qua màn", thời
+        lượng session, model máy, phiên bản OS, khu vực/quốc gia, ngôn
+        ngữ ứng dụng. Sự kiện gắn với ID cài đặt ngẫu nhiên, không gắn
+        với cá nhân bạn.
+      </li>
+    </ul>
+    <p>
+      Chúng tôi chỉ đọc dữ liệu này ở dạng tổng hợp để cải thiện ứng dụng.
+      Google xử lý dữ liệu theo
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">trang bảo mật của Firebase</a>.
+      Bạn có thể từ chối chia sẻ phân tích thiết bị trong cài đặt hệ thống
+      (iOS: Cài đặt → Quyền riêng tư &amp; Bảo mật → Phân tích &amp; Cải
+      thiện; Android: Cài đặt → Google → Quảng cáo).
+    </p>
+    <p>
+      Một số ứng dụng có thể không tích hợp Firebase tại thời điểm ra mắt.
+      Khi một ứng dụng có Firebase, mô tả "Data Safety" trong listing của
+      ứng dụng đó sẽ ghi rõ.
+    </p>
+
+    <h2>3. Quảng cáo từ bên thứ ba (Google AdMob)</h2>
+    <p>
+      Các ứng dụng có hiển thị quảng cáo sử dụng
+      <strong>Google AdMob</strong>, dịch vụ do Google LLC vận hành. Để
+      phục vụ quảng cáo, AdMob có thể thu thập và xử lý:
+    </p>
+    <ul>
+      <li>
+        <strong>Mã định danh quảng cáo</strong> — IDFA trên iOS, AAID trên
+        Android. Trên iOS 14.5+, hệ thống sẽ hiển thị hộp thoại "App
+        Tracking Transparency" của Apple trước khi mã này được sử dụng.
+        Nếu bạn từ chối, quảng cáo vẫn hiện nhưng không cá nhân hoá.
+      </li>
+      <li>
+        <strong>Dữ liệu thiết bị &amp; sử dụng</strong> — phiên bản hệ điều
+        hành, mẫu máy, khu vực tương đối, tương tác với quảng cáo — được
+        AdMob dùng để chọn, hiển thị và đo lường quảng cáo.
+      </li>
+    </ul>
+    <p>
+      Chúng tôi không truy cập mã quảng cáo hay dữ liệu tương tác thô.
+      Google xử lý những dữ liệu này với tư cách bên kiểm soát độc lập,
+      theo
+      <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">chính sách bảo mật quảng cáo của Google</a>.
+    </p>
+    <p>
+      Người dùng ở EU, Anh, Thuỵ Sĩ và California sẽ thấy biểu mẫu đồng ý
+      Google UMP (User Messaging Platform) trước khi ứng dụng tải quảng
+      cáo. Bạn có thể:
+    </p>
+    <ul>
+      <li>Chấp nhận quảng cáo cá nhân hoá,</li>
+      <li>Chỉ chấp nhận quảng cáo không cá nhân hoá, hoặc</li>
+      <li>
+        Quản lý lại lựa chọn qua mục Privacy trong ứng dụng (nếu có),
+        hoặc gỡ ứng dụng.
+      </li>
+    </ul>
+    <p>
+      Nếu không đồng ý, ứng dụng sẽ chuyển sang quảng cáo không cá nhân
+      hoá dựa trên nội dung, hoặc không hiển thị quảng cáo.
+    </p>
+
+    <h2>4. Những điều chúng tôi KHÔNG làm</h2>
+    <ul>
+      <li>Không bán dữ liệu cá nhân của bạn cho bất kỳ ai.</li>
+      <li>
+        Không vận hành máy chủ, cơ sở dữ liệu người dùng hay đồng bộ
+        cloud riêng. Toàn bộ trạng thái chơi game ở trên máy bạn.
+      </li>
+      <li>Không liên hệ, gửi email hay tin nhắn cho bạn.</li>
+      <li>Không yêu cầu tài khoản hay đăng nhập.</li>
+      <li>
+        Không có mua hàng trong ứng dụng trừ khi listing của ứng dụng cụ
+        thể đó ghi rõ.
+      </li>
+    </ul>
+
+    <h2>5. Quyền riêng tư trẻ em</h2>
+    <p>
+      Ứng dụng của chúng tôi phân loại cho mọi đối tượng (4+ / Everyone)
+      và không nhắm đến trẻ dưới 13 tuổi. Chúng tôi không cố ý thu thập
+      dữ liệu cá nhân từ trẻ em. Quảng cáo dùng kho AdMob tiêu chuẩn, không
+      được đánh dấu "child-directed" theo COPPA. Phụ huynh có thể bật iOS
+      Screen Time hoặc Android Family Link để hạn chế quảng cáo nếu muốn.
+    </p>
+
+    <h2>6. Quyền của bạn</h2>
+    <p>
+      Chúng tôi không giữ dữ liệu cá nhân trên hạ tầng của mình nên không
+      có gì để trích xuất hay xoá ở phía chúng tôi. Dữ liệu do Google xử
+      lý (AdMob, Firebase Analytics, Firebase Crashlytics) tuân theo
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">chính sách bảo mật của Google</a>.
+      Bạn có thể kiểm soát thông qua máy hoặc tài khoản Google:
+    </p>
+    <ul>
+      <li>
+        Reset hoặc tắt mã quảng cáo trong cài đặt hệ thống (iOS: Cài đặt
+        → Quyền riêng tư → Theo dõi; Android: Cài đặt → Google →
+        Quảng cáo).
+      </li>
+      <li>
+        Điều chỉnh cá nhân hoá tại
+        <a href="https://adssettings.google.com/" target="_blank" rel="noopener">adssettings.google.com</a>.
+      </li>
+      <li>
+        Từ chối chia sẻ phân tích (iOS: Cài đặt → Quyền riêng tư &amp;
+        Bảo mật → Phân tích &amp; Cải thiện; Android: Cài đặt → Google
+        → Sử dụng &amp; chẩn đoán).
+      </li>
+      <li>
+        Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu local và dừng thu thập từ SDK.
+      </li>
+    </ul>
+
+    <h2>7. Thay đổi chính sách</h2>
+    <p>
+      Nếu thay đổi cách xử lý dữ liệu (ví dụ thêm báo lỗi hoặc thêm mua
+      hàng trong ứng dụng), chúng tôi sẽ cập nhật trang này và đổi ngày
+      "Last updated" bên dưới trước khi bản mới đến tay người dùng.
+    </p>
+
+    <h2>8. Liên hệ</h2>
+    <p>
+      Thắc mắc về chính sách này, vui lòng gửi email tới
+      <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>.
+    </p>
+  </section>
+
+  <div class="meta">
+    Last updated: 2026-07-04 · Publisher: Ho Van Dai ·
+    <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>
+  </div>
+</main>
+
+<script>
+  (function () {
+    const buttons = document.querySelectorAll('.lang button');
+    const sections = document.querySelectorAll('[data-lang]');
+    function setLang(lang) {
+      sections.forEach(s => s.classList.toggle('on', s.dataset.lang === lang));
+      buttons.forEach(b => b.classList.toggle('on', b.dataset.set === lang));
+      try { localStorage.setItem('pp-lang', lang); } catch (e) {}
+      document.documentElement.lang = lang;
+    }
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.set)));
+    let initial = 'en';
+    try { initial = localStorage.getItem('pp-lang') || 'en'; } catch (e) {}
+    if (initial !== 'en') setLang(initial);
+  })();
+</script>
+</body>
+</html>
