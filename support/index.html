@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — DAHA Solutions</title>
+<meta name="description" content="Support for DAHA Solutions apps — contact, FAQ, bug reports and feature requests.">
+<link rel="icon" href="../assets/icons/line98.png">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #ffffff;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #f97350;
+    --accent-soft: #fdeae4;
+    --border: #e8e2d9;
+    --shadow: 0 1px 2px rgba(31,36,48,.05), 0 8px 24px rgba(31,36,48,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161c;
+      --card: #1d2029;
+      --text: #eef0f4;
+      --muted: #9aa1ad;
+      --accent: #fb8a6a;
+      --accent-soft: #322723;
+      --border: #2b2f3a;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  [data-lang="en"] .vi { display: none; }
+  [data-lang="vi"] .en { display: none; }
+
+  header { padding: 20px 0; }
+  .nav { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--text); text-decoration: none; }
+  .brand span { color: var(--accent); }
+  .lang-toggle {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero { padding: 56px 0 32px; text-align: center; }
+  .hero h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.02em; font-weight: 800; }
+  .hero p { margin: 12px auto 0; max-width: 520px; color: var(--muted); font-size: 17px; }
+
+  .contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .contact .btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 12px;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contact .btn:hover { opacity: .85; }
+  .contact .note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+  h2.section { font-size: 22px; letter-spacing: -.01em; margin: 0 0 16px; }
+  .faq { display: grid; gap: 12px; padding-bottom: 64px; }
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  details[open] { border-color: var(--accent); }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-size: 20px; font-weight: 700; flex-shrink: 0; }
+  details[open] summary::after { content: "–"; }
+  details .a { margin-top: 10px; color: var(--muted); font-size: 15px; }
+  details .a a { color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../">DAHA<span>.</span>Solutions</a>
+    <button class="lang-toggle" id="langToggle" type="button">Tiếng Việt</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>
+      <span class="en">Support</span>
+      <span class="vi">Hỗ trợ</span>
+    </h1>
+    <p>
+      <span class="en">Questions, bug reports, or feature ideas for any DAHA Solutions app — we're happy to help.</span>
+      <span class="vi">Thắc mắc, báo lỗi hay góp ý tính năng cho bất kỳ ứng dụng nào của DAHA Solutions — chúng tôi luôn sẵn lòng hỗ trợ.</span>
+    </p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="contact">
+    <strong>
+      <span class="en">Email us anytime</span>
+      <span class="vi">Gửi email cho chúng tôi bất cứ lúc nào</span>
+    </strong>
+    <br>
+    <a class="btn" href="mailto:dahapublic@gmail.com?subject=App%20support">dahapublic@gmail.com</a>
+    <div class="note">
+      <span class="en">Please include the app name, your device model, and OS version — we usually reply within 48 hours.</span>
+      <span class="vi">Vui lòng ghi rõ tên ứng dụng, dòng máy và phiên bản hệ điều hành — chúng tôi thường phản hồi trong vòng 48 giờ.</span>
+    </div>
+  </div>
+
+  <h2 class="section">
+    <span class="en">Frequently asked questions</span>
+    <span class="vi">Câu hỏi thường gặp</span>
+  </h2>
+
+  <div class="faq">
+
+    <details>
+      <summary>
+        <span class="en">Where is my data stored?</span>
+        <span class="vi">Dữ liệu của tôi được lưu ở đâu?</span>
+      </summary>
+      <div class="a">
+        <span class="en">On your device. Our apps have no accounts and no cloud — game saves, journal entries, and settings never leave your phone unless you opt in to your OS backup (iCloud / Google One). See the <a href="../privacy-page/">Privacy Policy</a> for details.</span>
+        <span class="vi">Ngay trên thiết bị của bạn. Ứng dụng của chúng tôi không có tài khoản, không có cloud — dữ liệu game, nhật ký và cài đặt không bao giờ rời khỏi điện thoại trừ khi bạn bật sao lưu hệ điều hành (iCloud / Google One). Xem chi tiết tại <a href="../privacy-page/">Chính sách bảo mật</a>.</span>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="en">I deleted the app — can I get my data back?</span>
+        <span class="vi">Tôi đã xóa ứng dụng — có lấy lại dữ liệu được không?</span>
+      </summary>
+      <div class="a">
+        <span class="en">Because data lives only on your device, deleting the app deletes its data. If you restore your phone from an iCloud / Google backup made while the app was installed, the data comes back with it. Some apps also offer their own export (e.g. ZIP export) — use it regularly if your data matters to you.</span>
+        <span class="vi">Vì dữ liệu chỉ nằm trên thiết bị, xóa ứng dụng sẽ xóa luôn dữ liệu. Nếu bạn khôi phục điện thoại từ bản sao lưu iCloud / Google được tạo khi ứng dụng còn cài, dữ liệu sẽ trở lại cùng bản sao lưu. Một số ứng dụng có tính năng xuất dữ liệu riêng (ví dụ xuất file ZIP) — hãy dùng thường xuyên nếu dữ liệu quan trọng với bạn.</span>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="en">How do I report a bug or request a feature?</span>
+        <span class="vi">Làm sao để báo lỗi hoặc đề xuất tính năng?</span>
+      </summary>
+      <div class="a">
+        <span class="en">Email <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a> with the app name, what happened (screenshots help a lot), your device model, and OS version. Feature ideas are always welcome — many of our updates come from user emails.</span>
+        <span class="vi">Gửi email tới <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a> kèm tên ứng dụng, mô tả sự cố (ảnh chụp màn hình rất hữu ích), dòng máy và phiên bản hệ điều hành. Chúng tôi luôn hoan nghênh góp ý tính năng — nhiều bản cập nhật ra đời từ email của người dùng.</span>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="en">How do I request a refund?</span>
+        <span class="vi">Làm sao để yêu cầu hoàn tiền?</span>
+      </summary>
+      <div class="a">
+        <span class="en">Purchases are processed by Apple or Google, so refunds go through them: on iOS use <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>; on Android open Google Play → your profile → Payments &amp; subscriptions. If you get stuck, email us and we'll point you the right way.</span>
+        <span class="vi">Giao dịch mua được xử lý bởi Apple hoặc Google, nên việc hoàn tiền thực hiện qua họ: trên iOS dùng <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>; trên Android mở Google Play → hồ sơ của bạn → Thanh toán và gói thuê bao. Nếu gặp khó khăn, cứ email cho chúng tôi để được hướng dẫn.</span>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="en">Which languages do the apps support?</span>
+        <span class="vi">Ứng dụng hỗ trợ những ngôn ngữ nào?</span>
+      </summary>
+      <div class="a">
+        <span class="en">English and Vietnamese at launch, with more languages planned. If a translation looks wrong, email us — native-speaker corrections are hugely appreciated.</span>
+        <span class="vi">Tiếng Anh và tiếng Việt khi ra mắt, và sẽ mở rộng thêm nhiều ngôn ngữ. Nếu bạn thấy bản dịch chưa chuẩn, hãy email cho chúng tôi — mọi góp ý từ người bản xứ đều rất đáng quý.</span>
+      </div>
+    </details>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ho Van Dai · DAHA Solutions</div>
+    <div>
+      <a href="../">
+        <span class="en">Home</span>
+        <span class="vi">Trang chủ</span>
+      </a>
+      &nbsp;·&nbsp;
+      <a href="../privacy-page/">
+        <span class="en">Privacy Policy</span>
+        <span class="vi">Chính sách bảo mật</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('langToggle');
+  var root = document.documentElement;
+  function setLang(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    toggle.textContent = lang === 'en' ? 'Tiếng Việt' : 'English';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  toggle.addEventListener('click', function () {
+    setLang(root.getAttribute('data-lang') === 'en' ? 'vi' : 'en');
+  });
+  try {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'vi' || saved === 'en') setLang(saved);
+    else if ((navigator.language || '').toLowerCase().indexOf('vi') === 0) setLang('vi');
+  } catch (e) {}
+</script>
+
+</body>
+</html>
