@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAHA Solutions — Small, thoughtful mobile apps</title>
+<meta name="description" content="DAHA Solutions builds small, thoughtful mobile apps for iOS and Android — Line 98 Classic, Moodee mood tracker, Anniversary Tracker and more.">
+<meta property="og:title" content="DAHA Solutions">
+<meta property="og:description" content="Small, thoughtful mobile apps for iOS and Android.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dahasolutions.github.io/">
+<link rel="icon" href="assets/icons/line98.png">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #ffffff;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #f97350;
+    --accent-soft: #fdeae4;
+    --border: #e8e2d9;
+    --shadow: 0 1px 2px rgba(31,36,48,.05), 0 8px 24px rgba(31,36,48,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161c;
+      --card: #1d2029;
+      --text: #eef0f4;
+      --muted: #9aa1ad;
+      --accent: #fb8a6a;
+      --accent-soft: #322723;
+      --border: #2b2f3a;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Language toggle: html[data-lang] decides which span shows */
+  [data-lang="en"] .vi { display: none; }
+  [data-lang="vi"] .en { display: none; }
+
+  header { padding: 20px 0; }
+  .nav { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -.01em; }
+  .brand span { color: var(--accent); }
+  .lang-toggle {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero h1 {
+    font-size: clamp(32px, 5.5vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    font-weight: 800;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p {
+    margin: 18px auto 0;
+    max-width: 560px;
+    font-size: 18px;
+    color: var(--muted);
+  }
+
+  .apps { display: grid; gap: 24px; padding-bottom: 72px; }
+  .card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 24px;
+    align-items: start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .card img {
+    width: 96px; height: 96px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+  }
+  .card h2 { font-size: 22px; letter-spacing: -.01em; }
+  .tagline { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 2px; }
+  .card .desc { color: var(--muted); font-size: 15px; margin-top: 10px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    border-radius: 12px;
+    padding: 9px 16px;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.primary:hover { opacity: .85; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary:hover { color: var(--bg); }
+  .soon {
+    display: inline-flex; align-items: center;
+    border-radius: 12px;
+    padding: 9px 16px;
+    font-size: 14px; font-weight: 600;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin-left: 8px;
+    vertical-align: 2px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .card { grid-template-columns: 1fr; }
+    .card img { width: 80px; height: 80px; border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">DAHA<span>.</span>Solutions</div>
+    <button class="lang-toggle" id="langToggle" type="button">Tiếng Việt</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>
+      <span class="en">Small apps, <em>made with care.</em></span>
+      <span class="vi">Ứng dụng nhỏ, <em>làm bằng cả tâm huyết.</em></span>
+    </h1>
+    <p>
+      <span class="en">We build simple, private, offline-first mobile apps for iOS and Android — no accounts, no clutter, just things that work.</span>
+      <span class="vi">Chúng tôi làm các ứng dụng di động đơn giản, riêng tư, hoạt động offline cho iOS và Android — không tài khoản, không rườm rà, chỉ tập trung vào trải nghiệm.</span>
+    </p>
+  </div>
+</section>
+
+<main class="wrap apps">
+
+  <!-- ============ Line 98 Classic ============ -->
+  <article class="card">
+    <img src="assets/icons/line98.png" alt="Line 98 Classic app icon" width="96" height="96">
+    <div>
+      <h2>Line 98 Classic</h2>
+      <div class="tagline">
+        <span class="en">The timeless 9×9 ball puzzle, polished for mobile</span>
+        <span class="vi">Trò chơi xếp bóng 9×9 kinh điển, tối ưu cho di động</span>
+      </div>
+      <p class="desc">
+        <span class="en">Tap a ball, line up five of the same color, and watch them shatter. 14 themes, 14 ball styles, offline play, instant restart. Simple to learn — impossible to put down.</span>
+        <span class="vi">Chạm vào bóng, xếp 5 bóng cùng màu thành hàng và nhìn chúng vỡ tan. 14 chủ đề, 14 kiểu bóng, chơi offline, chơi lại tức thì. Dễ học — khó dừng.</span>
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="https://apps.apple.com/app/id6787416787">
+          <span class="en">Download on the App Store</span>
+          <span class="vi">Tải trên App Store</span>
+        </a>
+        <span class="soon">
+          <span class="en">Google Play — coming soon</span>
+          <span class="vi">Google Play — sắp ra mắt</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ Moodee — Mood Tracker ============ -->
+  <article class="card">
+    <img src="assets/icons/moodee.png" alt="Moodee app icon" width="96" height="96">
+    <div>
+      <h2>Moodee — Mood Tracker
+        <span class="badge"><span class="en">Coming soon</span><span class="vi">Sắp ra mắt</span></span>
+      </h2>
+      <div class="tagline">
+        <span class="en">A calm, private mood journal</span>
+        <span class="vi">Nhật ký cảm xúc riêng tư, nhẹ nhàng</span>
+      </div>
+      <p class="desc">
+        <span class="en">Check in with how you feel in under 10 seconds — no account, no cloud, everything stays on your device. Calendar, timeline, and insights that turn check-ins into a picture of how you're really doing.</span>
+        <span class="vi">Ghi lại cảm xúc trong chưa đầy 10 giây — không tài khoản, không cloud, mọi dữ liệu nằm trên thiết bị của bạn. Lịch, dòng thời gian và thống kê giúp bạn hiểu rõ bản thân hơn.</span>
+      </p>
+      <div class="actions">
+        <span class="soon">
+          <span class="en">Coming soon to the App Store</span>
+          <span class="vi">Sắp có mặt trên App Store</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ Anniversary Tracker: Memento ============ -->
+  <article class="card">
+    <img src="assets/icons/anniversary.png" alt="Anniversary Tracker app icon" width="96" height="96">
+    <div>
+      <h2>Anniversary Tracker: Memento
+        <span class="badge"><span class="en">Coming soon</span><span class="vi">Sắp ra mắt</span></span>
+      </h2>
+      <div class="tagline">
+        <span class="en">Count down to what matters — and keep the memories</span>
+        <span class="vi">Đếm ngược ngày quan trọng — và lưu giữ kỷ niệm</span>
+      </div>
+      <p class="desc">
+        <span class="en">Counts down the days ahead and up through the years you've shared. Each anniversary asks for one photo and a few words — so a countdown grows into the timeline of your life.</span>
+        <span class="vi">Đếm ngược tới ngày sắp đến và đếm lên những năm tháng đã qua. Mỗi dịp kỷ niệm chỉ cần một tấm ảnh và vài dòng chữ — để chiếc đồng hồ đếm ngược lớn dần thành dòng thời gian cuộc đời bạn.</span>
+      </p>
+      <div class="actions">
+        <span class="soon">
+          <span class="en">Coming soon to the App Store</span>
+          <span class="vi">Sắp có mặt trên App Store</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ Template for a new app — copy the block below ============
+  <article class="card">
+    <img src="assets/icons/NEWAPP.png" alt="NEWAPP app icon" width="96" height="96">
+    <div>
+      <h2>App Name
+        <span class="badge"><span class="en">Coming soon</span><span class="vi">Sắp ra mắt</span></span>
+      </h2>
+      <div class="tagline">
+        <span class="en">One-line tagline</span>
+        <span class="vi">Tagline một dòng</span>
+      </div>
+      <p class="desc">
+        <span class="en">Short description.</span>
+        <span class="vi">Mô tả ngắn.</span>
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="https://apps.apple.com/app/idXXXXXXXXXX">
+          <span class="en">Download on the App Store</span>
+          <span class="vi">Tải trên App Store</span>
+        </a>
+      </div>
+    </div>
+  </article>
+  ======================================================================== -->
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ho Van Dai · DAHA Solutions</div>
+    <div>
+      <a href="privacy-page/">
+        <span class="en">Privacy Policy</span>
+        <span class="vi">Chính sách bảo mật</span>
+      </a>
+      &nbsp;·&nbsp;
+      <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('langToggle');
+  var root = document.documentElement;
+  function setLang(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    toggle.textContent = lang === 'en' ? 'Tiếng Việt' : 'English';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  toggle.addEventListener('click', function () {
+    setLang(root.getAttribute('data-lang') === 'en' ? 'vi' : 'en');
+  });
+  try {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'vi' || saved === 'en') setLang(saved);
+    else if ((navigator.language || '').toLowerCase().indexOf('vi') === 0) setLang('vi');
+  } catch (e) {}
+</script>
+
+</body>
+</html>
