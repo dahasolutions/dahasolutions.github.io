@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "year": 2026,
+  "configVersion": 1,
+  "updatedAt": "2026-07-17T00:00:00Z",
+  "sources": {
+    "mileage": "IRS Notice 2026-10",
+    "wageBase": "IRS Publication 926",
+    "brackets": "IRS Rev. Proc. 2025-32",
+    "standardDeduction": "IRS Rev. Proc. 2025-32"
+  },
+  "mileageRateTenthCents": 725,
+  "seTax": {
+    "adjustment": 0.9235,
+    "socialSecurityRate": 0.124,
+    "medicareRate": 0.029,
+    "ssWageBaseCents": 18450000,
+    "additionalMedicare": {
+      "rate": 0.009,
+      "thresholdCents": {
+        "single": 20000000,
+        "mfj": 25000000,
+        "hoh": 20000000
+      }
+    }
+  },
+  "standardDeductionCents": {
+    "single": 1610000,
+    "mfj": 3220000,
+    "hoh": 2415000
+  },
+  "qbiRate": 0.2,
+  "brackets": {
+    "single": [
+      { "upToCents": 1240000, "rate": 0.1 },
+      { "upToCents": 5040000, "rate": 0.12 },
+      { "upToCents": 10570000, "rate": 0.22 },
+      { "upToCents": 20177500, "rate": 0.24 },
+      { "upToCents": 25622500, "rate": 0.32 },
+      { "upToCents": 64060000, "rate": 0.35 },
+      { "upToCents": null, "rate": 0.37 }
+    ],
+    "mfj": [
+      { "upToCents": 2480000, "rate": 0.1 },
+      { "upToCents": 10080000, "rate": 0.12 },
+      { "upToCents": 21140000, "rate": 0.22 },
+      { "upToCents": 40355000, "rate": 0.24 },
+      { "upToCents": 51245000, "rate": 0.32 },
+      { "upToCents": 76870000, "rate": 0.35 },
+      { "upToCents": null, "rate": 0.37 }
+    ],
+    "hoh": [
+      { "upToCents": 1770000, "rate": 0.1 },
+      { "upToCents": 6745000, "rate": 0.12 },
+      { "upToCents": 10570000, "rate": 0.22 },
+      { "upToCents": 20177500, "rate": 0.24 },
+      { "upToCents": 25620000, "rate": 0.32 },
+      { "upToCents": 64060000, "rate": 0.35 },
+      { "upToCents": null, "rate": 0.37 }
+    ]
+  },
+  "quarterDeadlines": [
+    { "q": 1, "due": "2026-04-15", "periodStart": "2026-01-01", "periodEnd": "2026-03-31" },
+    { "q": 2, "due": "2026-06-16", "periodStart": "2026-04-01", "periodEnd": "2026-05-31" },
+    { "q": 3, "due": "2026-09-15", "periodStart": "2026-06-01", "periodEnd": "2026-08-31" },
+    { "q": 4, "due": "2027-01-15", "periodStart": "2026-09-01", "periodEnd": "2026-12-31" }
+  ],
+  "safeHarbor": {
+    "basePct": 1.0,
+    "highIncomePct": 1.1,
+    "agiThresholdCents": 15000000,
+    "currentYearPct": 0.9
+  },
+  "_verification": {
+    "verified": [
+      "mileageRateTenthCents",
+      "seTax.ssWageBaseCents",
+      "standardDeductionCents",
+      "brackets.single (10%, 12%, 22%, 24%, 37% boundaries)",
+      "brackets.mfj (10%, 12%, 22%, 24%, 37% boundaries)",
+      "quarterDeadlines"
+    ],
+    "needsVerify": [
+      "brackets.single 32% top (256225.00 - cross-check Rev. Proc. 2025-32 Table 1)",
+      "brackets.mfj 32% top (512450.00 - cross-check)",
+      "brackets.hoh all thresholds except 22%/24%/35% (cross-check Rev. Proc. 2025-32)"
+    ],
+    "note": "Update this block after cross-checking irs.gov. App treats config as authoritative; keep this repo accurate."
+  }
+}
