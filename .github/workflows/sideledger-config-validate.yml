@@ -1,0 +1,93 @@
+name: Validate SideLedger Tax Config
+
+on:
+  push:
+    branches: [main]
+    paths: ['sideledger-config/v1/**', 'sideledger-config/schema/**']
+  pull_request:
+    paths: ['sideledger-config/v1/**', 'sideledger-config/schema/**']
+
+defaults:
+  run:
+    working-directory: sideledger-config
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate all tax year configs against schema
+        run: |
+          for f in v1/tax/*.json; do
+            echo "Validating $f"
+            ajv validate -s schema/tax_year_config.schema.json -d "$f" --strict=false
+          done
+
+      - name: Validate manifest is valid JSON and years exist
+        run: |
+          node -e '
+            const fs = require("fs");
+            const m = JSON.parse(fs.readFileSync("v1/manifest.json", "utf8"));
+            if (!m.latestYear || !m.years) throw new Error("manifest missing fields");
+            for (const [year, info] of Object.entries(m.years)) {
+              const p = "v1/" + info.path;
+              if (!fs.existsSync(p)) throw new Error("manifest points to missing file: " + p);
+              const cfg = JSON.parse(fs.readFileSync(p, "utf8"));
+              if (String(cfg.year) !== year) throw new Error("year mismatch in " + p);
+              if (cfg.configVersion !== info.configVersion)
+                throw new Error("configVersion mismatch between manifest and " + p);
+            }
+            console.log("Manifest OK");
+          '
+
+      - name: Logic checks (brackets ascending, deadlines ordered, rates sane)
+        run: |
+          node -e '
+            const fs = require("fs");
+            for (const f of fs.readdirSync("v1/tax")) {
+              const cfg = JSON.parse(fs.readFileSync("v1/tax/" + f, "utf8"));
+              // 1) Brackets: upToCents strictly ascending, last is null, rates ascending
+              for (const [status, br] of Object.entries(cfg.brackets)) {
+                let prevUp = -1, prevRate = -1;
+                br.forEach((b, i) => {
+                  const isLast = i === br.length - 1;
+                  if (isLast && b.upToCents !== null)
+                    throw new Error(`${f} ${status}: last bracket must be null`);
+                  if (!isLast) {
+                    if (b.upToCents === null) throw new Error(`${f} ${status}: null before last`);
+                    if (b.upToCents <= prevUp) throw new Error(`${f} ${status}: upToCents not ascending at ${i}`);
+                    prevUp = b.upToCents;
+                  }
+                  if (b.rate <= prevRate) throw new Error(`${f} ${status}: rate not ascending at ${i}`);
+                  prevRate = b.rate;
+                });
+              }
+              // 2) Quarter deadlines: q 1..4, periods contiguous within year, due after periodEnd
+              const qs = cfg.quarterDeadlines.sort((a,b) => a.q - b.q);
+              qs.forEach((q, i) => {
+                if (q.q !== i + 1) throw new Error(`${f}: quarter numbering broken`);
+                if (new Date(q.due) <= new Date(q.periodEnd))
+                  throw new Error(`${f} Q${q.q}: due date must be after periodEnd`);
+                if (i > 0) {
+                  const prevEnd = new Date(qs[i-1].periodEnd);
+                  const start = new Date(q.periodStart);
+                  const diffDays = (start - prevEnd) / 86400000;
+                  if (diffDays !== 1) throw new Error(`${f}: gap between Q${i} and Q${i+1} periods`);
+                }
+              });
+              // 3) SE total rate sanity: ss + medicare should equal 15.3% (+/- epsilon)
+              const total = cfg.seTax.socialSecurityRate + cfg.seTax.medicareRate;
+              if (Math.abs(total - 0.153) > 0.02)
+                throw new Error(`${f}: SE total rate ${total} looks wrong`);
+              console.log(f + " logic OK");
+            }
+          '
