@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SideLedger TaxYearConfig",
+  "type": "object",
+  "required": [
+    "schemaVersion", "year", "configVersion", "mileageRateTenthCents",
+    "seTax", "standardDeductionCents", "qbiRate", "brackets",
+    "quarterDeadlines", "safeHarbor"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "year": { "type": "integer", "minimum": 2025, "maximum": 2100 },
+    "configVersion": { "type": "integer", "minimum": 1 },
+    "updatedAt": { "type": "string" },
+    "sources": { "type": "object" },
+    "mileageRateTenthCents": {
+      "type": "integer",
+      "minimum": 300,
+      "maximum": 1500,
+      "description": "72.5 cents/mile => 725. Sanity bounds 30c-150c."
+    },
+    "seTax": {
+      "type": "object",
+      "required": ["adjustment", "socialSecurityRate", "medicareRate", "ssWageBaseCents", "additionalMedicare"],
+      "properties": {
+        "adjustment": { "type": "number", "minimum": 0.9, "maximum": 1.0 },
+        "socialSecurityRate": { "type": "number", "minimum": 0.1, "maximum": 0.15 },
+        "medicareRate": { "type": "number", "minimum": 0.02, "maximum": 0.05 },
+        "ssWageBaseCents": { "type": "integer", "minimum": 10000000, "maximum": 50000000 },
+        "additionalMedicare": {
+          "type": "object",
+          "required": ["rate", "thresholdCents"],
+          "properties": {
+            "rate": { "type": "number", "minimum": 0, "maximum": 0.05 },
+            "thresholdCents": {
+              "type": "object",
+              "required": ["single", "mfj", "hoh"],
+              "additionalProperties": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "standardDeductionCents": {
+      "type": "object",
+      "required": ["single", "mfj", "hoh"],
+      "properties": {
+        "single": { "type": "integer", "minimum": 500000, "maximum": 10000000 },
+        "mfj": { "type": "integer", "minimum": 1000000, "maximum": 20000000 },
+        "hoh": { "type": "integer", "minimum": 500000, "maximum": 15000000 }
+      }
+    },
+    "qbiRate": { "type": "number", "minimum": 0, "maximum": 0.5 },
+    "brackets": {
+      "type": "object",
+      "required": ["single", "mfj", "hoh"],
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "required": ["upToCents", "rate"],
+          "properties": {
+            "upToCents": { "type": ["integer", "null"], "minimum": 0 },
+            "rate": { "type": "number", "minimum": 0, "maximum": 0.6 }
+          }
+        }
+      }
+    },
+    "quarterDeadlines": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["q", "due", "periodStart", "periodEnd"],
+        "properties": {
+          "q": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "due": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "periodStart": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "periodEnd": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+        }
+      }
+    },
+    "safeHarbor": {
+      "type": "object",
+      "required": ["basePct", "highIncomePct", "agiThresholdCents", "currentYearPct"],
+      "properties": {
+        "basePct": { "type": "number", "minimum": 0.5, "maximum": 1.5 },
+        "highIncomePct": { "type": "number", "minimum": 0.5, "maximum": 1.5 },
+        "agiThresholdCents": { "type": "integer", "minimum": 0 },
+        "currentYearPct": { "type": "number", "minimum": 0.5, "maximum": 1.0 }
+      }
+    }
+  }
+}
