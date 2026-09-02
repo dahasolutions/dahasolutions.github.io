@@ -3,9 +3,9 @@ name: Validate SideLedger Tax Config
 on:
   push:
     branches: [main]
-    paths: ['sideledger-config/v1/**', 'sideledger-config/schema/**']
+    paths: ['sideledger-config/v2/**', 'sideledger-config/schema/**']
   pull_request:
-    paths: ['sideledger-config/v1/**', 'sideledger-config/schema/**']
+    paths: ['sideledger-config/v2/**', 'sideledger-config/schema/**']
 
 defaults:
   run:
@@ -27,7 +27,7 @@ jobs:
 
       - name: Validate all tax year configs against schema
         run: |
-          for f in v1/tax/*.json; do
+          for f in v2/tax/*.json; do
             echo "Validating $f"
             ajv validate -s schema/tax_year_config.schema.json -d "$f" --strict=false
           done
@@ -36,10 +36,12 @@ jobs:
         run: |
           node -e '
             const fs = require("fs");
-            const m = JSON.parse(fs.readFileSync("v1/manifest.json", "utf8"));
+            const m = JSON.parse(fs.readFileSync("v2/manifest.json", "utf8"));
+            if (m.schemaVersion !== 2) throw new Error("manifest schemaVersion must be 2");
             if (!m.latestYear || !m.years) throw new Error("manifest missing fields");
+            if (!m.years[String(m.latestYear)]) throw new Error("latestYear has no entry in years");
             for (const [year, info] of Object.entries(m.years)) {
-              const p = "v1/" + info.path;
+              const p = "v2/" + info.path;
               if (!fs.existsSync(p)) throw new Error("manifest points to missing file: " + p);
               const cfg = JSON.parse(fs.readFileSync(p, "utf8"));
               if (String(cfg.year) !== year) throw new Error("year mismatch in " + p);
@@ -49,12 +51,12 @@ jobs:
             console.log("Manifest OK");
           '
 
-      - name: Logic checks (brackets ascending, deadlines ordered, rates sane)
+      - name: Logic checks (brackets ascending, deadlines ordered, rates sane, mileage dated, QBI divisible)
         run: |
           node -e '
             const fs = require("fs");
-            for (const f of fs.readdirSync("v1/tax")) {
-              const cfg = JSON.parse(fs.readFileSync("v1/tax/" + f, "utf8"));
+            for (const f of fs.readdirSync("v2/tax")) {
+              const cfg = JSON.parse(fs.readFileSync("v2/tax/" + f, "utf8"));
               // 1) Brackets: upToCents strictly ascending, last is null, rates ascending
               for (const [status, br] of Object.entries(cfg.brackets)) {
                 let prevUp = -1, prevRate = -1;
@@ -84,10 +86,30 @@ jobs:
                   if (diffDays !== 1) throw new Error(`${f}: gap between Q${i} and Q${i+1} periods`);
                 }
               });
+              if (qs[0].periodStart !== `${cfg.year}-01-01` || qs[3].periodEnd !== `${cfg.year}-12-31`)
+                throw new Error(`${f}: quarter periods must cover the whole year`);
               // 3) SE total rate sanity: ss + medicare should equal 15.3% (+/- epsilon)
               const total = cfg.seTax.socialSecurityRate + cfg.seTax.medicareRate;
               if (Math.abs(total - 0.153) > 0.02)
                 throw new Error(`${f}: SE total rate ${total} looks wrong`);
+              // 4) Mileage: the first rate starts on Jan 1 (the app applies it to any earlier
+              //    stray entry), later ones strictly ascending and inside the year, no two the same day
+              const rates = cfg.mileageRates;
+              if (rates[0].from !== `${cfg.year}-01-01`)
+                throw new Error(`${f}: first mileage rate must start on ${cfg.year}-01-01`);
+              rates.forEach((r, i) => {
+                if (isNaN(new Date(r.from))) throw new Error(`${f}: mileage rate ${i} has an invalid date`);
+                if (!r.from.startsWith(`${cfg.year}-`)) throw new Error(`${f}: mileage rate ${i} is outside ${cfg.year}`);
+                if (i > 0 && r.from <= rates[i-1].from) throw new Error(`${f}: mileage rates not ascending at ${i}`);
+              });
+              // 5) QBI: the engine divides by the phase-in range and compares against the threshold
+              for (const status of ["single", "mfj", "hoh"]) {
+                if (cfg.qbi.phaseInRangeCents[status] <= 0) throw new Error(`${f} qbi ${status}: phaseInRangeCents must be > 0`);
+                if (cfg.qbi.thresholdCents[status] <= 0) throw new Error(`${f} qbi ${status}: thresholdCents must be > 0`);
+              }
+              if (cfg.qbi.rate <= 0) throw new Error(`${f}: qbi.rate must be > 0`);
+              if (cfg.qbi.minimumDeductionCents > 0 && cfg.qbi.minimumQualifyingBaseCents <= 0)
+                throw new Error(`${f}: a QBI floor needs a qualifying base`);
               console.log(f + " logic OK");
             }
           '
