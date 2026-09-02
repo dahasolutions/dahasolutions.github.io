@@ -103,7 +103,7 @@ jobs:
                 if (i > 0 && r.from <= rates[i-1].from) throw new Error(`${f}: mileage rates not ascending at ${i}`);
               });
               // 5) QBI: the engine divides by the phase-in range and compares against the threshold
-              for (const status of ["single", "mfj", "hoh"]) {
+              for (const status of ["single", "mfj", "hoh", "mfs"]) {
                 if (cfg.qbi.phaseInRangeCents[status] <= 0) throw new Error(`${f} qbi ${status}: phaseInRangeCents must be > 0`);
                 if (cfg.qbi.thresholdCents[status] <= 0) throw new Error(`${f} qbi ${status}: thresholdCents must be > 0`);
               }
