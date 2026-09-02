@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-02T00:00:00Z",
+  "updatedAt": "2026-09-02T12:00:00Z",
   "latestYear": 2026,
   "years": {
     "2026": {
       "path": "tax/2026.json",
-      "configVersion": 1
+      "configVersion": 3
     }
   },
   "message": null
