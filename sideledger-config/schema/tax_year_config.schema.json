@@ -329,6 +329,201 @@
           "maximum": 1.0
         }
       }
+    },
+    "stateTax": {
+      "type": "object",
+      "description": "State income tax, one entry per state and DC. Optional: a build that predates it ignores the block and shows the federal estimate alone.",
+      "required": [
+        "source",
+        "method",
+        "states"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "states": {
+          "type": "object",
+          "description": "Keyed by two-letter postal code.",
+          "propertyNames": {
+            "pattern": "^[A-Z]{2}$"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "name",
+              "kind"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "none",
+                  "flat",
+                  "graduated"
+                ]
+              },
+              "note": {
+                "type": "string"
+              },
+              "standardDeductionCents": {
+                "type": "object",
+                "description": "Cents, by filing status. A status the state does not list falls back to single.",
+                "properties": {
+                  "single": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "mfj": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "hoh": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "mfs": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "additionalProperties": false
+              },
+              "personalExemptionCents": {
+                "type": "object",
+                "description": "Cents, by filing status. A status the state does not list falls back to single.",
+                "properties": {
+                  "single": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "mfj": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "hoh": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "mfs": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "additionalProperties": false
+              },
+              "brackets": {
+                "type": "object",
+                "required": [
+                  "single"
+                ],
+                "properties": {
+                  "single": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "overCents",
+                        "rate"
+                      ],
+                      "properties": {
+                        "overCents": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "rate": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "mfj": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "overCents",
+                        "rate"
+                      ],
+                      "properties": {
+                        "overCents": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "rate": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "hoh": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "overCents",
+                        "rate"
+                      ],
+                      "properties": {
+                        "overCents": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "rate": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "mfs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "overCents",
+                        "rate"
+                      ],
+                      "properties": {
+                        "overCents": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "rate": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

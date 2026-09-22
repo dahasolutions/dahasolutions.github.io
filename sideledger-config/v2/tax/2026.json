@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "year": 2026,
-  "configVersion": 3,
-  "updatedAt": "2026-09-02T12:00:00Z",
+  "configVersion": 4,
+  "updatedAt": "2026-09-21T12:00:00Z",
   "sources": {
     "mileage": "IRS Notice 2026-10 (Jan 1 – Jun 30); IRS Announcement 2026-11 (Jul 1 – Dec 31)",
     "wageBase": "SSA 2026 cost-of-living adjustment fact sheet — $184,500",
@@ -14,7 +14,8 @@
     "qbi": "IRC §199A as amended by Pub. L. 119-21 (2025); threshold amounts per Rev. Proc. 2025-32",
     "quarterDeadlines": "Form 1040-ES (2026)",
     "safeHarbor": "IRC §6654(d)",
-    "filingStatuses": "IRC §1(j) — MFS brackets are half the joint amounts; §1401(b)(2) sets the MFS Additional Medicare threshold at $125,000"
+    "filingStatuses": "IRC §1(j) — MFS brackets are half the joint amounts; §1401(b)(2) sets the MFS Additional Medicare threshold at $125,000",
+    "stateTax": "Tax Foundation, \"State Individual Income Tax Rates and Brackets, 2026\" (rates as of February 11, 2026)"
   },
   "mileageRates": [
     {
@@ -219,6 +220,1877 @@
     "agiThresholdCents": 15000000,
     "currentYearPct": 0.9
   },
+  "stateTax": {
+    "source": "Tax Foundation, \"State Individual Income Tax Rates and Brackets, 2026\" (rates as of February 11, 2026)",
+    "method": "Taxable income is federal AGI less the state standard deduction and any personal exemption the state gives as a deduction. Head of household and married filing separately use the single schedule; local income taxes, credits and state-specific adjustments are not modelled.",
+    "states": {
+      "AL": {
+        "name": "Alabama",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 50000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 300000,
+              "rate": 0.05
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 100000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 600000,
+              "rate": 0.05
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 300000,
+          "mfj": 850000
+        },
+        "personalExemptionCents": {
+          "single": 150000,
+          "mfj": 300000
+        }
+      },
+      "AK": {
+        "name": "Alaska",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "AZ": {
+        "name": "Arizona",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.025
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.025
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 835000,
+          "mfj": 1670000
+        }
+      },
+      "AR": {
+        "name": "Arkansas",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 460000,
+              "rate": 0.039
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 460000,
+              "rate": 0.039
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 247000,
+          "mfj": 494000
+        }
+      },
+      "CA": {
+        "name": "California",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.01
+            },
+            {
+              "overCents": 1107900,
+              "rate": 0.02
+            },
+            {
+              "overCents": 2626400,
+              "rate": 0.04
+            },
+            {
+              "overCents": 4145200,
+              "rate": 0.06
+            },
+            {
+              "overCents": 5754200,
+              "rate": 0.08
+            },
+            {
+              "overCents": 7272400,
+              "rate": 0.093
+            },
+            {
+              "overCents": 37147900,
+              "rate": 0.103
+            },
+            {
+              "overCents": 44577100,
+              "rate": 0.113
+            },
+            {
+              "overCents": 74295300,
+              "rate": 0.123
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.133
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.01
+            },
+            {
+              "overCents": 2215800,
+              "rate": 0.02
+            },
+            {
+              "overCents": 5252800,
+              "rate": 0.04
+            },
+            {
+              "overCents": 8290400,
+              "rate": 0.06
+            },
+            {
+              "overCents": 11508400,
+              "rate": 0.08
+            },
+            {
+              "overCents": 14544800,
+              "rate": 0.093
+            },
+            {
+              "overCents": 74295800,
+              "rate": 0.103
+            },
+            {
+              "overCents": 89154200,
+              "rate": 0.113
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.123
+            },
+            {
+              "overCents": 148590600,
+              "rate": 0.133
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 554000,
+          "mfj": 1108000
+        }
+      },
+      "CO": {
+        "name": "Colorado",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.044
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.044
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "CT": {
+        "name": "Connecticut",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.045
+            },
+            {
+              "overCents": 5000000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 10000000,
+              "rate": 0.06
+            },
+            {
+              "overCents": 20000000,
+              "rate": 0.065
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.069
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0699
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 2000000,
+              "rate": 0.045
+            },
+            {
+              "overCents": 10000000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 20000000,
+              "rate": 0.06
+            },
+            {
+              "overCents": 40000000,
+              "rate": 0.065
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.069
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.0699
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 1500000,
+          "mfj": 2400000
+        }
+      },
+      "DE": {
+        "name": "Delaware",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 200000,
+              "rate": 0.022
+            },
+            {
+              "overCents": 500000,
+              "rate": 0.039
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.048
+            },
+            {
+              "overCents": 2000000,
+              "rate": 0.052
+            },
+            {
+              "overCents": 2500000,
+              "rate": 0.0555
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.066
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 200000,
+              "rate": 0.022
+            },
+            {
+              "overCents": 500000,
+              "rate": 0.039
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.048
+            },
+            {
+              "overCents": 2000000,
+              "rate": 0.052
+            },
+            {
+              "overCents": 2500000,
+              "rate": 0.0555
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.066
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 325000,
+          "mfj": 650000
+        }
+      },
+      "FL": {
+        "name": "Florida",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "GA": {
+        "name": "Georgia",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0519
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0519
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1200000,
+          "mfj": 2400000
+        }
+      },
+      "HI": {
+        "name": "Hawaii",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.014
+            },
+            {
+              "overCents": 960000,
+              "rate": 0.032
+            },
+            {
+              "overCents": 1440000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 1920000,
+              "rate": 0.064
+            },
+            {
+              "overCents": 2400000,
+              "rate": 0.068
+            },
+            {
+              "overCents": 3600000,
+              "rate": 0.072
+            },
+            {
+              "overCents": 4800000,
+              "rate": 0.076
+            },
+            {
+              "overCents": 12500000,
+              "rate": 0.079
+            },
+            {
+              "overCents": 17500000,
+              "rate": 0.0825
+            },
+            {
+              "overCents": 22500000,
+              "rate": 0.09
+            },
+            {
+              "overCents": 27500000,
+              "rate": 0.1
+            },
+            {
+              "overCents": 32500000,
+              "rate": 0.11
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.014
+            },
+            {
+              "overCents": 1920000,
+              "rate": 0.032
+            },
+            {
+              "overCents": 2880000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 3840000,
+              "rate": 0.064
+            },
+            {
+              "overCents": 4800000,
+              "rate": 0.068
+            },
+            {
+              "overCents": 7200000,
+              "rate": 0.072
+            },
+            {
+              "overCents": 9600000,
+              "rate": 0.076
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.079
+            },
+            {
+              "overCents": 35000000,
+              "rate": 0.0825
+            },
+            {
+              "overCents": 45000000,
+              "rate": 0.09
+            },
+            {
+              "overCents": 55000000,
+              "rate": 0.1
+            },
+            {
+              "overCents": 65000000,
+              "rate": 0.11
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 440000,
+          "mfj": 880000
+        },
+        "personalExemptionCents": {
+          "single": 114400,
+          "mfj": 228800
+        }
+      },
+      "ID": {
+        "name": "Idaho",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 481100,
+              "rate": 0.053
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 962200,
+              "rate": 0.053
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "IL": {
+        "name": "Illinois",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0495
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0495
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 292500,
+          "mfj": 585000
+        }
+      },
+      "IN": {
+        "name": "Indiana",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0295
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0295
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 100000,
+          "mfj": 200000
+        }
+      },
+      "IA": {
+        "name": "Iowa",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.038
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.038
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "KS": {
+        "name": "Kansas",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.052
+            },
+            {
+              "overCents": 2300000,
+              "rate": 0.0558
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.052
+            },
+            {
+              "overCents": 4600000,
+              "rate": 0.0558
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 360500,
+          "mfj": 824000
+        },
+        "personalExemptionCents": {
+          "single": 916000,
+          "mfj": 1832000
+        }
+      },
+      "KY": {
+        "name": "Kentucky",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.035
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.035
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 336000,
+          "mfj": 336000
+        }
+      },
+      "LA": {
+        "name": "Louisiana",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.03
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.03
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1287500,
+          "mfj": 2575000
+        }
+      },
+      "ME": {
+        "name": "Maine",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.058
+            },
+            {
+              "overCents": 2739900,
+              "rate": 0.0675
+            },
+            {
+              "overCents": 6484900,
+              "rate": 0.0715
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.058
+            },
+            {
+              "overCents": 5484900,
+              "rate": 0.0675
+            },
+            {
+              "overCents": 12974900,
+              "rate": 0.0715
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 835000,
+          "mfj": 1670000
+        },
+        "personalExemptionCents": {
+          "single": 530000,
+          "mfj": 1060000
+        }
+      },
+      "MD": {
+        "name": "Maryland",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 100000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 200000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 300000,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 10000000,
+              "rate": 0.05
+            },
+            {
+              "overCents": 12500000,
+              "rate": 0.0525
+            },
+            {
+              "overCents": 15000000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.0575
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0625
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.065
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 100000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 200000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 300000,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 15000000,
+              "rate": 0.05
+            },
+            {
+              "overCents": 17500000,
+              "rate": 0.0525
+            },
+            {
+              "overCents": 22500000,
+              "rate": 0.055
+            },
+            {
+              "overCents": 30000000,
+              "rate": 0.0575
+            },
+            {
+              "overCents": 60000000,
+              "rate": 0.0625
+            },
+            {
+              "overCents": 120000000,
+              "rate": 0.065
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 335000,
+          "mfj": 670000
+        },
+        "personalExemptionCents": {
+          "single": 320000,
+          "mfj": 640000
+        }
+      },
+      "MA": {
+        "name": "Massachusetts",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.05
+            },
+            {
+              "overCents": 108315000,
+              "rate": 0.09
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.05
+            },
+            {
+              "overCents": 108315000,
+              "rate": 0.09
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 440000,
+          "mfj": 880000
+        }
+      },
+      "MI": {
+        "name": "Michigan",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0425
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0425
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 590000,
+          "mfj": 1180000
+        }
+      },
+      "MN": {
+        "name": "Minnesota",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0535
+            },
+            {
+              "overCents": 3331000,
+              "rate": 0.068
+            },
+            {
+              "overCents": 10943000,
+              "rate": 0.0785
+            },
+            {
+              "overCents": 20315000,
+              "rate": 0.0985
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0535
+            },
+            {
+              "overCents": 4870000,
+              "rate": 0.068
+            },
+            {
+              "overCents": 19348000,
+              "rate": 0.0785
+            },
+            {
+              "overCents": 33793000,
+              "rate": 0.0985
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1530000,
+          "mfj": 3060000
+        }
+      },
+      "MS": {
+        "name": "Mississippi",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 1000000,
+              "rate": 0.04
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 1000000,
+              "rate": 0.04
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 230000,
+          "mfj": 460000
+        },
+        "personalExemptionCents": {
+          "single": 600000,
+          "mfj": 1200000
+        }
+      },
+      "MO": {
+        "name": "Missouri",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 134800,
+              "rate": 0.02
+            },
+            {
+              "overCents": 269600,
+              "rate": 0.025
+            },
+            {
+              "overCents": 404400,
+              "rate": 0.03
+            },
+            {
+              "overCents": 539200,
+              "rate": 0.035
+            },
+            {
+              "overCents": 674000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 808800,
+              "rate": 0.045
+            },
+            {
+              "overCents": 943600,
+              "rate": 0.047
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 134800,
+              "rate": 0.02
+            },
+            {
+              "overCents": 269600,
+              "rate": 0.025
+            },
+            {
+              "overCents": 404400,
+              "rate": 0.03
+            },
+            {
+              "overCents": 539200,
+              "rate": 0.035
+            },
+            {
+              "overCents": 674000,
+              "rate": 0.04
+            },
+            {
+              "overCents": 808800,
+              "rate": 0.045
+            },
+            {
+              "overCents": 943600,
+              "rate": 0.047
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "MT": {
+        "name": "Montana",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.047
+            },
+            {
+              "overCents": 4750000,
+              "rate": 0.0565
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.047
+            },
+            {
+              "overCents": 9500000,
+              "rate": 0.0565
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "NE": {
+        "name": "Nebraska",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0246
+            },
+            {
+              "overCents": 413000,
+              "rate": 0.0351
+            },
+            {
+              "overCents": 2476000,
+              "rate": 0.0455
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0246
+            },
+            {
+              "overCents": 825000,
+              "rate": 0.0351
+            },
+            {
+              "overCents": 4953000,
+              "rate": 0.0455
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 885000,
+          "mfj": 1770000
+        }
+      },
+      "NV": {
+        "name": "Nevada",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "NH": {
+        "name": "New Hampshire",
+        "kind": "none",
+        "note": "New Hampshire taxed interest and dividends only, and that tax ended after 2024."
+      },
+      "NJ": {
+        "name": "New Jersey",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.014
+            },
+            {
+              "overCents": 2000000,
+              "rate": 0.0175
+            },
+            {
+              "overCents": 3500000,
+              "rate": 0.035
+            },
+            {
+              "overCents": 4000000,
+              "rate": 0.0553
+            },
+            {
+              "overCents": 7500000,
+              "rate": 0.0637
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0897
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.1075
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.014
+            },
+            {
+              "overCents": 2000000,
+              "rate": 0.0175
+            },
+            {
+              "overCents": 5000000,
+              "rate": 0.0245
+            },
+            {
+              "overCents": 7000000,
+              "rate": 0.035
+            },
+            {
+              "overCents": 8000000,
+              "rate": 0.0553
+            },
+            {
+              "overCents": 15000000,
+              "rate": 0.0637
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0897
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.1075
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 100000,
+          "mfj": 200000
+        }
+      },
+      "NM": {
+        "name": "New Mexico",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.015
+            },
+            {
+              "overCents": 550000,
+              "rate": 0.032
+            },
+            {
+              "overCents": 1650000,
+              "rate": 0.043
+            },
+            {
+              "overCents": 3350000,
+              "rate": 0.047
+            },
+            {
+              "overCents": 6650000,
+              "rate": 0.049
+            },
+            {
+              "overCents": 21000000,
+              "rate": 0.059
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.015
+            },
+            {
+              "overCents": 800000,
+              "rate": 0.032
+            },
+            {
+              "overCents": 2500000,
+              "rate": 0.043
+            },
+            {
+              "overCents": 5000000,
+              "rate": 0.047
+            },
+            {
+              "overCents": 10000000,
+              "rate": 0.049
+            },
+            {
+              "overCents": 31500000,
+              "rate": 0.059
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "NY": {
+        "name": "New York",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.039
+            },
+            {
+              "overCents": 850000,
+              "rate": 0.044
+            },
+            {
+              "overCents": 1170000,
+              "rate": 0.0515
+            },
+            {
+              "overCents": 1390000,
+              "rate": 0.054
+            },
+            {
+              "overCents": 8065000,
+              "rate": 0.059
+            },
+            {
+              "overCents": 21540000,
+              "rate": 0.0685
+            },
+            {
+              "overCents": 107755000,
+              "rate": 0.0965
+            },
+            {
+              "overCents": 500000000,
+              "rate": 0.103
+            },
+            {
+              "overCents": 2500000000,
+              "rate": 0.109
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.039
+            },
+            {
+              "overCents": 1715000,
+              "rate": 0.044
+            },
+            {
+              "overCents": 2360000,
+              "rate": 0.0515
+            },
+            {
+              "overCents": 2790000,
+              "rate": 0.054
+            },
+            {
+              "overCents": 16155000,
+              "rate": 0.059
+            },
+            {
+              "overCents": 32320000,
+              "rate": 0.0685
+            },
+            {
+              "overCents": 215535000,
+              "rate": 0.0965
+            },
+            {
+              "overCents": 500000000,
+              "rate": 0.103
+            },
+            {
+              "overCents": 2500000000,
+              "rate": 0.109
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 800000,
+          "mfj": 1605000
+        }
+      },
+      "NC": {
+        "name": "North Carolina",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0399
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0399
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1275000,
+          "mfj": 2550000
+        }
+      },
+      "ND": {
+        "name": "North Dakota",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 4847500,
+              "rate": 0.0195
+            },
+            {
+              "overCents": 24482500,
+              "rate": 0.025
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 8097500,
+              "rate": 0.0195
+            },
+            {
+              "overCents": 29807500,
+              "rate": 0.025
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      },
+      "OH": {
+        "name": "Ohio",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 2605000,
+              "rate": 0.0275
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 2605000,
+              "rate": 0.0275
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 240000,
+          "mfj": 480000
+        }
+      },
+      "OK": {
+        "name": "Oklahoma",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 375000,
+              "rate": 0.025
+            },
+            {
+              "overCents": 490000,
+              "rate": 0.035
+            },
+            {
+              "overCents": 720000,
+              "rate": 0.045
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 750000,
+              "rate": 0.025
+            },
+            {
+              "overCents": 980000,
+              "rate": 0.035
+            },
+            {
+              "overCents": 1440000,
+              "rate": 0.045
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 635000,
+          "mfj": 1270000
+        },
+        "personalExemptionCents": {
+          "single": 100000,
+          "mfj": 200000
+        }
+      },
+      "OR": {
+        "name": "Oregon",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 455000,
+              "rate": 0.0675
+            },
+            {
+              "overCents": 1140000,
+              "rate": 0.0875
+            },
+            {
+              "overCents": 12500000,
+              "rate": 0.099
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 910000,
+              "rate": 0.0675
+            },
+            {
+              "overCents": 2280000,
+              "rate": 0.0875
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.099
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 291000,
+          "mfj": 582000
+        }
+      },
+      "PA": {
+        "name": "Pennsylvania",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0307
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0307
+            }
+          ]
+        }
+      },
+      "RI": {
+        "name": "Rhode Island",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0375
+            },
+            {
+              "overCents": 8205000,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 18645000,
+              "rate": 0.0599
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0375
+            },
+            {
+              "overCents": 8205000,
+              "rate": 0.0475
+            },
+            {
+              "overCents": 18645000,
+              "rate": 0.0599
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1120000,
+          "mfj": 2240000
+        },
+        "personalExemptionCents": {
+          "single": 525000,
+          "mfj": 1050000
+        }
+      },
+      "SC": {
+        "name": "South Carolina",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0
+            },
+            {
+              "overCents": 364000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 1823000,
+              "rate": 0.06
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0
+            },
+            {
+              "overCents": 364000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 1823000,
+              "rate": 0.06
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 835000,
+          "mfj": 1670000
+        }
+      },
+      "SD": {
+        "name": "South Dakota",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "TN": {
+        "name": "Tennessee",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "TX": {
+        "name": "Texas",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "UT": {
+        "name": "Utah",
+        "kind": "flat",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.045
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.045
+            }
+          ]
+        }
+      },
+      "VT": {
+        "name": "Vermont",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0335
+            },
+            {
+              "overCents": 4940000,
+              "rate": 0.066
+            },
+            {
+              "overCents": 11970000,
+              "rate": 0.076
+            },
+            {
+              "overCents": 24970000,
+              "rate": 0.0875
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0335
+            },
+            {
+              "overCents": 8250000,
+              "rate": 0.066
+            },
+            {
+              "overCents": 19945000,
+              "rate": 0.076
+            },
+            {
+              "overCents": 30400000,
+              "rate": 0.0875
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 765000,
+          "mfj": 1530000
+        },
+        "personalExemptionCents": {
+          "single": 530000,
+          "mfj": 1060000
+        }
+      },
+      "VA": {
+        "name": "Virginia",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 300000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 500000,
+              "rate": 0.05
+            },
+            {
+              "overCents": 1700000,
+              "rate": 0.0575
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.02
+            },
+            {
+              "overCents": 300000,
+              "rate": 0.03
+            },
+            {
+              "overCents": 500000,
+              "rate": 0.05
+            },
+            {
+              "overCents": 1700000,
+              "rate": 0.0575
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 875000,
+          "mfj": 1750000
+        },
+        "personalExemptionCents": {
+          "single": 93000,
+          "mfj": 186000
+        }
+      },
+      "WA": {
+        "name": "Washington",
+        "kind": "none",
+        "note": "Washington taxes long-term capital gains only — wages and self-employment income are untaxed."
+      },
+      "WV": {
+        "name": "West Virginia",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.0222
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.0296
+            },
+            {
+              "overCents": 2500000,
+              "rate": 0.0333
+            },
+            {
+              "overCents": 4000000,
+              "rate": 0.0444
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.0482
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.0222
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.0296
+            },
+            {
+              "overCents": 2500000,
+              "rate": 0.0333
+            },
+            {
+              "overCents": 4000000,
+              "rate": 0.0444
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.0482
+            }
+          ]
+        },
+        "personalExemptionCents": {
+          "single": 200000,
+          "mfj": 400000
+        }
+      },
+      "WI": {
+        "name": "Wisconsin",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.035
+            },
+            {
+              "overCents": 1511000,
+              "rate": 0.044
+            },
+            {
+              "overCents": 5195000,
+              "rate": 0.053
+            },
+            {
+              "overCents": 33272000,
+              "rate": 0.0765
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.035
+            },
+            {
+              "overCents": 2015000,
+              "rate": 0.044
+            },
+            {
+              "overCents": 6926000,
+              "rate": 0.053
+            },
+            {
+              "overCents": 44363000,
+              "rate": 0.0765
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1396000,
+          "mfj": 2584000
+        },
+        "personalExemptionCents": {
+          "single": 70000,
+          "mfj": 140000
+        }
+      },
+      "WY": {
+        "name": "Wyoming",
+        "kind": "none",
+        "note": "No state income tax."
+      },
+      "DC": {
+        "name": "District of Columbia",
+        "kind": "graduated",
+        "brackets": {
+          "single": [
+            {
+              "overCents": 0,
+              "rate": 0.04
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.06
+            },
+            {
+              "overCents": 4000000,
+              "rate": 0.065
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.085
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.0925
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0975
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.1075
+            }
+          ],
+          "mfj": [
+            {
+              "overCents": 0,
+              "rate": 0.04
+            },
+            {
+              "overCents": 1000000,
+              "rate": 0.06
+            },
+            {
+              "overCents": 4000000,
+              "rate": 0.065
+            },
+            {
+              "overCents": 6000000,
+              "rate": 0.085
+            },
+            {
+              "overCents": 25000000,
+              "rate": 0.0925
+            },
+            {
+              "overCents": 50000000,
+              "rate": 0.0975
+            },
+            {
+              "overCents": 100000000,
+              "rate": 0.1075
+            }
+          ]
+        },
+        "standardDeductionCents": {
+          "single": 1610000,
+          "mfj": 3220000
+        }
+      }
+    }
+  },
   "_verification": {
     "verified": [
       "mileageRates — 72.5¢ Jan–Jun (IRS Notice 2026-10), 76¢ Jul–Dec (IRS Announcement 2026-11)",
@@ -227,9 +2099,11 @@
       "brackets.single, brackets.mfj, brackets.hoh — every ceiling (Rev. Proc. 2025-32 §2.01 Tables 1-3)",
       "qbi.thresholdCents ($201,750 / $403,500) and phaseInRangeCents ($75,000 / $150,000 after Pub. L. 119-21)",
       "qbi.minimumDeductionCents $400 at minimumQualifyingBaseCents $1,000 — §199A(i), first applies to tax year 2026",
-      "quarterDeadlines (Form 1040-ES 2026; Jun 15, 2026 is a Monday, no weekend shift)"
+      "quarterDeadlines (Form 1040-ES 2026; Jun 15, 2026 is a Monday, no weekend shift)",
+      "stateTax — 51 jurisdictions from the Tax Foundation 2026 table (9 with no tax on earnings, 15 flat, 27 graduated)"
     ],
     "needsVerify": [],
-    "note": "Cross-checked against irs.gov 2026-09-02. App treats config as authoritative; keep this repo accurate."
+    "note": "Cross-checked against irs.gov 2026-09-02. App treats config as authoritative; keep this repo accurate.",
+    "stateTaxNote": "Head of household and married filing separately use the single schedule; no local income taxes, no credits, no state-specific income adjustments."
   }
 }
