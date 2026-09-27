@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOAP Notes — Support</title>
+<meta name="description" content="Help with SOAP Notes — where your records live, moving to a new phone, backups and exports.">
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --card: #ffffff;
+    --text: #1e1d1b;
+    --muted: #5a584f;
+    --accent: #2a4fa0;
+    --border: #dcd9cf;
+    --shadow: 0 1px 2px rgba(30,29,27,.05), 0 8px 24px rgba(30,29,27,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14151c;
+      --card: #1d1f28;
+      --text: #ece9e2;
+      --muted: #9a9890;
+      --accent: #8aa4f0;
+      --border: #2a2b33;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 20px 0; }
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--text); text-decoration: none; }
+
+  .hero { padding: 48px 0 32px; text-align: center; }
+  .hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 5vw, 40px);
+    letter-spacing: -.02em;
+    font-weight: 900;
+  }
+  .hero p { margin: 12px auto 0; max-width: 520px; color: var(--muted); font-size: 17px; }
+
+  .contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .contact .btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 12px;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  @media (prefers-color-scheme: dark) { .contact .btn { color: #14151c; } }
+  .contact .btn:hover { opacity: .85; }
+  .contact .note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+  h2.section { font-size: 22px; letter-spacing: -.01em; margin: 0 0 16px; }
+  .faq { display: grid; gap: 12px; padding-bottom: 64px; }
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  details[open] { border-color: var(--accent); }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-size: 20px; font-weight: 700; flex-shrink: 0; }
+  details[open] summary::after { content: "–"; }
+  details .a { margin-top: 10px; color: var(--muted); font-size: 15px; }
+  details .a p + p { margin-top: 8px; }
+  details .a a { color: var(--accent); }
+  details .a strong { color: var(--text); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../../">Ho Van Dai</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>SOAP Notes Support</h1>
+    <p>Questions about your records, backups or Premium — we're happy to help.</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="contact">
+    <strong>Email us anytime</strong>
+    <br>
+    <a class="btn" href="mailto:dahapublic@gmail.com?subject=SOAP%20Notes%20support">dahapublic@gmail.com</a>
+    <div class="note">Please include your device model and system version. Never send client records by email.
+    We usually reply within 48 hours.</div>
+  </div>
+
+  <h2 class="section">Frequently asked questions</h2>
+
+  <div class="faq">
+
+    <details open>
+      <summary>Where is my data?</summary>
+      <div class="a">
+        <p>Only on your device. SOAP Notes has no account and no server, so your client records are never
+        sent to us or anyone else. The system encrypts them while your device is locked, as long as it has a
+        passcode, and you can lock the app itself in <strong>Settings → Security</strong>.</p>
+        <p>A copy exists somewhere else only if you make one: a backup file you save, or the automatic
+        backup if you turn it on. See the <a href="../privacy/">Privacy Policy</a> for details.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I move to a new phone?</summary>
+      <div class="a">
+        <p>On the old phone, open <strong>Settings → Backup → Create backup file</strong> and save the file
+        somewhere the new phone can reach — iCloud Drive, Google Drive, a computer, or email it to yourself.
+        On the new phone, install SOAP Notes and choose <strong>Settings → Backup → Restore from backup</strong>.</p>
+        <p>If automatic backup is on, the new device can restore the latest daily file straight away with
+        your passphrase. Backup files use the same format on iPhone, iPad and Android.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What happens if I lose my phone?</summary>
+      <div class="a">
+        <p>Records on the lost phone stay protected by its passcode and the app lock. Install SOAP Notes on
+        your new device and restore your most recent backup.</p>
+        <p>Automatic backup (Premium) keeps one encrypted copy, replaced each day, in iCloud Drive on iPhone
+        and iPad or in a folder you choose on Android. Without it, the app reminds you when your last backup
+        is more than a week old. If there is no backup, there is no copy anywhere — not even with us — so
+        please keep one.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What happens if the app is discontinued?</summary>
+      <div class="a">
+        <p>Your records stay readable. Exporting is always free, on every plan:
+        <strong>Settings → Backup → Export</strong> gives you clients, session notes and payments as CSV, and
+        everything as JSON — open formats that spreadsheets and other software can read. You can also save
+        any record as a PDF.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I use SOAP Notes on two devices, like an iPad at the clinic and an iPhone?</summary>
+      <div class="a">
+        <p>Yes, through backups. Records do not sync live between devices. Turn on automatic backup on the
+        device you write on; on the other device, tap <strong>Settings → Backup → Update from latest
+        backup</strong> and choose <strong>Merge with this device</strong> to bring it up to date without losing anything written
+        there.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>I forgot my backup passphrase.</summary>
+      <div class="a">
+        <p>An encrypted backup cannot be opened without its passphrase — not by you, and not by us. That is
+        what keeps it safe if someone else gets the file. Your records on the device itself are not
+        affected: make a new backup with a new passphrase.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I restore a purchase or ask for a refund?</summary>
+      <div class="a">
+        <p>Open the Premium screen from the top of Settings and tap <strong>Restore</strong>. Purchases are
+        handled by Apple or Google, so refunds go through them: on iPhone and iPad use
+        <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>; on Android open
+        Google Play → your profile → Payments &amp; subscriptions.</p>
+      </div>
+    </details>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ho Van Dai</div>
+    <div>
+      <a href="../../">Home</a>
+      &nbsp;·&nbsp;
+      <a href="../privacy/">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
