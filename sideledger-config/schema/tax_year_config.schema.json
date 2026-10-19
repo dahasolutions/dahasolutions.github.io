@@ -327,6 +327,11 @@
           "type": "number",
           "minimum": 0.5,
           "maximum": 1.0
+        },
+        "mfsAGIThresholdCents": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Optional for older readers/configs; MFS prior-year AGI threshold."
         }
       }
     },
@@ -524,6 +529,12 @@
         }
       },
       "additionalProperties": false
+    },
+    "businessMealsDeductibleRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Ordinary deductible share of business meal costs under IRC §274(n). Optional for cached schemas."
     }
   }
 }

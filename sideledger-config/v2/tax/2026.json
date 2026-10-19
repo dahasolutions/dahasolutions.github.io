@@ -1,21 +1,22 @@
 {
   "schemaVersion": 2,
   "year": 2026,
-  "configVersion": 4,
-  "updatedAt": "2026-09-21T12:00:00Z",
+  "configVersion": 5,
+  "updatedAt": "2026-10-18T00:00:00Z",
   "sources": {
     "mileage": "IRS Notice 2026-10 (Jan 1 – Jun 30); IRS Announcement 2026-11 (Jul 1 – Dec 31)",
     "wageBase": "SSA 2026 cost-of-living adjustment fact sheet — $184,500",
     "seMinimumEarnings": "IRC §1402(b)(2); Schedule SE line 4c — $400",
     "seRates": "IRC §1401 — 12.4% Social Security + 2.9% Medicare on 92.35% of profit",
-    "additionalMedicare": "IRC §1401(b)(2); Form 8959 Part II — 0.9% above the threshold",
-    "brackets": "IRS Rev. Proc. 2025-32 §2.01, Tables 1–3",
-    "standardDeduction": "IRS Rev. Proc. 2025-32 §2.15",
+    "additionalMedicare": "Form 8959 Parts I–II — 0.9% on Medicare wages and self-employment income above the filing-status threshold",
+    "brackets": "IRS Rev. Proc. 2025-32 §4.01, Tables 1–4",
+    "standardDeduction": "IRS Rev. Proc. 2025-32 §4.14",
     "qbi": "IRC §199A as amended by Pub. L. 119-21 (2025); threshold amounts per Rev. Proc. 2025-32",
     "quarterDeadlines": "Form 1040-ES (2026)",
     "safeHarbor": "IRC §6654(d)",
     "filingStatuses": "IRC §1(j) — MFS brackets are half the joint amounts; §1401(b)(2) sets the MFS Additional Medicare threshold at $125,000",
-    "stateTax": "Tax Foundation, \"State Individual Income Tax Rates and Brackets, 2026\" (rates as of February 11, 2026)"
+    "stateTax": "Tax Foundation, \"State Individual Income Tax Rates and Brackets, 2026\" (rates as of February 11, 2026)",
+    "businessMeals": "IRC §274(n); IRS Income & Expenses FAQ — ordinary unreimbursed business meals generally limited to 50%"
   },
   "mileageRates": [
     {
@@ -55,7 +56,7 @@
       "single": 20175000,
       "mfj": 40350000,
       "hoh": 20175000,
-      "mfs": 20175000
+      "mfs": 20177500
     },
     "phaseInRangeCents": {
       "single": 7500000,
@@ -218,7 +219,8 @@
     "basePct": 1.0,
     "highIncomePct": 1.1,
     "agiThresholdCents": 15000000,
-    "currentYearPct": 0.9
+    "currentYearPct": 0.9,
+    "mfsAGIThresholdCents": 7500000
   },
   "stateTax": {
     "source": "Tax Foundation, \"State Individual Income Tax Rates and Brackets, 2026\" (rates as of February 11, 2026)",
@@ -2095,15 +2097,18 @@
     "verified": [
       "mileageRates — 72.5¢ Jan–Jun (IRS Notice 2026-10), 76¢ Jul–Dec (IRS Announcement 2026-11)",
       "seTax.ssWageBaseCents ($184,500 for 2026)",
-      "standardDeductionCents (Rev. Proc. 2025-32 §2.15)",
-      "brackets.single, brackets.mfj, brackets.hoh — every ceiling (Rev. Proc. 2025-32 §2.01 Tables 1-3)",
-      "qbi.thresholdCents ($201,750 / $403,500) and phaseInRangeCents ($75,000 / $150,000 after Pub. L. 119-21)",
+      "standardDeductionCents — Rev. Proc. 2025-32 §4.14 (IRS, rechecked 2026-10-19)",
+      "brackets.single, brackets.mfj, brackets.hoh, brackets.mfs — Rev. Proc. 2025-32 §4.01 Tables 1–4; https://www.irs.gov/irb/2025-45_IRB (rechecked 2026-10-19)",
+      "qbi.thresholdCents — single/HOH $201,750, MFJ $403,500, MFS $201,775; phase-in widths $75,000/$150,000 — Rev. Proc. 2025-32 §4.26; https://www.irs.gov/irb/2025-45_IRB (rechecked 2026-10-19)",
       "qbi.minimumDeductionCents $400 at minimumQualifyingBaseCents $1,000 — §199A(i), first applies to tax year 2026",
       "quarterDeadlines (Form 1040-ES 2026; Jun 15, 2026 is a Monday, no weekend shift)",
-      "stateTax — 51 jurisdictions from the Tax Foundation 2026 table (9 with no tax on earnings, 15 flat, 27 graduated)"
+      "stateTax — 51 jurisdictions from the Tax Foundation 2026 table (9 with no tax on earnings, 15 flat, 27 graduated)",
+      "safeHarbor.mfsAGIThresholdCents $75,000 (other filers $150,000), prior-year AGI above threshold uses 110% — 2026 Publication 505, Higher Income Taxpayers; https://www.irs.gov/publications/p505 (rechecked 2026-10-19)",
+      "businessMealsDeductibleRate 0.5 for ordinary qualifying business meals — Publication 463, chapter 2, 50% Limit; IRC §274(n); https://www.irs.gov/publications/p463 (rechecked 2026-10-19)"
     ],
     "needsVerify": [],
-    "note": "Cross-checked against irs.gov 2026-09-02. App treats config as authoritative; keep this repo accurate.",
+    "note": "Earlier general/state verification: 2026-09-02. Federal MFS, meals and section citations rechecked against the listed IRS primary sources 2026-10-19. No numeric tax parameters changed in this metadata update.",
     "stateTaxNote": "Head of household and married filing separately use the single schedule; no local income taxes, no credits, no state-specific income adjustments."
-  }
+  },
+  "businessMealsDeductibleRate": 0.5
 }
