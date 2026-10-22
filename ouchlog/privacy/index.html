@@ -54,7 +54,7 @@
 <main>
   <header>
     <h1>OuchLog — Privacy Policy</h1>
-    <div class="sub">Last updated: 2026-10-11</div>
+    <div class="sub">Last updated: 2026-10-21</div>
   </header>
 
   <p>OuchLog is a pain and symptom diary that runs entirely on your device.</p>
@@ -71,8 +71,9 @@
   <h2>What the app stores on your device</h2>
   <p>The information you choose to log:</p>
   <ul>
-    <li>Pain entries: time, pain level, body regions, triggers, notes</li>
-    <li>Medications and doses you record</li>
+    <li>Pain entries: time, pain level, body regions, pain type, triggers, impact on your day, notes</li>
+    <li>Medications, the doses you record and any dose limits you set</li>
+    <li>Doctor visits: date, doctor or clinic, and your questions</li>
   </ul>
   <p>This data is stored in a local database inside the app's private storage on your device. It is protected by your device's own security (passcode/Face&nbsp;ID/encryption at rest). You can additionally require Face&nbsp;ID to open the app (More → Privacy).</p>
 
@@ -86,13 +87,18 @@
   <p>These are generated locally and only leave the device when you explicitly share or save them via the iOS share sheet. Where you send them (Mail, Files, AirDrop, a cloud drive) is your choice and is governed by those services' policies. OuchLog does not store health data in iCloud.</p>
 
   <h2>Notifications</h2>
-  <p>The optional daily reminder is a local notification scheduled on your device. No push service is involved.</p>
+  <p>Reminders you switch on (daily reminder, check-in after a dose, monthly summary, the evening before a doctor visit) are local notifications scheduled on your device. No server sends them.</p>
 
   <h2>Data retention &amp; deletion</h2>
   <p>Your data stays on your device until you delete it. You can delete individual entries and medications, or use <strong>More → Backup &amp; restore → Delete all data</strong> to erase everything inside the app. Deleting the app also removes all of its data.</p>
 
   <h2>Health data</h2>
-  <p>OuchLog does not currently read from or write to Apple Health (HealthKit). If a future version adds optional HealthKit integration, it will ask for your permission first, and HealthKit data will never be used for marketing, advertising, or shared with third parties.</p>
+  <p>Connecting a health app is optional and off by default. OuchLog asks for permission first, and you can turn it off at any time in the app or in the system settings.</p>
+  <ul>
+    <li><strong>Apple Health (iPhone):</strong> OuchLog saves the pain entries you log as symptoms in Apple Health, and reads your sleep to compare it with your pain on the Trends screen.</li>
+    <li><strong>Health Connect (Android):</strong> OuchLog only reads your sleep, for the same comparison. It writes nothing to Health Connect.</li>
+  </ul>
+  <p>Health data read this way stays on your device. It is never sent to Firebase or anywhere else, never used for advertising or marketing, and never stored in iCloud.</p>
 
   <h2>Children</h2>
   <p>OuchLog is not directed at children under 13.</p>
