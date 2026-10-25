@@ -189,7 +189,7 @@
       Google One), which you control.
     </p>
 
-    <h2>2. Health data (OuchLog)</h2>
+    <h2 id="health">2. Health data (OuchLog)</h2>
     <p>
       <strong>OuchLog</strong> is a pain and symptom diary, so it handles
       health data. All of it stays on your device:
@@ -441,7 +441,7 @@
       (iCloud Backup / Google One), và đó là tuỳ chọn do bạn kiểm soát.
     </p>
 
-    <h2>2. Dữ liệu sức khoẻ (OuchLog)</h2>
+    <h2 id="health-vi">2. Dữ liệu sức khoẻ (OuchLog)</h2>
     <p>
       <strong>OuchLog</strong> là nhật ký cơn đau và triệu chứng nên có xử
       lý dữ liệu sức khoẻ. Toàn bộ dữ liệu đó nằm trên máy bạn:
@@ -653,6 +653,9 @@
     let initial = 'en';
     try { initial = localStorage.getItem('pp-lang') || 'en'; } catch (e) {}
     if (initial !== 'en') setLang(initial);
+    if (location.hash === '#health' && initial === 'vi') {
+      document.getElementById('health-vi').scrollIntoView();
+    }
   })();
 </script>
 </body>
