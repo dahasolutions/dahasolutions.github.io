@@ -189,7 +189,51 @@
       Google One), which you control.
     </p>
 
-    <h2>2. Diagnostics &amp; analytics (Firebase)</h2>
+    <h2>2. Health data (OuchLog)</h2>
+    <p>
+      <strong>OuchLog</strong> is a pain and symptom diary, so it handles
+      health data. All of it stays on your device:
+    </p>
+    <ul>
+      <li>
+        <strong>What you log</strong> — pain entries (time, pain level, body
+        regions, pain type, triggers, impact on your day, notes),
+        medications and the doses you record, and doctor visits. They are
+        stored in a local database in the app's private storage. We never
+        receive them.
+      </li>
+      <li>
+        <strong>Apple Health (iPhone)</strong> — optional and off by
+        default. Only after you turn it on and grant permission, OuchLog
+        saves the pain entries you log to Apple Health as symptoms, and
+        reads your sleep to compare it with your pain on the Trends screen.
+      </li>
+      <li>
+        <strong>Health Connect (Android)</strong> — optional and off by
+        default. Only after you turn it on and grant permission, OuchLog
+        reads your sleep (read-only) for the same comparison. It writes
+        nothing to Health Connect and reads no other data type.
+      </li>
+    </ul>
+    <p>
+      Health data is never sent to us, to Firebase, or to any other third
+      party; it is never sold, never used for advertising, marketing or
+      profiling, and never stored in iCloud. Firebase Analytics in OuchLog
+      records only that an action happened (for example, that an entry was
+      logged) — never a pain level, body region, note, medication, sleep
+      value or date. Health data leaves your device only inside files you
+      create and share yourself (PDF report, CSV export, backup file).
+    </p>
+    <p>
+      You can stop access at any time: turn the connection off in OuchLog's
+      More tab, or revoke it in iOS Settings → Health → Data Access &amp;
+      Devices → OuchLog, or Android Settings → Health Connect → App
+      permissions → OuchLog. To erase what OuchLog stores, use More →
+      Backup &amp; restore → Delete all data, or uninstall the app. Entries
+      already saved to Apple Health are managed in the Health app.
+    </p>
+
+    <h2>3. Diagnostics &amp; analytics (Firebase)</h2>
     <p>
       To keep our apps stable and to understand which features are used,
       we use Google Firebase, a service operated by Google LLC:
@@ -224,7 +268,7 @@
       declare it.
     </p>
 
-    <h2>3. Third-party advertising (Google AdMob)</h2>
+    <h2>4. Third-party advertising (Google AdMob)</h2>
     <p>
       Apps that display advertisements use <strong>Google AdMob</strong>, a
       service operated by Google LLC. To serve ads, AdMob may collect and
@@ -266,7 +310,7 @@
       where available, or are not served at all.
     </p>
 
-    <h2>4. What we do not do</h2>
+    <h2>5. What we do not do</h2>
     <ul>
       <li>We do not sell your personal data to anyone.</li>
       <li>
@@ -278,7 +322,7 @@
       <li>We do not ship in-app purchases unless an app's store listing says so.</li>
     </ul>
 
-    <h2>5. Children's privacy</h2>
+    <h2>6. Children's privacy</h2>
     <p>
       Our apps are rated for general audiences (4+ / Everyone) and are not
       directed at children under 13. We do not knowingly collect personal
@@ -288,7 +332,7 @@
       preferred.
     </p>
 
-    <h2>6. Your rights</h2>
+    <h2>7. Your rights</h2>
     <p>
       We do not hold personal data on our own infrastructure, so there is
       nothing on our side to export or delete. Data processed by Google
@@ -317,14 +361,14 @@
       </li>
     </ul>
 
-    <h2>7. Changes to this policy</h2>
+    <h2>8. Changes to this policy</h2>
     <p>
       If we change how data is handled (for example, by adding a crash
       reporter or an in-app purchase flow), we will update this page and
       revise the "Last updated" date below before the change reaches users.
     </p>
 
-    <h2>8. Contact</h2>
+    <h2>9. Contact</h2>
     <p>
       Questions about this policy, or about any of the apps listed above?
       Email <strong>Ho Van Dai</strong> at
@@ -397,7 +441,52 @@
       (iCloud Backup / Google One), và đó là tuỳ chọn do bạn kiểm soát.
     </p>
 
-    <h2>2. Phân tích &amp; báo lỗi (Firebase)</h2>
+    <h2>2. Dữ liệu sức khoẻ (OuchLog)</h2>
+    <p>
+      <strong>OuchLog</strong> là nhật ký cơn đau và triệu chứng nên có xử
+      lý dữ liệu sức khoẻ. Toàn bộ dữ liệu đó nằm trên máy bạn:
+    </p>
+    <ul>
+      <li>
+        <strong>Dữ liệu bạn ghi</strong> — các lần đau (thời điểm, mức đau,
+        vùng cơ thể, kiểu đau, tác nhân, ảnh hưởng tới sinh hoạt, ghi chú),
+        thuốc và các liều bạn ghi lại, lịch khám bác sĩ. Dữ liệu lưu trong
+        cơ sở dữ liệu cục bộ, ở vùng lưu trữ riêng của ứng dụng. Chúng tôi
+        không bao giờ nhận được.
+      </li>
+      <li>
+        <strong>Apple Health (iPhone)</strong> — tuỳ chọn, mặc định tắt.
+        Chỉ sau khi bạn bật và cấp quyền, OuchLog ghi các lần đau bạn nhập
+        vào Apple Health dưới dạng triệu chứng, và đọc dữ liệu giấc ngủ để
+        so với cơn đau ở màn Trends.
+      </li>
+      <li>
+        <strong>Health Connect (Android)</strong> — tuỳ chọn, mặc định tắt.
+        Chỉ sau khi bạn bật và cấp quyền, OuchLog đọc dữ liệu giấc ngủ (chỉ
+        đọc) để so sánh như trên. Ứng dụng không ghi gì vào Health Connect
+        và không đọc loại dữ liệu nào khác.
+      </li>
+    </ul>
+    <p>
+      Dữ liệu sức khoẻ không bao giờ được gửi cho chúng tôi, cho Firebase
+      hay bất kỳ bên thứ ba nào; không bán, không dùng cho quảng cáo,
+      marketing hay lập hồ sơ, và không lưu lên iCloud. Firebase Analytics
+      trong OuchLog chỉ ghi nhận một thao tác đã xảy ra (ví dụ: vừa ghi một
+      lần đau) — không bao giờ gửi mức đau, vùng cơ thể, ghi chú, thuốc,
+      giấc ngủ hay ngày tháng. Dữ liệu sức khoẻ chỉ rời khỏi máy trong các
+      file do chính bạn tạo và chia sẻ (báo cáo PDF, file CSV, file sao
+      lưu).
+    </p>
+    <p>
+      Bạn có thể ngừng cấp quyền bất cứ lúc nào: tắt kết nối trong tab More
+      của OuchLog, hoặc thu hồi trong Cài đặt iOS → Sức khoẻ → Truy cập dữ
+      liệu &amp; thiết bị → OuchLog, hoặc Cài đặt Android → Health Connect →
+      Quyền ứng dụng → OuchLog. Để xoá dữ liệu OuchLog lưu, dùng More →
+      Backup &amp; restore → Delete all data, hoặc gỡ ứng dụng. Dữ liệu đã
+      ghi vào Apple Health được quản lý trong ứng dụng Sức khoẻ.
+    </p>
+
+    <h2>3. Phân tích &amp; báo lỗi (Firebase)</h2>
     <p>
       Để giữ ứng dụng ổn định và hiểu tính năng nào đang được dùng, chúng
       tôi sử dụng Google Firebase — dịch vụ của Google LLC:
@@ -432,7 +521,7 @@
       ứng dụng đó sẽ ghi rõ.
     </p>
 
-    <h2>3. Quảng cáo từ bên thứ ba (Google AdMob)</h2>
+    <h2>4. Quảng cáo từ bên thứ ba (Google AdMob)</h2>
     <p>
       Các ứng dụng có hiển thị quảng cáo sử dụng
       <strong>Google AdMob</strong>, dịch vụ do Google LLC vận hành. Để
@@ -475,7 +564,7 @@
       hoá dựa trên nội dung, hoặc không hiển thị quảng cáo.
     </p>
 
-    <h2>4. Những điều chúng tôi KHÔNG làm</h2>
+    <h2>5. Những điều chúng tôi KHÔNG làm</h2>
     <ul>
       <li>Không bán dữ liệu cá nhân của bạn cho bất kỳ ai.</li>
       <li>
@@ -490,7 +579,7 @@
       </li>
     </ul>
 
-    <h2>5. Quyền riêng tư trẻ em</h2>
+    <h2>6. Quyền riêng tư trẻ em</h2>
     <p>
       Ứng dụng của chúng tôi phân loại cho mọi đối tượng (4+ / Everyone)
       và không nhắm đến trẻ dưới 13 tuổi. Chúng tôi không cố ý thu thập
@@ -499,7 +588,7 @@
       Screen Time hoặc Android Family Link để hạn chế quảng cáo nếu muốn.
     </p>
 
-    <h2>6. Quyền của bạn</h2>
+    <h2>7. Quyền của bạn</h2>
     <p>
       Chúng tôi không giữ dữ liệu cá nhân trên hạ tầng của mình nên không
       có gì để trích xuất hay xoá ở phía chúng tôi. Dữ liệu do Google xử
@@ -527,14 +616,14 @@
       </li>
     </ul>
 
-    <h2>7. Thay đổi chính sách</h2>
+    <h2>8. Thay đổi chính sách</h2>
     <p>
       Nếu thay đổi cách xử lý dữ liệu (ví dụ thêm báo lỗi hoặc thêm mua
       hàng trong ứng dụng), chúng tôi sẽ cập nhật trang này và đổi ngày
       "Last updated" bên dưới trước khi bản mới đến tay người dùng.
     </p>
 
-    <h2>8. Liên hệ</h2>
+    <h2>9. Liên hệ</h2>
     <p>
       Thắc mắc về chính sách này hay về bất kỳ ứng dụng nào nêu trên, vui
       lòng gửi email tới <strong>Ho Van Dai</strong>,
@@ -545,7 +634,7 @@
   </section>
 
   <div class="meta">
-    Last updated: 2026-07-30 · Developer: Ho Van Dai ·
+    Last updated: 2026-10-25 · Developer: Ho Van Dai ·
     <a href="mailto:dahapublic@gmail.com">dahapublic@gmail.com</a>
   </div>
 </main>
