@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ho Van Dai — Small, thoughtful mobile apps</title>
-<meta name="description" content="Ho Van Dai builds small, thoughtful mobile apps for iOS and Android — OuchLog pain tracker, Memento anniversary tracker, Shelflife book journal, Focal visual timer, Pitbook fuel & service log, Plant Journal, Moodee mood tracker and Line 98 classic ball puzzle.">
+<meta name="description" content="Ho Van Dai builds small, thoughtful mobile apps for iOS and Android: Ouch Log, Jars, SOAP Notes, Plant Journal, Formula Book, SiteCalc, Prayline, Shelflife, Memento, Focal, Doughbook, Pitbook, Moodee, Ladle, Chore Jar, Side Ledger, Zero Owed, Line 98 Classic.">
 <meta property="og:title" content="Ho Van Dai">
 <meta property="og:description" content="Small, thoughtful mobile apps for iOS and Android.">
 <meta property="og:type" content="website">
@@ -41,7 +41,7 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
   /* Language toggle: html[data-lang] decides which span shows */
   [data-lang="en"] .vi { display: none; }
@@ -62,7 +62,7 @@
   }
   .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero { padding: 56px 0 48px; text-align: center; }
   .hero h1 {
     font-size: clamp(32px, 5.5vw, 52px);
     line-height: 1.15;
@@ -77,59 +77,44 @@
     color: var(--muted);
   }
 
-  .apps { display: grid; gap: 24px; padding-bottom: 72px; }
-  .card {
+  .apps {
     display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 24px;
-    align-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding-bottom: 72px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 28px;
+    padding: 24px;
     box-shadow: var(--shadow);
   }
+  .card-head { display: flex; align-items: center; gap: 16px; }
   .card img {
-    width: 96px; height: 96px;
-    border-radius: 22px;
+    width: 64px; height: 64px;
+    flex: none;
+    border-radius: 15px;
     border: 1px solid var(--border);
   }
-  .card h2 { font-size: 22px; letter-spacing: -.01em; }
-  .tagline { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 2px; }
-  .card .desc { color: var(--muted); font-size: 15px; margin-top: 10px; }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .card h2 { font-size: 20px; line-height: 1.25; letter-spacing: -.01em; }
+  .kind { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 2px; }
+  .card .desc { color: var(--muted); font-size: 15px; margin: 14px 0 18px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
   .btn {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center;
     border-radius: 12px;
-    padding: 9px 16px;
+    padding: 8px 16px;
     font-size: 14px; font-weight: 600;
     text-decoration: none;
     border: 1px solid var(--border);
     color: var(--text);
   }
-  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
-  .btn.primary:hover { opacity: .85; }
   .btn:hover { border-color: var(--accent); color: var(--accent); }
-  .btn.primary:hover { color: var(--bg); }
-  .soon {
-    display: inline-flex; align-items: center;
-    border-radius: 12px;
-    padding: 9px 16px;
-    font-size: 14px; font-weight: 600;
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-  .badge {
-    display: inline-block;
-    font-size: 11px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .06em;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-radius: 999px;
-    padding: 3px 10px;
-    margin-left: 8px;
-    vertical-align: 2px;
-  }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.primary:hover { opacity: .85; color: var(--bg); }
 
   footer {
     border-top: 1px solid var(--border);
@@ -141,9 +126,11 @@
   footer a { color: var(--muted); }
   footer a:hover { color: var(--accent); }
 
-  @media (max-width: 560px) {
-    .card { grid-template-columns: 1fr; }
-    .card img { width: 80px; height: 80px; border-radius: 18px; }
+  @media (max-width: 760px) {
+    .wrap { padding: 0 16px; }
+    .hero { padding: 32px 0 32px; }
+    .apps { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .card { padding: 20px; }
   }
 </style>
 </head>
@@ -163,246 +150,339 @@
       <span class="vi">Ứng dụng nhỏ, <em>làm bằng cả tâm huyết.</em></span>
     </h1>
     <p>
-      <span class="en">We build simple, private, offline-first mobile apps for iOS and Android — no accounts, no clutter, just things that work.</span>
-      <span class="vi">Chúng tôi làm các ứng dụng di động đơn giản, riêng tư, hoạt động offline cho iOS và Android — không tài khoản, không rườm rà, chỉ tập trung vào trải nghiệm.</span>
+      <span class="en">We build simple, private, offline-first mobile apps for iOS and Android. No accounts, no clutter, just things that work.</span>
+      <span class="vi">Chúng tôi làm các ứng dụng di động đơn giản, riêng tư, hoạt động offline cho iOS và Android. Không tài khoản, không rườm rà, chỉ tập trung vào trải nghiệm.</span>
     </p>
   </div>
 </section>
 
 <main class="wrap apps">
 
-  <!-- ============ OuchLog — Pain Tracker & Diary ============ -->
   <article class="card">
-    <img src="assets/icons/ouchlog.png" alt="OuchLog app icon" width="96" height="96">
-    <div>
-      <h2>OuchLog: Pain Tracker &amp; Diary</h2>
-      <div class="tagline">
-        <span class="en">Log a flare in five seconds</span>
-        <span class="vi">Ghi lại cơn đau trong năm giây</span>
+    <div class="card-head">
+      <img src="assets/icons/ouchlog.png" alt="Ouch Log app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Ouch Log</h2>
+        <div class="kind">Pain Tracker &amp; Diary</div>
       </div>
-      <p class="desc">
-        <span class="en">A pain and symptom diary you can fill in while it hurts — tap the level, tap the spot on the body map, done. Calendar, trends and trigger analysis turn your entries into a PDF report your doctor can actually read. Works offline, no account, no subscription.</span>
-        <span class="vi">Nhật ký cơn đau và triệu chứng ghi được ngay lúc đang đau — chạm mức đau, chạm vùng trên bản đồ cơ thể, xong. Lịch, xu hướng và phân tích yếu tố kích hoạt biến các lần ghi thành báo cáo PDF bác sĩ đọc được. Chạy offline, không tài khoản, không thuê bao.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6792059742">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.ouchlog">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A pain and symptom diary you can fill in while it hurts — tap the level, tap the spot on the body map, done. Calendar, trends and trigger analysis turn your entries into a PDF report your doctor can actually read.</span>
+      <span class="vi">Nhật ký cơn đau và triệu chứng ghi được ngay lúc đang đau — chạm mức đau, chạm vùng trên bản đồ cơ thể, xong. Lịch, xu hướng và phân tích yếu tố kích hoạt biến các lần ghi thành báo cáo PDF bác sĩ đọc được.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6792059742">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.ouchlog">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Memento — Anniversary Tracker ============ -->
   <article class="card">
-    <img src="assets/icons/anniversary.png" alt="Anniversary Tracker app icon" width="96" height="96">
-    <div>
-      <h2>Memento: Anniversary Tracker</h2>
-      <div class="tagline">
-        <span class="en">Count down to what matters — and keep the memories</span>
-        <span class="vi">Đếm ngược ngày quan trọng — và lưu giữ kỷ niệm</span>
+    <div class="card-head">
+      <img src="assets/icons/jars.png" alt="Jars app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Jars</h2>
+        <div class="kind">Savings Goal Tracker</div>
       </div>
-      <p class="desc">
-        <span class="en">Counts down the days ahead and up through the years you've shared. Each anniversary asks for one photo and a few words — so a countdown grows into the timeline of your life.</span>
-        <span class="vi">Đếm ngược tới ngày sắp đến và đếm lên những năm tháng đã qua. Mỗi dịp kỷ niệm chỉ cần một tấm ảnh và vài dòng chữ — để chiếc đồng hồ đếm ngược lớn dần thành dòng thời gian cuộc đời bạn.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6787834446">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.anniversarytracker">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">One jar for every goal — the trip, the emergency fund, next year's taxes. Add money in a few taps and watch the jar fill up. No ads, no account, your data stays on your phone.</span>
+      <span class="vi">Mỗi mục tiêu một chiếc hũ — chuyến đi, quỹ dự phòng, khoản thuế năm sau. Bỏ tiền vào bằng vài lần chạm và nhìn hũ đầy dần. Không quảng cáo, không tài khoản, dữ liệu nằm trên máy bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6813859259">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.jars">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Shelflife — Book Journal ============ -->
   <article class="card">
-    <img src="assets/icons/shelflife.png" alt="Shelflife app icon" width="96" height="96">
-    <div>
-      <h2>Shelflife: Book Journal</h2>
-      <div class="tagline">
-        <span class="en">Your paper books, remembered</span>
-        <span class="vi">Tủ sách giấy có trí nhớ</span>
+    <div class="card-head">
+      <img src="assets/icons/soapnotes.png" alt="SOAP Notes app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>SOAP Notes</h2>
+        <div class="kind">Massage &amp; Physio</div>
       </div>
-      <p class="desc">
-        <span class="en">A private home for your paper books. Scan an ISBN to shelve each book, keep a reading journal of progress, notes and quotes, and collect the memories around them — no accounts, everything stays on your phone.</span>
-        <span class="vi">Mái nhà riêng cho tủ sách giấy của bạn. Quét ISBN để đặt sách lên kệ, ghi nhật ký đọc với tiến độ, ghi chú, trích dẫn, và lưu giữ ký ức quanh từng cuốn sách — không tài khoản, mọi thứ nằm trên máy bạn.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6790657863">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.shelflife">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Write a complete SOAP note in two minutes between clients. Mark the body chart, get intake and consent signed on the spot, and keep every client record on your own device.</span>
+      <span class="vi">Viết xong một ghi chú SOAP trong hai phút giữa hai lượt khách. Đánh dấu trên sơ đồ cơ thể, lấy chữ ký phiếu tiếp nhận và cam kết ngay tại chỗ, và giữ mọi hồ sơ khách trên chính thiết bị của bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6815480593">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.soapnotes">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Focal — Visual Timer & Routine ============ -->
   <article class="card">
-    <img src="assets/icons/focal.png" alt="Focal app icon" width="96" height="96">
-    <div>
-      <h2>Focal: Visual Timer &amp; Routine</h2>
-      <div class="tagline">
-        <span class="en">See time. One thing at a time.</span>
-        <span class="vi">Thấy thời gian. Làm từng việc.</span>
+    <div class="card-head">
+      <img src="assets/icons/plantjournal.png" alt="Plant Journal app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Plant Journal</h2>
+        <div class="kind">Grow Diary</div>
       </div>
-      <p class="desc">
-        <span class="en">A countdown you can actually look at — a colored disk that shrinks as your time runs out. Chain short steps into routines that move on by themselves, and keep the timer in sight on the Lock Screen, Dynamic Island, widgets and StandBy. Fully offline, no account, pay once.</span>
-        <span class="vi">Đồng hồ đếm ngược bạn nhìn thấy được — một đĩa màu thu nhỏ dần theo thời gian trôi. Ghép những việc ngắn thành routine tự chuyển bước, và luôn thấy đồng hồ trên màn hình khoá, Dynamic Island, widget và StandBy. Offline hoàn toàn, không tài khoản, trả một lần.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6801943122">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.focal">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A private notebook for the plants you grow at home. Each pot gets its own page, watering follows the plant's own rhythm with one gentle reminder each morning, and every photo becomes a dated, pressed page.</span>
+      <span class="vi">Cuốn sổ tay riêng cho những chậu cây bạn trồng trong nhà. Mỗi chậu một trang hồ sơ, tưới theo nhịp riêng của từng cây với một lời nhắc nhẹ mỗi sáng, và mỗi tấm ảnh thành một trang tiêu bản có ngày tháng.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6791094256">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.plantjournal">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Pitbook — Fuel & Service Log ============ -->
   <article class="card">
-    <img src="assets/icons/pitbook.png" alt="Pitbook app icon" width="96" height="96">
-    <div>
-      <h2>Pitbook: Fuel &amp; Service Log</h2>
-      <div class="tagline">
-        <span class="en">Every fill-up and service, kept on your phone</span>
-        <span class="vi">Mọi lần đổ nhiên liệu và bảo dưỡng, nằm trên máy bạn</span>
+    <div class="card-head">
+      <img src="assets/icons/formulabook.png" alt="Formula Book app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Formula Book</h2>
+        <div class="kind">Hair Color Notes</div>
       </div>
-      <p class="desc">
-        <span class="en">A maintenance log that stays yours. A fill-up takes five seconds, receipts attach as photos, and Pitbook tracks what's due by date, by odometer, or both — for cars, motorcycles, campers and boats. Export a PDF service history when it's time to sell. No account, no server.</span>
-        <span class="vi">Cuốn sổ bảo dưỡng thuộc về bạn. Ghi một lần đổ nhiên liệu mất năm giây, hoá đơn đính kèm bằng ảnh, và Pitbook theo hạn bằng ngày, bằng số công-tơ-mét hoặc cả hai — cho ô tô, xe máy, xe cắm trại và thuyền. Xuất lịch sử bảo dưỡng PDF khi cần bán xe. Không tài khoản, không máy chủ.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://play.google.com/store/apps/details?id=vn.bm.pitbook">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-        <span class="soon">
-          <span class="en">App Store — coming soon</span>
-          <span class="vi">App Store — sắp ra mắt</span>
-        </span>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Every client and every color formula, one tap away while your gloves are still on. Before and after photos, allergy flags and patch test dates on one card — saved on your phone, backed up to files you keep.</span>
+      <span class="vi">Mọi khách hàng và mọi công thức màu, chỉ một chạm khi tay còn đeo găng. Ảnh trước và sau, cảnh báo dị ứng và ngày thử phản ứng da nằm trên một thẻ — lưu trên máy bạn, sao lưu ra file bạn giữ.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6810034654">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.formulabook">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Plant Journal — Grow Diary ============ -->
   <article class="card">
-    <img src="assets/icons/plantjournal.png" alt="Plant Journal app icon" width="96" height="96">
-    <div>
-      <h2>Plant Journal: Grow Diary</h2>
-      <div class="tagline">
-        <span class="en">A garden that remembers</span>
-        <span class="vi">Kí ức cả khu vườn</span>
+    <div class="card-head">
+      <img src="assets/icons/sitecalc.png" alt="SiteCalc app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>SiteCalc</h2>
+        <div class="kind">Construction Tools</div>
       </div>
-      <p class="desc">
-        <span class="en">A private notebook for the plants you grow at home. Each pot gets its own page, watering follows the plant's own rhythm with one gentle reminder each morning, and every photo becomes a dated, pressed page — a seedling turning into a canopy. No accounts, no cloud.</span>
-        <span class="vi">Cuốn sổ tay riêng cho những chậu cây bạn trồng trong nhà. Mỗi chậu một trang hồ sơ, tưới theo nhịp riêng của từng cây với một lời nhắc nhẹ mỗi sáng, và mỗi tấm ảnh thành một trang tiêu bản có ngày tháng — nhìn mầm non lớn thành tán lá. Không tài khoản, không đám mây.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6791094256">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.plantjournal">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A jobsite calculator for feet, inches and fractions — framing, stairs, concrete and roofs. Read every answer in feet-inch, decimal inches and millimetres, and tap any result to see how it was worked out. Offline, no account, no ads.</span>
+      <span class="vi">Máy tính công trường cho feet, inch và phân số — khung nhà, cầu thang, bê tông và mái. Đọc mỗi kết quả theo feet-inch, inch thập phân và milimét, và chạm vào bất kỳ con số nào để xem cách tính. Chạy offline, không tài khoản, không quảng cáo.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6818809803">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.sitecalc">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Moodee — Mood Tracker ============ -->
   <article class="card">
-    <img src="assets/icons/moodee.png" alt="Moodee app icon" width="96" height="96">
-    <div>
-      <h2>Moodee: Mood Tracker</h2>
-      <div class="tagline">
-        <span class="en">A calm, private mood journal</span>
-        <span class="vi">Nhật ký cảm xúc riêng tư, nhẹ nhàng</span>
+    <div class="card-head">
+      <img src="assets/icons/prayline.png" alt="Prayline app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Prayline</h2>
+        <div class="kind">Muslim Prayer Times</div>
       </div>
-      <p class="desc">
-        <span class="en">Check in with how you feel in under 10 seconds — no account, no cloud, everything stays on your device. Calendar, timeline, and insights that turn check-ins into a picture of how you're really doing.</span>
-        <span class="vi">Ghi lại cảm xúc trong chưa đầy 10 giây — không tài khoản, không cloud, mọi dữ liệu nằm trên thiết bị của bạn. Lịch, dòng thời gian và thống kê giúp bạn hiểu rõ bản thân hơn.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6788285478">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.moodtracker">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">The next prayer, the time until it, and one tap to record the one you just prayed. Prayer times are calculated on your phone, with a Qibla compass, Hijri date, fasting log and tasbih in one place. No account, no ads, works offline.</span>
+      <span class="vi">Giờ cầu nguyện kế tiếp, thời gian còn lại, và một chạm để ghi lại lần vừa cầu nguyện. Giờ cầu nguyện được tính ngay trên máy, cùng la bàn Qibla, ngày Hijri, sổ nhịn chay và tasbih ở một nơi. Không tài khoản, không quảng cáo, chạy offline.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6827624512">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.prayline">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Line 98 — Classic Ball Puzzle ============ -->
   <article class="card">
-    <img src="assets/icons/line98.png" alt="Line 98 app icon" width="96" height="96">
-    <div>
-      <h2>Line 98: Classic Ball Puzzle</h2>
-      <div class="tagline">
-        <span class="en">The timeless 9×9 ball puzzle, polished for mobile</span>
-        <span class="vi">Trò chơi xếp bóng 9×9 kinh điển, tối ưu cho di động</span>
+    <div class="card-head">
+      <img src="assets/icons/shelflife.png" alt="Shelflife app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Shelflife</h2>
+        <div class="kind">Book Journal</div>
       </div>
-      <p class="desc">
-        <span class="en">Tap a ball, line up five of the same color, and watch them shatter. 14 themes, 14 ball styles, offline play, instant restart. Simple to learn — impossible to put down.</span>
-        <span class="vi">Chạm vào bóng, xếp 5 bóng cùng màu thành hàng và nhìn chúng vỡ tan. 14 chủ đề, 14 kiểu bóng, chơi offline, chơi lại tức thì. Dễ học — khó dừng.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/id6787416787">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.dhs.line98">
-          <span class="en">Get it on Google Play</span>
-          <span class="vi">Tải trên Google Play</span>
-        </a>
-      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A private home for your paper books. Scan an ISBN to shelve each book, keep a reading journal of progress, notes and quotes, and collect the memories around them — no accounts, everything stays on your phone.</span>
+      <span class="vi">Mái nhà riêng cho tủ sách giấy của bạn. Quét ISBN để đặt sách lên kệ, ghi nhật ký đọc với tiến độ, ghi chú, trích dẫn, và lưu giữ ký ức quanh từng cuốn sách — không tài khoản, mọi thứ nằm trên máy bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6790657863">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.shelflife">Google Play</a>
     </div>
   </article>
 
-  <!-- ============ Template for a new app — copy the block below ============
   <article class="card">
-    <img src="assets/icons/NEWAPP.png" alt="NEWAPP app icon" width="96" height="96">
-    <div>
-      <h2>App Name
-        <span class="badge"><span class="en">Coming soon</span><span class="vi">Sắp ra mắt</span></span>
-      </h2>
-      <div class="tagline">
-        <span class="en">One-line tagline</span>
-        <span class="vi">Tagline một dòng</span>
-      </div>
-      <p class="desc">
-        <span class="en">Short description.</span>
-        <span class="vi">Mô tả ngắn.</span>
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/idXXXXXXXXXX">
-          <span class="en">Download on the App Store</span>
-          <span class="vi">Tải trên App Store</span>
-        </a>
+    <div class="card-head">
+      <img src="assets/icons/anniversary.png" alt="Memento app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Memento</h2>
+        <div class="kind">Anniversary Countdown</div>
       </div>
     </div>
+    <p class="desc">
+      <span class="en">Counts down the days ahead and up through the years you've shared. Each anniversary asks for one photo and a few words — so a countdown grows into the timeline of your life.</span>
+      <span class="vi">Đếm ngược tới ngày sắp đến và đếm lên những năm tháng đã qua. Mỗi dịp kỷ niệm chỉ cần một tấm ảnh và vài dòng chữ — để chiếc đồng hồ đếm ngược lớn dần thành dòng thời gian cuộc đời bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6787834446">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.anniversarytracker">Google Play</a>
+    </div>
   </article>
-  ======================================================================== -->
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/focal.png" alt="Focal app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Focal</h2>
+        <div class="kind">Visual Timer &amp; Routine</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A countdown you can actually look at — a colored disk that shrinks as your time runs out. Chain short steps into routines that move on by themselves, and keep the timer in sight on the Lock Screen and in widgets.</span>
+      <span class="vi">Đồng hồ đếm ngược bạn nhìn thấy được — một đĩa màu thu nhỏ dần theo thời gian trôi. Ghép những việc ngắn thành routine tự chuyển bước, và luôn thấy đồng hồ trên màn hình khoá và widget.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6801943122">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.focal">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/doughbook.png" alt="Doughbook app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Doughbook</h2>
+        <div class="kind">Recipe Cost, Orders</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Know what every cupcake costs you and price it right. A recipe cost calculator, order book and bake planner for the home bakery — offline, on your phone, yours to export.</span>
+      <span class="vi">Biết mỗi chiếc cupcake tốn bao nhiêu để định giá cho đúng. Tính giá vốn công thức, sổ đơn hàng và lịch nướng cho tiệm bánh tại nhà — chạy offline, nằm trên máy bạn, xuất ra được khi cần.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6808533032">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.doughbook">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/pitbook.png" alt="Pitbook app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Pitbook</h2>
+        <div class="kind">Fuel &amp; Service Log</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">A maintenance log that stays yours. A fill-up takes five seconds, receipts attach as photos, and Pitbook tracks what's due by date, by odometer, or both. Export a PDF service history when it's time to sell.</span>
+      <span class="vi">Cuốn sổ bảo dưỡng thuộc về bạn. Ghi một lần đổ nhiên liệu mất năm giây, hoá đơn đính kèm bằng ảnh, và Pitbook theo hạn bằng ngày, bằng số công-tơ-mét hoặc cả hai. Xuất lịch sử bảo dưỡng PDF khi cần bán xe.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6795348682">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.pitbook">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/moodee.png" alt="Moodee app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Moodee</h2>
+        <div class="kind">Mood Tracker</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Check in with how you feel in under 10 seconds — no account, no cloud, everything stays on your device. Calendar, timeline and insights turn check-ins into a picture of how you're really doing.</span>
+      <span class="vi">Ghi lại cảm xúc trong chưa đầy 10 giây — không tài khoản, không cloud, mọi dữ liệu nằm trên thiết bị của bạn. Lịch, dòng thời gian và thống kê giúp bạn hiểu rõ bản thân hơn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6788285478">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.moodtracker">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/ladle.png" alt="Ladle app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Ladle</h2>
+        <div class="kind">Recipe Box &amp; Planner</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Paste a recipe from anywhere — text, a photo, a shared link — and Ladle reads it on your phone. Then it plans the week and writes the grocery list for you.</span>
+      <span class="vi">Dán công thức từ bất cứ đâu — đoạn chữ, tấm ảnh, đường link được chia sẻ — và Ladle đọc ngay trên máy bạn. Rồi nó lên thực đơn cả tuần và viết danh sách đi chợ giúp bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6803971181">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.ladle">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/chorejar.png" alt="Chore Jar app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Chore Jar</h2>
+        <div class="kind">Allowance &amp; Chores</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Chores and allowance for the whole family on one phone. Each kid taps their own PIN, ticks off chores and watches their jar fill. No account, nothing leaves your phone.</span>
+      <span class="vi">Việc nhà và tiền tiêu vặt của cả gia đình trên một chiếc điện thoại. Mỗi bé nhập mã PIN riêng, đánh dấu việc đã làm và nhìn hũ của mình đầy dần. Không tài khoản, không gì rời khỏi máy bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6818087666">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.chorejar">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/sideledger.png" alt="Side Ledger app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Side Ledger</h2>
+        <div class="kind">1099 Tax Tracker</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Know what you owe the IRS before the bill arrives. Log a payout, snap a receipt, add your miles — a running tax estimate updates on the spot, next to a countdown to the quarterly deadline. No bank login.</span>
+      <span class="vi">Biết mình nợ IRS bao nhiêu trước khi hoá đơn tới. Ghi một khoản thu, chụp hoá đơn, thêm số dặm đã chạy — ước tính thuế cập nhật ngay, cạnh đồng hồ đếm ngược tới hạn nộp quý. Không cần đăng nhập ngân hàng.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6807616853">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.sideledger">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/zeroowed.png" alt="Zero Owed app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Zero Owed</h2>
+        <div class="kind">Debt Payoff Planner</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Enter your debts once and see the month you'll be debt-free. Pick snowball or avalanche, add what extra you can pay, and watch the payoff date move. No account, no ads, your numbers stay on your phone.</span>
+      <span class="vi">Nhập các khoản nợ một lần và thấy tháng bạn hết nợ. Chọn snowball hay avalanche, thêm khoản trả dư, và xem ngày hết nợ dịch lại gần. Không tài khoản, không quảng cáo, con số nằm trên máy bạn.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6821785590">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=vn.bm.zeroowed">Google Play</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <img src="assets/icons/line98.png" alt="Line 98 Classic app icon" width="64" height="64" loading="lazy">
+      <div>
+        <h2>Line 98 Classic</h2>
+        <div class="kind">Amazing Ball</div>
+      </div>
+    </div>
+    <p class="desc">
+      <span class="en">Tap a ball, line up five of the same color, and watch them shatter. 14 themes, 14 ball styles, offline play, instant restart. Simple to learn — impossible to put down.</span>
+      <span class="vi">Chạm vào bóng, xếp 5 bóng cùng màu thành hàng và nhìn chúng vỡ tan. 14 chủ đề, 14 kiểu bóng, chơi offline, chơi lại tức thì. Dễ học — khó dừng.</span>
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://apps.apple.com/app/id6787416787">App Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.dhs.line98">Google Play</a>
+    </div>
+  </article>
+
+  <!-- New app: copy one <article class="card"> block above, add a 320px icon to assets/icons/ -->
 
 </main>
 
