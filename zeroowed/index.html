@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero Owed — Debt payoff planner with snowball and avalanche, no bank connection</title>
+<meta name="description" content="Zero Owed is a debt payoff planner. Enter your debts once and see the month you will be debt-free. Compare snowball, avalanche and your own order, test extra payments, and track what you actually paid. No account, no bank connection, no ads.">
+<link rel="canonical" href="https://dahasolutions.github.io/zeroowed/">
+<meta name="apple-itunes-app" content="app-id=6821785590">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zero Owed — Debt payoff planner with snowball and avalanche, no bank connection">
+<meta property="og:description" content="Zero Owed is a debt payoff planner. Enter your debts once and see the month you will be debt-free. Compare snowball, avalanche and your own order, test extra payments, and track what you actually paid. No account, no bank connection, no ads.">
+<meta property="og:url" content="https://dahasolutions.github.io/zeroowed/">
+<meta property="og:image" content="https://dahasolutions.github.io/zeroowed/img/shot-1.webp">
+<link rel="icon" href="../assets/icons/zeroowed.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Zero Owed: Debt Payoff Planner", "alternateName": "Zero Owed", "description": "Zero Owed is a debt payoff planner. Enter your debts once and see the month you will be debt-free. Compare snowball, avalanche and your own order, test extra payments, and track what you actually paid. No account, no bank connection, no ads.", "applicationCategory": "FinanceApplication", "operatingSystem": "iOS 17.0 or later, Android", "url": "https://dahasolutions.github.io/zeroowed/", "image": "https://dahasolutions.github.io/assets/icons/zeroowed.png", "screenshot": ["https://dahasolutions.github.io/zeroowed/img/shot-1.webp", "https://dahasolutions.github.io/zeroowed/img/shot-2.webp", "https://dahasolutions.github.io/zeroowed/img/shot-3.webp", "https://dahasolutions.github.io/zeroowed/img/shot-4.webp"], "downloadUrl": ["https://apps.apple.com/app/id6821785590", "https://play.google.com/store/apps/details?id=vn.bm.zeroowed"], "inLanguage": ["en"], "audience": {"@type": "Audience", "audienceType": "People paying off credit cards, loans and other debts who want a payoff plan they can check"}, "author": {"@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/"}, "featureList": ["Snowball, avalanche or your own order", "A schedule for every debt", "0% promotional rates", "Try it before you commit", "Track what you actually paid", "The math, written out"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between snowball and avalanche?", "acceptedAnswer": {"@type": "Answer", "text": "Snowball pays the smallest balance first; avalanche pays the highest interest rate first. Zero Owed shows both, plus your own order, side by side with payoff date and total interest."}}, {"@type": "Question", "name": "Does Zero Owed connect to my bank or credit cards?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no bank connection and no account. You enter balances, rates and payments yourself."}}, {"@type": "Question", "name": "Can I see what extra payments would do?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add an extra monthly amount or a one-time payment and see how many months sooner you finish and how much interest you save."}}, {"@type": "Question", "name": "Does it handle 0% promotional rates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter the promotional rate with its end date and the plan switches to the regular rate when it ends, with a notice 30 days before."}}, {"@type": "Question", "name": "Can I check the calculations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The formulas are written out in the app, and you can export the full schedule as a PDF or CSV."}}, {"@type": "Question", "name": "Which devices and languages does Zero Owed support?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone (iOS 17 or later) and Android. The app is in English."}}]}</script>
+<style>
+  :root { --bg: #EEF8F4; --paper: #FFFFFF; --ink: #13202B; --alt: #E4EEEB; --line: #D4DEDC; --muted: #5D696F; --accent: #1E55C9; --accent-ink: #1E55C9; --accent-soft: #D1E1EE; --on-accent: #FFFFFF; --head: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --r: 16px; --rs: 14px;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 14px 40px rgba(20,20,20,.09); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #13161C; --paper: #202328; --ink: #F3F2EF; --alt: #282B30; --line: #34373C; --muted: #A9A6A1; --accent: #779CEB; --accent-ink: #88A9ED; --accent-soft: #15233F; --on-accent: #101112; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45); } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+  .strip { height: 6px; } .strip.tall { height: 14px; } .strip.bands { display: flex; } .strip.bands i { flex: 1; }
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .hero { padding: 28px 0 72px; }
+  .hero.split .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero.center { text-align: center; padding-bottom: 0; }
+  .hero.center .app, .hero.center .stores { justify-content: center; }
+  .hero.center .lead { margin-left: auto; margin-right: auto; max-width: 640px; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; text-align: left; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1, h2 { font-family: var(--head); font-weight: 800; letter-spacing: -.03em; text-transform: none; }
+  h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.07; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  h2 { font-size: clamp(25px, 3.5vw, 36px); line-height: 1.15; margin-top: 8px; }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px;
+    border-radius: var(--rs); text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; text-align: left; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--accent); color: var(--on-accent); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .phones { position: relative; height: 560px; }
+  .phones img { position: absolute; width: 262px; border-radius: 26px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--alt); }
+  .phones img:nth-child(1) { right: 6%; top: 44px; transform: rotate(4deg); }
+  .phones img:nth-child(2) { left: 6%; top: 0; transform: rotate(-3deg); }
+  .row3 { display: flex; justify-content: center; gap: 22px; margin-top: 48px; align-items: flex-end; overflow: hidden; height: 470px; }
+  .row3 img { width: 250px; border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); background: var(--alt); align-self: flex-start; }
+  .row3 img:nth-child(2) { margin-top: 0; } .row3 img:nth-child(1), .row3 img:nth-child(3) { margin-top: 46px; }
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-family: var(--sans); }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 640px; }
+  .feat h3, .step h3 { font-size: 17px; letter-spacing: -.01em; }
+  .feat p, .step p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .feat .n { font-family: var(--head); color: var(--accent-ink); font-size: 15px; display: block; margin-bottom: 6px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+  .feats.ruled { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feats.ruled .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feats.cards { gap: 18px; }
+  .feats.cards .feat { padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); }
+  .feats.rows { grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .feats.rows .feat { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; }
+  .feats.rows .feat .n { grid-row: span 2; font-size: 20px; }
+  .extra { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .extra div { border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+  section.alt .extra div { background: var(--bg); }
+  .extra b { display: block; font-size: 16px; } .extra span { color: var(--muted); font-size: 15px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 12px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 24px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); } .spec dt { color: var(--muted); }
+  .cta { text-align: center; } .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  @media (max-width: 880px) {
+    .hero.split .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .phones { height: 480px; max-width: 420px; margin: 0 auto; width: 100%; } .phones img { width: 220px; }
+    .feats, .feats.rows { grid-template-columns: repeat(2, 1fr); } .feats.rows { gap: 0 32px; }
+    .steps { grid-template-columns: 1fr; } .shots { grid-template-columns: repeat(2, 1fr); }
+    .row3 { height: 380px; gap: 14px; } .row3 img { width: 200px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .feats, .feats.rows, .extra { grid-template-columns: 1fr; }
+    .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .phones { height: 400px; } .phones img { width: 180px; }
+    .row3 { height: 300px; } .row3 img { width: 150px; border-radius: 18px 18px 0 0; } .row3 img:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="strip bands" aria-hidden="true"><i style="background:#1E55C9"></i><i style="background:#3E6FD6"></i><i style="background:#6690E0"></i><i style="background:#93B4EA"></i><i style="background:#BFD6F2"></i><i style="background:#DDEFE9"></i><i style="background:#1E9E62"></i></div>
+<header class="top"><div class="wrap"><a class="brand" href="../">Ho Van Dai</a><a class="all" href="../">All apps</a></div></header>
+<main>
+<section class="hero center"><div class="wrap"><div class="app"><img src="../assets/icons/zeroowed.png" alt="Zero Owed app icon" width="56" height="56"><div><b>Zero Owed</b><span>Debt payoff planner</span></div></div><h1>See the month you will be <em>debt-free.</em></h1><p class="lead">Enter your debts once — credit cards, car loans, student loans, buy now pay later, medical bills. Pick snowball or avalanche, add what extra you can pay, and watch the payoff date move before you decide anything.</p><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6821785590"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.zeroowed&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div><p class="facts">iPhone and Android · No bank connection · No account, no ads</p><div class="row3"><img src="img/shot-2.webp" width="660" height="1434" alt="Zero Owed screenshot 2"><img src="img/shot-1.webp" width="660" height="1434" alt="Zero Owed screenshot 1"><img src="img/shot-3.webp" width="660" height="1434" alt="Zero Owed screenshot 3"></div></div></section>
+<section class="alt"><div class="wrap"><p class="eyebrow">What it does</p><h2>A plan you can check</h2>
+
+<div class="feats rows"><div class="feat"><span class="n">01</span><h3>Snowball, avalanche or your own order</h3><p>Compare all three side by side: payoff date, total interest, and the difference between them.</p></div><div class="feat"><span class="n">02</span><h3>A schedule for every debt</h3><p>Month by month, with interest and principal split out, down to the last payment.</p></div><div class="feat"><span class="n">03</span><h3>0% promotional rates</h3><p>Enter the promo with its end date. The plan switches to the regular rate when it ends.</p></div><div class="feat"><span class="n">04</span><h3>Try it before you commit</h3><p>Add an extra amount per month or a one-time payment and see how many months sooner you finish and how much interest you save.</p></div><div class="feat"><span class="n">05</span><h3>Track what you actually paid</h3><p>Tick the payments you made each month. The plan recalculates from your real balances, and a paid-off debt&#x27;s minimum rolls into the next one.</p></div><div class="feat"><span class="n">06</span><h3>The math, written out</h3><p>The formulas are shown in How the math works, so you can check any number against your own spreadsheet.</p></div></div></div></section>
+
+<section><div class="wrap"><p class="eyebrow">How it works</p><h2>Watch the date move</h2><div class="steps"><div class="step"><h3>Add your debts</h3><p>Balance, APR, minimum payment and due day — or import them from a CSV.</p></div><div class="step"><h3>Pick a strategy</h3><p>And an extra amount, if you have one. Pick a target month and get the budget that reaches it.</p></div><div class="step"><h3>Tick off each month</h3><p>Reminders on due days, and charts of the plan against what really happened.</p></div></div><div class="shots"><figure><img src="img/shot-1.webp" width="660" height="1434" alt="Zero Owed screenshot 1" loading="lazy"><figcaption>Zero Owed screenshot 1</figcaption></figure><figure><img src="img/shot-2.webp" width="660" height="1434" alt="Zero Owed screenshot 2" loading="lazy"><figcaption>Zero Owed screenshot 2</figcaption></figure><figure><img src="img/shot-3.webp" width="660" height="1434" alt="Zero Owed screenshot 3" loading="lazy"><figcaption>Zero Owed screenshot 3</figcaption></figure><figure><img src="img/shot-4.webp" width="660" height="1434" alt="Zero Owed screenshot 4" loading="lazy"><figcaption>Zero Owed screenshot 4</figcaption></figure></div></div></section>
+<section class="alt"><div class="wrap narrow"><p class="eyebrow">Your data</p><h2>Your balances stay on your phone</h2>
+<ul class="ticks"><li><b>No account. No bank connection. No ads.</b></li><li><b>Lock the app</b> with Face ID or your passcode, and hide every amount with one switch.</li><li><b>Notifications never show amounts.</b></li><li><b>Back up to a file you keep</b> and restore it on a new phone.</li><li><b>Export</b> the schedule as a PDF, or your debts and payments as CSV.</li></ul><p class="note">Zero Owed is a planning tool. It estimates with a monthly interest model; your lender may calculate daily, so your statement can differ slightly.</p></div></section>
+<section><div class="wrap narrow"><p class="eyebrow">Questions</p><h2>Before you download</h2>
+<div class="faq"><details open><summary>What is the difference between snowball and avalanche?</summary><p>Snowball pays the smallest balance first; avalanche pays the highest interest rate first. Zero Owed shows both, plus your own order, side by side with payoff date and total interest.</p></details><details><summary>Does Zero Owed connect to my bank or credit cards?</summary><p>No. There is no bank connection and no account. You enter balances, rates and payments yourself.</p></details><details><summary>Can I see what extra payments would do?</summary><p>Yes. Add an extra monthly amount or a one-time payment and see how many months sooner you finish and how much interest you save.</p></details><details><summary>Does it handle 0% promotional rates?</summary><p>Yes. Enter the promotional rate with its end date and the plan switches to the regular rate when it ends, with a notice 30 days before.</p></details><details><summary>Can I check the calculations?</summary><p>Yes. The formulas are written out in the app, and you can export the full schedule as a PDF or CSV.</p></details><details><summary>Which devices and languages does Zero Owed support?</summary><p>iPhone (iOS 17 or later) and Android. The app is in English.</p></details></div>
+<dl class="spec"><dt>Made for</dt><dd>People paying off credit cards, loans and other debts who want a payoff plan they can check</dd><dt>Platforms</dt><dd>iPhone (iOS 17 or later) · Android</dd>
+<dt>Languages</dt><dd>English</dd>
+<dt>Category</dt><dd>Finance</dd><dt>Developer</dt><dd>Ho Van Dai</dd>
+<dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd></dl></div></section>
+<section class="alt cta"><div class="wrap narrow"><img class="icon" src="../assets/icons/zeroowed.png" alt="" width="72" height="72" loading="lazy">
+<h2>Find your debt-free month</h2><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6821785590"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.zeroowed&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 Ho Van Dai</div><div><a href="../">Home</a> &nbsp;·&nbsp; <a href="../privacy-page/">Privacy Policy</a> &nbsp;·&nbsp; <a href="../support/">Support</a></div></div></footer>
+</body>
+</html>

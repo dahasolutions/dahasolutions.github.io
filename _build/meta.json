@@ -1,0 +1,355 @@
+{
+ "ouchlog": {
+  "ios": "6792059742",
+  "play": "vn.bm.ouchlog",
+  "store_name": "Ouch Log: Pain Tracker & Diary",
+  "minos": "17.0",
+  "langs": [
+   "NL",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "ID",
+   "IT",
+   "JA",
+   "KO",
+   "PL",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "SV",
+   "TH",
+   "ZH",
+   "TR",
+   "UK",
+   "VI"
+  ],
+  "genre": "Medical",
+  "ipad": true
+ },
+ "jars": {
+  "ios": "6813859259",
+  "play": "vn.bm.jars",
+  "store_name": "Jars: Savings Goal Tracker",
+  "minos": "17.0",
+  "langs": [
+   "NL",
+   "EN",
+   "FR",
+   "DE",
+   "IT",
+   "JA",
+   "KO",
+   "PL",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "SV",
+   "ZH",
+   "TR",
+   "VI"
+  ],
+  "genre": "Finance",
+  "ipad": true
+ },
+ "soapnotes": {
+  "ios": "6815480593",
+  "play": "vn.bm.soapnotes",
+  "store_name": "SOAP Notes: Massage & Physio",
+  "minos": "17.0",
+  "langs": [
+   "EN"
+  ],
+  "genre": "Medical",
+  "ipad": true
+ },
+ "plantjournal": {
+  "ios": "6791094256",
+  "play": "vn.bm.plantjournal",
+  "store_name": "Plant Journal: Grow Diary",
+  "minos": "17.0",
+  "langs": [
+   "AR",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "JA",
+   "KO",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "VI"
+  ],
+  "genre": "Lifestyle",
+  "ipad": false
+ },
+ "formulabook": {
+  "ios": "6810034654",
+  "play": "vn.bm.formulabook",
+  "store_name": "Formula Book: Hair Color Notes",
+  "minos": "17.0",
+  "langs": [
+   "NL",
+   "EN",
+   "FR",
+   "DE",
+   "IT",
+   "JA",
+   "KO",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "ZH",
+   "VI"
+  ],
+  "genre": "Business",
+  "ipad": false
+ },
+ "sitecalc": {
+  "ios": "6818809803",
+  "play": "vn.bm.sitecalc",
+  "store_name": "SiteCalc: Construction Tools",
+  "minos": "17.0",
+  "langs": [
+   "EN"
+  ],
+  "genre": "Utilities",
+  "ipad": false
+ },
+ "prayline": {
+  "ios": "6827624512",
+  "play": "vn.bm.prayline",
+  "store_name": "Prayline: Muslim Prayer Times",
+  "minos": "17.0",
+  "langs": [
+   "AR",
+   "EN",
+   "FR",
+   "ID",
+   "MS",
+   "TR",
+   "UR"
+  ],
+  "genre": "Lifestyle",
+  "ipad": false
+ },
+ "shelflife": {
+  "ios": "6790657863",
+  "play": "vn.bm.shelflife",
+  "store_name": "Shelflife: Book Journal",
+  "minos": "17.0",
+  "langs": [
+   "AR",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "JA",
+   "KO",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "VI"
+  ],
+  "genre": "Book",
+  "ipad": false
+ },
+ "anniversary": {
+  "ios": "6787834446",
+  "play": "vn.bm.anniversarytracker",
+  "store_name": "Memento: Anniversary Countdown",
+  "minos": "17.0",
+  "langs": [
+   "AR",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "JA",
+   "KO",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "VI"
+  ],
+  "genre": "Lifestyle",
+  "ipad": false
+ },
+ "focal": {
+  "ios": "6801943122",
+  "play": "vn.bm.focal",
+  "store_name": "Focal: Visual Timer & Routine",
+  "minos": "18.0",
+  "langs": [
+   "AR",
+   "BN",
+   "NL",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "ID",
+   "IT",
+   "JA",
+   "JV",
+   "KO",
+   "PL",
+   "PT",
+   "PA",
+   "RU",
+   "ZH",
+   "ES",
+   "SV",
+   "TH",
+   "ZH",
+   "TR",
+   "UK",
+   "UR",
+   "VI"
+  ],
+  "genre": "Productivity",
+  "ipad": false
+ },
+ "doughbook": {
+  "ios": "6808533032",
+  "play": "vn.bm.doughbook",
+  "store_name": "Doughbook: Recipe Cost, Orders",
+  "minos": "17.0",
+  "langs": [
+   "EN",
+   "FR",
+   "DE",
+   "IT",
+   "JA",
+   "KO",
+   "PT",
+   "ZH",
+   "ES",
+   "ZH"
+  ],
+  "genre": "Business",
+  "ipad": false
+ },
+ "pitbook": {
+  "ios": "6795348682",
+  "play": "vn.bm.pitbook",
+  "store_name": "Pitbook: Fuel & Service Log",
+  "minos": "17.0",
+  "langs": [
+   "NL",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "ID",
+   "IT",
+   "JA",
+   "KO",
+   "PL",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "SV",
+   "TH",
+   "ZH",
+   "TR",
+   "UK",
+   "VI"
+  ],
+  "genre": "Utilities",
+  "ipad": false
+ },
+ "moodee": {
+  "ios": "6788285478",
+  "play": "vn.bm.moodtracker",
+  "store_name": "Moodee: Mood Tracker",
+  "minos": "17.0",
+  "langs": [
+   "AR",
+   "EN",
+   "FR",
+   "DE",
+   "HI",
+   "JA",
+   "KO",
+   "PT",
+   "RU",
+   "ZH",
+   "ES",
+   "VI"
+  ],
+  "genre": "Health & Fitness",
+  "ipad": false
+ },
+ "ladle": {
+  "ios": "6803971181",
+  "play": "vn.bm.ladle",
+  "store_name": "Ladle: Recipe Box & Planner",
+  "minos": "18.0",
+  "langs": [
+   "EN",
+   "FR",
+   "DE",
+   "JA",
+   "KO",
+   "ZH",
+   "VI"
+  ],
+  "genre": "Food & Drink",
+  "ipad": false
+ },
+ "chorejar": {
+  "ios": "6818087666",
+  "play": "vn.bm.chorejar",
+  "store_name": "Chore Jar: Allowance & Chores",
+  "minos": "17.0",
+  "langs": [
+   "EN"
+  ],
+  "genre": "Productivity",
+  "ipad": true
+ },
+ "sideledger": {
+  "ios": "6807616853",
+  "play": "vn.bm.sideledger",
+  "store_name": "Side Ledger: 1099 Tax Tracker",
+  "minos": "17.0",
+  "langs": [
+   "EN"
+  ],
+  "genre": "Finance",
+  "ipad": true
+ },
+ "zeroowed": {
+  "ios": "6821785590",
+  "play": "vn.bm.zeroowed",
+  "store_name": "Zero Owed: Debt Payoff Planner",
+  "minos": "17.0",
+  "langs": [
+   "EN"
+  ],
+  "genre": "Finance",
+  "ipad": false
+ },
+ "line98": {
+  "ios": "6787416787",
+  "play": "com.dhs.line98",
+  "store_name": "Line 98 Classic: Amazing Ball",
+  "minos": "15.0",
+  "langs": [
+   "EN",
+   "VI"
+  ],
+  "genre": "Games",
+  "ipad": false
+ }
+}

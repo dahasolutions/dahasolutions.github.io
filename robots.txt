@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /sideledger-config/
+
+Sitemap: https://dahasolutions.github.io/sitemap.xml

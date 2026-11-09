@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ouch Log — Pain tracker and symptom diary you can fill in while it hurts</title>
+<meta name="description" content="Ouch Log is a private pain tracker and symptom diary for chronic pain, migraine, fibromyalgia and arthritis. Log a flare in five seconds on a body map, see which medication helps, and bring a PDF report to your doctor. Works offline, no account.">
+<link rel="canonical" href="https://dahasolutions.github.io/ouchlog/">
+<meta name="apple-itunes-app" content="app-id=6792059742">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ouch Log — Pain tracker and symptom diary you can fill in while it hurts">
+<meta property="og:description" content="Ouch Log is a private pain tracker and symptom diary for chronic pain, migraine, fibromyalgia and arthritis. Log a flare in five seconds on a body map, see which medication helps, and bring a PDF report to your doctor. Works offline, no account.">
+<meta property="og:url" content="https://dahasolutions.github.io/ouchlog/">
+<meta property="og:image" content="https://dahasolutions.github.io/ouchlog/img/shot-1.webp">
+<link rel="icon" href="../assets/icons/ouchlog.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Ouch Log: Pain Tracker & Diary", "alternateName": "Ouch Log", "description": "Ouch Log is a private pain tracker and symptom diary for chronic pain, migraine, fibromyalgia and arthritis. Log a flare in five seconds on a body map, see which medication helps, and bring a PDF report to your doctor. Works offline, no account.", "applicationCategory": "HealthApplication", "operatingSystem": "iOS 17.0 or later, Android", "url": "https://dahasolutions.github.io/ouchlog/", "image": "https://dahasolutions.github.io/assets/icons/ouchlog.png", "screenshot": ["https://dahasolutions.github.io/ouchlog/img/shot-1.webp", "https://dahasolutions.github.io/ouchlog/img/shot-2.webp", "https://dahasolutions.github.io/ouchlog/img/shot-3.webp", "https://dahasolutions.github.io/ouchlog/img/shot-4.webp"], "downloadUrl": ["https://apps.apple.com/app/id6792059742", "https://play.google.com/store/apps/details?id=vn.bm.ouchlog"], "inLanguage": ["de", "en", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ru", "sv", "th", "tr", "uk", "vi", "zh"], "audience": {"@type": "Audience", "audienceType": "People living with chronic pain, migraine, fibromyalgia, arthritis and other long-term conditions"}, "author": {"@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/"}, "featureList": ["Five-second logging", "Flare timer", "Medication relief", "Dose limits you set", "Patterns and trends", "Reports for your doctor"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need an account to use Ouch Log?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no account and no sign-up. Your entries stay on your device."}}, {"@type": "Question", "name": "Can I show my pain history to my doctor?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Ouch Log makes PDF reports for 7, 30 or 90 days, a custom range, or since your last visit, with the questions you want to ask printed at the top. You can also export every entry as CSV."}}, {"@type": "Question", "name": "Does Ouch Log tell me which medication works?", "acceptedAnswer": {"@type": "Answer", "text": "It shows your own log: the pain level before each dose next to the level 30 minutes to 4 hours after it, for every medication. It is a pattern in your entries, not medical advice."}}, {"@type": "Question", "name": "Does it work without internet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Ouch Log works fully offline."}}, {"@type": "Question", "name": "Is Ouch Log a medical device?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a diary. It does not diagnose, treat or give medical advice."}}, {"@type": "Question", "name": "Which devices and languages does Ouch Log support?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone and iPad (iOS 17 or later) and Android. The app is available in 20 languages: English, Chinese (Simplified and Traditional), Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese."}}]}</script>
+<style>
+  :root { --bg: #FBF5F3; --paper: #FFFFFF; --ink: #1B1A18; --alt: #F1EBE9; --line: #E0DBD9; --muted: #676462; --accent: #DC324D; --accent-ink: #C4213B; --accent-soft: #F8DFE0; --on-accent: #FFFFFF; --head: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", -apple-system, "Segoe UI", sans-serif; --sans: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", -apple-system, "Segoe UI", sans-serif; --r: 24px; --rs: 14px;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 14px 40px rgba(20,20,20,.09); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1C1617; --paper: #282324; --ink: #F3F2EF; --alt: #302B2C; --line: #3C3737; --muted: #A9A6A1; --accent: #E98191; --accent-ink: #EC92A0; --accent-soft: #442328; --on-accent: #101112; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45); } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+  .strip { height: 6px; } .strip.tall { height: 14px; } .strip.bands { display: flex; } .strip.bands i { flex: 1; }
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .hero { padding: 28px 0 72px; }
+  .hero.split .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero.center { text-align: center; padding-bottom: 0; }
+  .hero.center .app, .hero.center .stores { justify-content: center; }
+  .hero.center .lead { margin-left: auto; margin-right: auto; max-width: 640px; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; text-align: left; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1, h2 { font-family: var(--head); font-weight: 700; letter-spacing: -.02em; text-transform: none; }
+  h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.07; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  h2 { font-size: clamp(25px, 3.5vw, 36px); line-height: 1.15; margin-top: 8px; }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px;
+    border-radius: var(--rs); text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; text-align: left; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--accent); color: var(--on-accent); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .phones { position: relative; height: 560px; }
+  .phones img { position: absolute; width: 262px; border-radius: 26px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--alt); }
+  .phones img:nth-child(1) { right: 6%; top: 44px; transform: rotate(4deg); }
+  .phones img:nth-child(2) { left: 6%; top: 0; transform: rotate(-3deg); }
+  .row3 { display: flex; justify-content: center; gap: 22px; margin-top: 48px; align-items: flex-end; overflow: hidden; height: 470px; }
+  .row3 img { width: 250px; border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); background: var(--alt); align-self: flex-start; }
+  .row3 img:nth-child(2) { margin-top: 0; } .row3 img:nth-child(1), .row3 img:nth-child(3) { margin-top: 46px; }
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-family: var(--sans); }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 640px; }
+  .feat h3, .step h3 { font-size: 17px; letter-spacing: -.01em; }
+  .feat p, .step p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .feat .n { font-family: var(--head); color: var(--accent-ink); font-size: 15px; display: block; margin-bottom: 6px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+  .feats.ruled { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feats.ruled .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feats.cards { gap: 18px; }
+  .feats.cards .feat { padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); }
+  .feats.rows { grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .feats.rows .feat { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; }
+  .feats.rows .feat .n { grid-row: span 2; font-size: 20px; }
+  .extra { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .extra div { border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+  section.alt .extra div { background: var(--bg); }
+  .extra b { display: block; font-size: 16px; } .extra span { color: var(--muted); font-size: 15px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 12px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 24px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); } .spec dt { color: var(--muted); }
+  .cta { text-align: center; } .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  @media (max-width: 880px) {
+    .hero.split .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .phones { height: 480px; max-width: 420px; margin: 0 auto; width: 100%; } .phones img { width: 220px; }
+    .feats, .feats.rows { grid-template-columns: repeat(2, 1fr); } .feats.rows { gap: 0 32px; }
+    .steps { grid-template-columns: 1fr; } .shots { grid-template-columns: repeat(2, 1fr); }
+    .row3 { height: 380px; gap: 14px; } .row3 img { width: 200px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .feats, .feats.rows, .extra { grid-template-columns: 1fr; }
+    .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .phones { height: 400px; } .phones img { width: 180px; }
+    .row3 { height: 300px; } .row3 img { width: 150px; border-radius: 18px 18px 0 0; } .row3 img:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="strip bands" aria-hidden="true"><i style="background:#FBE3DE"></i><i style="background:#F8CFC9"></i><i style="background:#F5B8B2"></i><i style="background:#F29E9D"></i><i style="background:#EE8389"></i><i style="background:#E96A78"></i><i style="background:#E2556B"></i><i style="background:#CF4760"></i><i style="background:#B63B55"></i><i style="background:#98304A"></i></div>
+<header class="top"><div class="wrap"><a class="brand" href="../">Ho Van Dai</a><a class="all" href="../">All apps</a></div></header>
+<main>
+<section class="hero split"><div class="wrap"><div><div class="app"><img src="../assets/icons/ouchlog.png" alt="Ouch Log app icon" width="56" height="56"><div><b>Ouch Log</b><span>Pain tracker and symptom diary</span></div></div><h1>Log a flare in <em>five seconds</em>. See what actually helps.</h1><p class="lead">Ouch Log is a pain tracker and symptom diary for people living with chronic pain, migraine, fibromyalgia, arthritis and other long-term conditions. Tap a pain level, tap where it hurts, done — then walk into your next appointment with a report.</p><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6792059742"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.ouchlog&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div><p class="facts">iPhone, iPad and Android · Works offline · No account</p></div><div class="phones"><img src="img/shot-2.webp" width="660" height="1434" alt="Ouch Log body map for marking where it hurts"><img src="img/shot-1.webp" width="660" height="1434" alt="Ouch Log home screen with pain level buttons"></div></div></section>
+<section class="alt"><div class="wrap"><p class="eyebrow">What it does</p><h2>A pain diary made for your worst days</h2>
+<p class="sub">Large targets, high contrast and almost no typing. Add the details later, once the flare has passed.</p>
+<div class="feats cards"><div class="feat"><span class="n">01</span><h3>Five-second logging</h3><p>Tap a pain level and the spot on a body map — left, right, front and back. Triggers, pain types, medication and notes can wait.</p></div><div class="feat"><span class="n">02</span><h3>Flare timer</h3><p>During a flare, Home shows how long it has lasted. Tap “No pain now” when it eases.</p></div><div class="feat"><span class="n">03</span><h3>Medication relief</h3><p>Your pain before each dose next to your pain 30 minutes to 4 hours after it, for every medication.</p></div><div class="feat"><span class="n">04</span><h3>Dose limits you set</h3><p>A daily maximum and the hours between doses, with a count of where you stand. Ouch Log only counts; it never blocks a dose.</p></div><div class="feat"><span class="n">05</span><h3>Patterns and trends</h3><p>7, 30 or 90 days compared with the period before: flares, time of day, body regions, pain types, triggers and days of work or school missed.</p></div><div class="feat"><span class="n">06</span><h3>Reports for your doctor</h3><p>Add your visits and the questions you want to ask. PDF reports for any range, with your questions printed at the top, and CSV export of every entry.</p></div></div></div></section>
+
+<section><div class="wrap"><p class="eyebrow">How it works</p><h2>From a bad day to a clear picture</h2><div class="steps"><div class="step"><h3>Log while it hurts</h3><p>Two taps on the level and the body map. On iPhone you can also log from a widget or Apple Watch without opening the app.</p></div><div class="step"><h3>Look back</h3><p>A calendar with a color dot for every day, and a one-page summary each month.</p></div><div class="step"><h3>Walk in with proof</h3><p>A reminder the evening before your appointment, with a report covering everything since your last visit.</p></div></div><div class="shots"><figure><img src="img/shot-1.webp" width="660" height="1434" alt="Ouch Log home screen with pain level buttons" loading="lazy"><figcaption>Ouch Log home screen with pain level buttons</figcaption></figure><figure><img src="img/shot-2.webp" width="660" height="1434" alt="Ouch Log body map for marking where it hurts" loading="lazy"><figcaption>Ouch Log body map for marking where it hurts</figcaption></figure><figure><img src="img/shot-3.webp" width="660" height="1434" alt="Ouch Log trends over 30 days" loading="lazy"><figcaption>Ouch Log trends over 30 days</figcaption></figure><figure><img src="img/shot-4.webp" width="660" height="1434" alt="Ouch Log insights: triggers and medication relief" loading="lazy"><figcaption>Ouch Log insights: triggers and medication relief</figcaption></figure></div></div></section>
+<section class="alt"><div class="wrap narrow"><p class="eyebrow">Your data</p><h2>Private by design</h2>
+<ul class="ticks"><li><b>Entries stay on your device.</b> Pain entries, notes and medications are never sent to us.</li><li><b>No account and no sign-up.</b> Open the app and log.</li><li><b>Works fully offline</b>, and you can export a backup whenever you like.</li><li><b>Lock the diary</b> with Face ID or your passcode.</li><li><b>Apple Health is optional</b> on iPhone and off until you connect it.</li></ul><p class="note">Ouch Log is a pain diary, not a medical device. It does not diagnose or treat, and does not give medical advice. Always talk to a healthcare professional about your symptoms and before making decisions about medication.</p></div></section>
+<section><div class="wrap narrow"><p class="eyebrow">Questions</p><h2>Before you download</h2>
+<div class="faq"><details open><summary>Do I need an account to use Ouch Log?</summary><p>No. There is no account and no sign-up. Your entries stay on your device.</p></details><details><summary>Can I show my pain history to my doctor?</summary><p>Yes. Ouch Log makes PDF reports for 7, 30 or 90 days, a custom range, or since your last visit, with the questions you want to ask printed at the top. You can also export every entry as CSV.</p></details><details><summary>Does Ouch Log tell me which medication works?</summary><p>It shows your own log: the pain level before each dose next to the level 30 minutes to 4 hours after it, for every medication. It is a pattern in your entries, not medical advice.</p></details><details><summary>Does it work without internet?</summary><p>Yes. Ouch Log works fully offline.</p></details><details><summary>Is Ouch Log a medical device?</summary><p>No. It is a diary. It does not diagnose, treat or give medical advice.</p></details><details><summary>Which devices and languages does Ouch Log support?</summary><p>iPhone and iPad (iOS 17 or later) and Android. The app is available in 20 languages: English, Chinese (Simplified and Traditional), Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese.</p></details></div>
+<dl class="spec"><dt>Made for</dt><dd>People living with chronic pain, migraine, fibromyalgia, arthritis and other long-term conditions</dd><dt>Platforms</dt><dd>iPhone and iPad (iOS 17 or later) · Android</dd>
+<dt>Languages</dt><dd>20, including English, Chinese (Simplified and Traditional), Dutch, French, German, Hindi</dd>
+<dt>Category</dt><dd>Medical</dd><dt>Developer</dt><dd>Ho Van Dai</dd>
+<dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd></dl></div></section>
+<section class="alt cta"><div class="wrap narrow"><img class="icon" src="../assets/icons/ouchlog.png" alt="" width="72" height="72" loading="lazy">
+<h2>Start with the next flare</h2><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6792059742"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.ouchlog&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 Ho Van Dai</div><div><a href="../">Home</a> &nbsp;·&nbsp; <a href="privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="../support/">Support</a></div></div></footer>
+</body>
+</html>

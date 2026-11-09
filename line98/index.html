@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line 98 Classic — The classic 9×9 color lines ball puzzle, offline</title>
+<meta name="description" content="Line 98 Classic is the timeless 9×9 ball puzzle: line up five balls of the same color to clear them. 14 themes, next-ball preview, three difficulty levels, undo and named saves. Plays fully offline, no login.">
+<link rel="canonical" href="https://dahasolutions.github.io/line98/">
+<meta name="apple-itunes-app" content="app-id=6787416787">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Line 98 Classic — The classic 9×9 color lines ball puzzle, offline">
+<meta property="og:description" content="Line 98 Classic is the timeless 9×9 ball puzzle: line up five balls of the same color to clear them. 14 themes, next-ball preview, three difficulty levels, undo and named saves. Plays fully offline, no login.">
+<meta property="og:url" content="https://dahasolutions.github.io/line98/">
+<meta property="og:image" content="https://dahasolutions.github.io/line98/img/shot-1.webp">
+<link rel="icon" href="../assets/icons/line98.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Line 98 Classic: Amazing Ball", "alternateName": "Line 98 Classic", "description": "Line 98 Classic is the timeless 9×9 ball puzzle: line up five balls of the same color to clear them. 14 themes, next-ball preview, three difficulty levels, undo and named saves. Plays fully offline, no login.", "applicationCategory": "GameApplication", "operatingSystem": "iOS 15.0 or later, Android", "url": "https://dahasolutions.github.io/line98/", "image": "https://dahasolutions.github.io/assets/icons/line98.png", "screenshot": ["https://dahasolutions.github.io/line98/img/shot-1.webp", "https://dahasolutions.github.io/line98/img/shot-2.webp", "https://dahasolutions.github.io/line98/img/shot-3.webp", "https://dahasolutions.github.io/line98/img/shot-4.webp"], "downloadUrl": ["https://apps.apple.com/app/id6787416787", "https://play.google.com/store/apps/details?id=com.dhs.line98"], "inLanguage": ["en", "vi"], "audience": {"@type": "Audience", "audienceType": "Fans of the classic Lines / Color Lines puzzle and casual puzzle players"}, "author": {"@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/"}, "featureList": ["See what is coming", "14 themes", "14 ball styles", "Progressive scoring", "Three difficulty levels", "Undo and saves"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you play Line 98?", "acceptedAnswer": {"@type": "Answer", "text": "Move one ball at a time on a 9×9 board. Line up five or more of the same color in a row, column or diagonal to clear them. New balls appear after every move that does not clear a line; the game ends when the board is full."}}, {"@type": "Question", "name": "Can I play offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Line 98 Classic plays fully offline."}}, {"@type": "Question", "name": "Can I undo a move?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Undo is available during a game."}}, {"@type": "Question", "name": "Does it show the next balls?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It shows the next three balls and where they will appear. You can hide the preview for a scoring bonus."}}, {"@type": "Question", "name": "Is there an account or login?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no login, and your saved games live on your device."}}, {"@type": "Question", "name": "Which devices and languages does Line 98 Classic support?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone (iOS 15 or later) and Android. The app is available in 2 languages: English, Vietnamese."}}]}</script>
+<style>
+  :root { --bg: #ECECEC; --paper: #F7F7F7; --ink: #111111; --alt: #E2E2E2; --line: #D2D2D2; --muted: #5B5B5B; --accent: #1F4FD8; --accent-ink: #1F4FD8; --accent-soft: #CFD6E9; --on-accent: #FFFFFF; --head: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --r: 0px; --rs: 0px;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 14px 40px rgba(20,20,20,.09); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #13161D; --paper: #202329; --ink: #F3F2EF; --alt: #282B31; --line: #34373D; --muted: #A9A6A1; --accent: #7B98EC; --accent-ink: #8DA6EF; --accent-soft: #152142; --on-accent: #101112; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45); } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+  .strip { height: 6px; } .strip.tall { height: 14px; } .strip.bands { display: flex; } .strip.bands i { flex: 1; }
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .hero { padding: 28px 0 72px; }
+  .hero.split .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero.center { text-align: center; padding-bottom: 0; }
+  .hero.center .app, .hero.center .stores { justify-content: center; }
+  .hero.center .lead { margin-left: auto; margin-right: auto; max-width: 640px; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; text-align: left; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1, h2 { font-family: var(--head); font-weight: 700; letter-spacing: -.02em; text-transform: uppercase; }
+  h1 { font-size: clamp(28px, 5.2vw, 44px); line-height: 1.07; }
+  h1 em { font-style: normal; color: var(--accent-ink); }
+  h2 { font-size: clamp(25px, 3.5vw, 30px); line-height: 1.15; margin-top: 8px; }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px;
+    border-radius: var(--rs); text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; text-align: left; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--accent); color: var(--on-accent); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .phones { position: relative; height: 560px; }
+  .phones img { position: absolute; width: 262px; border-radius: 26px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--alt); }
+  .phones img:nth-child(1) { right: 6%; top: 44px; transform: rotate(4deg); }
+  .phones img:nth-child(2) { left: 6%; top: 0; transform: rotate(-3deg); }
+  .row3 { display: flex; justify-content: center; gap: 22px; margin-top: 48px; align-items: flex-end; overflow: hidden; height: 470px; }
+  .row3 img { width: 250px; border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); background: var(--alt); align-self: flex-start; }
+  .row3 img:nth-child(2) { margin-top: 0; } .row3 img:nth-child(1), .row3 img:nth-child(3) { margin-top: 46px; }
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-family: var(--sans); }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 640px; }
+  .feat h3, .step h3 { font-size: 17px; letter-spacing: -.01em; }
+  .feat p, .step p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .feat .n { font-family: var(--head); color: var(--accent-ink); font-size: 15px; display: block; margin-bottom: 6px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+  .feats.ruled { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feats.ruled .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feats.cards { gap: 18px; }
+  .feats.cards .feat { padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); }
+  .feats.rows { grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .feats.rows .feat { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; }
+  .feats.rows .feat .n { grid-row: span 2; font-size: 20px; }
+  .extra { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .extra div { border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+  section.alt .extra div { background: var(--bg); }
+  .extra b { display: block; font-size: 16px; } .extra span { color: var(--muted); font-size: 15px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 12px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 24px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); } .spec dt { color: var(--muted); }
+  .cta { text-align: center; } .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  @media (max-width: 880px) {
+    .hero.split .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .phones { height: 480px; max-width: 420px; margin: 0 auto; width: 100%; } .phones img { width: 220px; }
+    .feats, .feats.rows { grid-template-columns: repeat(2, 1fr); } .feats.rows { gap: 0 32px; }
+    .steps { grid-template-columns: 1fr; } .shots { grid-template-columns: repeat(2, 1fr); }
+    .row3 { height: 380px; gap: 14px; } .row3 img { width: 200px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .feats, .feats.rows, .extra { grid-template-columns: 1fr; }
+    .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .phones { height: 400px; } .phones img { width: 180px; }
+    .row3 { height: 300px; } .row3 img { width: 150px; border-radius: 18px 18px 0 0; } .row3 img:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="strip bands" aria-hidden="true"><i style="background:#F2C200"></i><i style="background:#C62828"></i><i style="background:#1F4FD8"></i><i style="background:#2E9E44"></i><i style="background:#B03AAE"></i><i style="background:#7B1E1E"></i><i style="background:#1FA9B8"></i></div>
+<header class="top"><div class="wrap"><a class="brand" href="../">Ho Van Dai</a><a class="all" href="../">All apps</a></div></header>
+<main>
+<section class="hero center"><div class="wrap"><div class="app"><img src="../assets/icons/line98.png" alt="Line 98 Classic app icon" width="56" height="56"><div><b>Line 98 Classic</b><span>The 9×9 ball puzzle</span></div></div><h1>Five in a row. <em>Keep the board alive.</em></h1><p class="lead">Line 98 Classic is the timeless 9×9 ball puzzle. Tap a ball, tap an empty cell, line up five of the same color — horizontally, vertically or diagonally — and they shatter. Keep going until the board fills up. Simple to learn, hard to put down.</p><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6787416787"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=com.dhs.line98&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div><p class="facts">iPhone and Android · Plays fully offline · No login</p><div class="row3"><img src="img/shot-2.webp" width="660" height="1434" alt="Line 98 Classic screenshot 2"><img src="img/shot-1.webp" width="660" height="1434" alt="Line 98 Classic screenshot 1"><img src="img/shot-3.webp" width="660" height="1434" alt="Line 98 Classic screenshot 3"></div></div></section>
+<section class="alt"><div class="wrap"><p class="eyebrow">Features</p><h2>The puzzle you remember, with a few kind additions</h2>
+
+<div class="feats ruled"><div class="feat"><span class="n">01</span><h3>See what is coming</h3><p>The next three balls and where they will spawn, so you can plan ahead. Hide the preview for a bonus.</p></div><div class="feat"><span class="n">02</span><h3>14 themes</h3><p>Classic 98, Pixel 8-bit, CRT Arcade, Y2K Chrome, Flat Pastel, Glass, Neon Cyberpunk, Synthwave, Holographic, Claymation, Paper Origami, Wood, Marble, Brutalist.</p></div><div class="feat"><span class="n">03</span><h3>14 ball styles</h3><p>Matched to the themes, and free to mix and match.</p></div><div class="feat"><span class="n">04</span><h3>Progressive scoring</h3><p>Longer lines score more — 5, 7, 10, 14, 19 — and crossing lines stack.</p></div><div class="feat"><span class="n">05</span><h3>Three difficulty levels</h3><p>Easy with 5 colors, Normal with 6, Hard with 7. Change any time.</p></div><div class="feat"><span class="n">06</span><h3>Undo and saves</h3><p>Undo moves during a game, and keep up to 8 named saves to resume later.</p></div></div></div></section>
+
+<section><div class="wrap"><p class="eyebrow">How it works</p><h2>No daily quests. No FOMO. Just the puzzle.</h2><div class="shots"><figure><img src="img/shot-1.webp" width="660" height="1434" alt="Line 98 Classic screenshot 1" loading="lazy"><figcaption>Line 98 Classic screenshot 1</figcaption></figure><figure><img src="img/shot-2.webp" width="660" height="1434" alt="Line 98 Classic screenshot 2" loading="lazy"><figcaption>Line 98 Classic screenshot 2</figcaption></figure><figure><img src="img/shot-3.webp" width="660" height="1434" alt="Line 98 Classic screenshot 3" loading="lazy"><figcaption>Line 98 Classic screenshot 3</figcaption></figure><figure><img src="img/shot-4.webp" width="660" height="1434" alt="Line 98 Classic screenshot 4" loading="lazy"><figcaption>Line 98 Classic screenshot 4</figcaption></figure></div></div></section>
+<section class="alt"><div class="wrap narrow"><p class="eyebrow">Good to know</p><h2>Plays offline, saves on your device</h2>
+<ul class="ticks"><li><b>No login and no cloud sync.</b> Your saves live on your device.</li><li><b>Plays fully offline.</b></li><li><b>Contains ads</b>, which use personalization only with your consent and are skipped when you are offline.</li><li><b>Haptics and sound effects</b> you can turn off any time.</li></ul></div></section>
+<section><div class="wrap narrow"><p class="eyebrow">Questions</p><h2>Before you download</h2>
+<div class="faq"><details open><summary>How do you play Line 98?</summary><p>Move one ball at a time on a 9×9 board. Line up five or more of the same color in a row, column or diagonal to clear them. New balls appear after every move that does not clear a line; the game ends when the board is full.</p></details><details><summary>Can I play offline?</summary><p>Yes. Line 98 Classic plays fully offline.</p></details><details><summary>Can I undo a move?</summary><p>Yes. Undo is available during a game.</p></details><details><summary>Does it show the next balls?</summary><p>Yes. It shows the next three balls and where they will appear. You can hide the preview for a scoring bonus.</p></details><details><summary>Is there an account or login?</summary><p>No. There is no login, and your saved games live on your device.</p></details><details><summary>Which devices and languages does Line 98 Classic support?</summary><p>iPhone (iOS 15 or later) and Android. The app is available in 2 languages: English, Vietnamese.</p></details></div>
+<dl class="spec"><dt>Made for</dt><dd>Fans of the classic Lines / Color Lines puzzle and casual puzzle players</dd><dt>Platforms</dt><dd>iPhone (iOS 15 or later) · Android</dd>
+<dt>Languages</dt><dd>English, Vietnamese</dd>
+<dt>Category</dt><dd>Games</dd><dt>Developer</dt><dd>Ho Van Dai</dd>
+<dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd></dl></div></section>
+<section class="alt cta"><div class="wrap narrow"><img class="icon" src="../assets/icons/line98.png" alt="" width="72" height="72" loading="lazy">
+<h2>Start a board</h2><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6787416787"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=com.dhs.line98&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 Ho Van Dai</div><div><a href="../">Home</a> &nbsp;·&nbsp; <a href="../privacy-page/">Privacy Policy</a> &nbsp;·&nbsp; <a href="../support/">Support</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chore Jar — Chore chart and allowance tracker on one phone, no accounts for kids</title>
+<meta name="description" content="Chore Jar is a chore chart and allowance app that runs on a parent&#x27;s phone. Each kid taps their own PIN, ticks off chores and watches their jar fill up. Approvals, payday, savings goals and a fairness check between siblings. No account, no app on kids&#x27; devices.">
+<link rel="canonical" href="https://dahasolutions.github.io/chorejar/">
+<meta name="apple-itunes-app" content="app-id=6818087666">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chore Jar — Chore chart and allowance tracker on one phone, no accounts for kids">
+<meta property="og:description" content="Chore Jar is a chore chart and allowance app that runs on a parent&#x27;s phone. Each kid taps their own PIN, ticks off chores and watches their jar fill up. Approvals, payday, savings goals and a fairness check between siblings. No account, no app on kids&#x27; devices.">
+<meta property="og:url" content="https://dahasolutions.github.io/chorejar/">
+<meta property="og:image" content="https://dahasolutions.github.io/chorejar/img/shot-1.webp">
+<link rel="icon" href="../assets/icons/chorejar.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Chore Jar: Allowance & Chores", "alternateName": "Chore Jar", "description": "Chore Jar is a chore chart and allowance app that runs on a parent's phone. Each kid taps their own PIN, ticks off chores and watches their jar fill up. Approvals, payday, savings goals and a fairness check between siblings. No account, no app on kids' devices.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS 17.0 or later, Android", "url": "https://dahasolutions.github.io/chorejar/", "image": "https://dahasolutions.github.io/assets/icons/chorejar.png", "screenshot": ["https://dahasolutions.github.io/chorejar/img/shot-1.webp", "https://dahasolutions.github.io/chorejar/img/shot-2.webp", "https://dahasolutions.github.io/chorejar/img/shot-3.webp", "https://dahasolutions.github.io/chorejar/img/shot-4.webp"], "downloadUrl": ["https://apps.apple.com/app/id6818087666", "https://play.google.com/store/apps/details?id=vn.bm.chorejar"], "inLanguage": ["en"], "audience": {"@type": "Audience", "audienceType": "Parents of children aged about 3 to 12 who want a chore chart and allowance tracker"}, "author": {"@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/"}, "featureList": ["Kid Mode with a PIN each", "Age-based templates", "Schedules that fit real weeks", "Rotate between siblings", "Approve, pay part, send back", "Reward store"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do my kids need their own phone or account?", "acceptedAnswer": {"@type": "Answer", "text": "No. Chore Jar runs on your phone or the family tablet. Each kid has a PIN, and there is no account and no app on their devices."}}, {"@type": "Question", "name": "What ages is Chore Jar for?", "acceptedAnswer": {"@type": "Answer", "text": "Templates cover ages 3 to 5, 6 to 8 and 9 to 12. Picture PINs and read-aloud help kids who cannot read yet."}}, {"@type": "Question", "name": "Can it track allowance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in money, stars or points, with Spend, Save and Give jars, a weekly payday, savings goals and optional parent-bank interest."}}, {"@type": "Question", "name": "How does it keep things fair between siblings?", "acceptedAnswer": {"@type": "Answer", "text": "A fairness view shows what each kid was assigned, did and earned, flags when one is carrying much more than another, and proposes swaps for next week."}}, {"@type": "Question", "name": "Can kids cheat by marking chores done?", "acceptedAnswer": {"@type": "Answer", "text": "You approve what they tick off. You can require a photo as proof, pay part, or send a chore back with a note."}}, {"@type": "Question", "name": "Which devices and languages does Chore Jar support?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone and iPad (iOS 17 or later) and Android. The app is in English."}}]}</script>
+<style>
+  :root { --bg: #F1F8FF; --paper: #FFFFFF; --ink: #17222E; --alt: #E7EEF6; --line: #D7DEE6; --muted: #616B75; --accent: #A06A00; --accent-ink: #8B5D00; --accent-soft: #F0EBDB; --on-accent: #FFFFFF; --head: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", -apple-system, "Segoe UI", sans-serif; --sans: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", -apple-system, "Segoe UI", sans-serif; --r: 26px; --rs: 14px;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 14px 40px rgba(20,20,20,.09); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1D1A12; --paper: #29271F; --ink: #F3F2EF; --alt: #312F27; --line: #3D3A33; --muted: #A9A6A1; --accent: #E79A00; --accent-ink: #F1A100; --accent-soft: #45340E; --on-accent: #101112; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45); } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+  .strip { height: 6px; } .strip.tall { height: 14px; } .strip.bands { display: flex; } .strip.bands i { flex: 1; }
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .hero { padding: 28px 0 72px; }
+  .hero.split .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero.center { text-align: center; padding-bottom: 0; }
+  .hero.center .app, .hero.center .stores { justify-content: center; }
+  .hero.center .lead { margin-left: auto; margin-right: auto; max-width: 640px; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; text-align: left; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1, h2 { font-family: var(--head); font-weight: 800; letter-spacing: -.02em; text-transform: none; }
+  h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.07; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  h2 { font-size: clamp(25px, 3.5vw, 36px); line-height: 1.15; margin-top: 8px; }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px;
+    border-radius: var(--rs); text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; text-align: left; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--accent); color: var(--on-accent); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .phones { position: relative; height: 560px; }
+  .phones img { position: absolute; width: 262px; border-radius: 26px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--alt); }
+  .phones img:nth-child(1) { right: 6%; top: 44px; transform: rotate(4deg); }
+  .phones img:nth-child(2) { left: 6%; top: 0; transform: rotate(-3deg); }
+  .row3 { display: flex; justify-content: center; gap: 22px; margin-top: 48px; align-items: flex-end; overflow: hidden; height: 470px; }
+  .row3 img { width: 250px; border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); background: var(--alt); align-self: flex-start; }
+  .row3 img:nth-child(2) { margin-top: 0; } .row3 img:nth-child(1), .row3 img:nth-child(3) { margin-top: 46px; }
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-family: var(--sans); }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 640px; }
+  .feat h3, .step h3 { font-size: 17px; letter-spacing: -.01em; }
+  .feat p, .step p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .feat .n { font-family: var(--head); color: var(--accent-ink); font-size: 15px; display: block; margin-bottom: 6px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+  .feats.ruled { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feats.ruled .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feats.cards { gap: 18px; }
+  .feats.cards .feat { padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); }
+  .feats.rows { grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .feats.rows .feat { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; }
+  .feats.rows .feat .n { grid-row: span 2; font-size: 20px; }
+  .extra { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .extra div { border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+  section.alt .extra div { background: var(--bg); }
+  .extra b { display: block; font-size: 16px; } .extra span { color: var(--muted); font-size: 15px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 12px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 24px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); } .spec dt { color: var(--muted); }
+  .cta { text-align: center; } .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  @media (max-width: 880px) {
+    .hero.split .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .phones { height: 480px; max-width: 420px; margin: 0 auto; width: 100%; } .phones img { width: 220px; }
+    .feats, .feats.rows { grid-template-columns: repeat(2, 1fr); } .feats.rows { gap: 0 32px; }
+    .steps { grid-template-columns: 1fr; } .shots { grid-template-columns: repeat(2, 1fr); }
+    .row3 { height: 380px; gap: 14px; } .row3 img { width: 200px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .feats, .feats.rows, .extra { grid-template-columns: 1fr; }
+    .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .phones { height: 400px; } .phones img { width: 180px; }
+    .row3 { height: 300px; } .row3 img { width: 150px; border-radius: 18px 18px 0 0; } .row3 img:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="strip tall" style="background:radial-gradient(circle at 8px 50%,#F2B632 0 5px,transparent 5.5px),radial-gradient(circle at 34px 50%,#2F86D6 0 5px,transparent 5.5px),radial-gradient(circle at 60px 50%,#F2637E 0 5px,transparent 5.5px),radial-gradient(circle at 86px 50%,#5BB36A 0 5px,transparent 5.5px),radial-gradient(circle at 112px 50%,#8A63D2 0 5px,transparent 5.5px);background-size:130px 100%;background-repeat:repeat-x" aria-hidden="true"></div>
+<header class="top"><div class="wrap"><a class="brand" href="../">Ho Van Dai</a><a class="all" href="../">All apps</a></div></header>
+<main>
+<section class="hero split"><div class="wrap"><div><div class="app"><img src="../assets/icons/chorejar.png" alt="Chore Jar app icon" width="56" height="56"><div><b>Chore Jar</b><span>Chores and allowance on one family phone</span></div></div><h1>Every chore, every kid, <em>one phone.</em></h1><p class="lead">Your kids tap their own PIN on your phone or the family tablet, tick off what they did, and watch their jar fill up. You approve, the app does the math, and payday comes with a fairness check so nobody can say the other one got off easy.</p><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6818087666"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.chorejar&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div><p class="facts">iPhone, iPad and Android · No account · No app on your kids&#x27; devices</p></div><div class="phones"><img src="img/shot-2.webp" width="660" height="1434" alt="Chore Jar screenshot 2"><img src="img/shot-1.webp" width="660" height="1434" alt="Chore Jar screenshot 1"></div></div></section>
+<section class="alt"><div class="wrap"><p class="eyebrow">What it does</p><h2>A week of chores in five minutes</h2>
+
+<div class="feats cards"><div class="feat"><span class="n">01</span><h3>Kid Mode with a PIN each</h3><p>Hand the phone over and it switches to big icons and few words, with no way out except the parent PIN. Picture PINs for kids who do not know numbers yet.</p></div><div class="feat"><span class="n">02</span><h3>Age-based templates</h3><p>Start from sets for ages 3 to 5, 6 to 8 and 9 to 12, and add a dozen chores at once.</p></div><div class="feat"><span class="n">03</span><h3>Schedules that fit real weeks</h3><p>Daily, chosen weekdays, a few times a week, once or monthly. Missed chores are marked, never carried over as debt.</p></div><div class="feat"><span class="n">04</span><h3>Rotate between siblings</h3><p>Assign a chore to one kid, rotate it each week or each day, or leave it open for whoever does it first.</p></div><div class="feat"><span class="n">05</span><h3>Approve, pay part, send back</h3><p>Review what was done, with an optional photo as proof, and send a note the kid reads in Kid Mode.</p></div><div class="feat"><span class="n">06</span><h3>Reward store</h3><p>Kids spend what they earned on movie night or fifteen more minutes before bed. You confirm before anything is deducted.</p></div></div></div></section>
+<section><div class="wrap"><p class="eyebrow">Allowance</p><h2>Allowance that adds itself up</h2><div class="extra"><div><b>Money, stars or points</b><span>One Spend jar by default; turn on Save and Give for any kid with a split you choose.</span></div><div><b>Payday</b><span>Adds the weekly allowance plus what each kid earned, whether or not you opened the app that day.</span></div><div><b>Savings goals</b><span>A progress bar the kid can see, and parent-bank interest at a rate you set.</span></div><div><b>Fair between siblings</b><span>See what each kid was assigned, did and earned, and rebalance next week with one tap.</span></div></div></div></section>
+<section><div class="wrap"><p class="eyebrow">How it works</p><h2>Made for kids who cannot read yet, too</h2><div class="steps"><div class="step"><h3>Hand to kids</h3><p>They tap their PIN and see morning, evening and anytime chores.</p></div><div class="step"><h3>One tap to finish</h3><p>Read-aloud says the chore name; a visual countdown runs for brushing teeth or reading.</p></div><div class="step"><h3>Confetti, then payday</h3><p>Streaks and badges at 7, 30 and 100 days, and a weekly recap you can share as a PDF.</p></div></div><div class="shots"><figure><img src="img/shot-1.webp" width="660" height="1434" alt="Chore Jar screenshot 1" loading="lazy"><figcaption>Chore Jar screenshot 1</figcaption></figure><figure><img src="img/shot-2.webp" width="660" height="1434" alt="Chore Jar screenshot 2" loading="lazy"><figcaption>Chore Jar screenshot 2</figcaption></figure><figure><img src="img/shot-3.webp" width="660" height="1434" alt="Chore Jar screenshot 3" loading="lazy"><figcaption>Chore Jar screenshot 3</figcaption></figure><figure><img src="img/shot-4.webp" width="660" height="1434" alt="Chore Jar screenshot 4" loading="lazy"><figcaption>Chore Jar screenshot 4</figcaption></figure></div></div></section>
+<section class="alt"><div class="wrap narrow"><p class="eyebrow">Your data</p><h2>Nothing leaves your phone</h2>
+<ul class="ticks"><li><b>No account.</b></li><li><b>No app on your kids&#x27; devices.</b> Everything runs on yours.</li><li><b>Nothing leaves your phone</b> unless you share a recap or export.</li><li><b>Export everything as CSV</b> for a spreadsheet.</li></ul></div></section>
+<section><div class="wrap narrow"><p class="eyebrow">Questions</p><h2>Before you download</h2>
+<div class="faq"><details open><summary>Do my kids need their own phone or account?</summary><p>No. Chore Jar runs on your phone or the family tablet. Each kid has a PIN, and there is no account and no app on their devices.</p></details><details><summary>What ages is Chore Jar for?</summary><p>Templates cover ages 3 to 5, 6 to 8 and 9 to 12. Picture PINs and read-aloud help kids who cannot read yet.</p></details><details><summary>Can it track allowance?</summary><p>Yes, in money, stars or points, with Spend, Save and Give jars, a weekly payday, savings goals and optional parent-bank interest.</p></details><details><summary>How does it keep things fair between siblings?</summary><p>A fairness view shows what each kid was assigned, did and earned, flags when one is carrying much more than another, and proposes swaps for next week.</p></details><details><summary>Can kids cheat by marking chores done?</summary><p>You approve what they tick off. You can require a photo as proof, pay part, or send a chore back with a note.</p></details><details><summary>Which devices and languages does Chore Jar support?</summary><p>iPhone and iPad (iOS 17 or later) and Android. The app is in English.</p></details></div>
+<dl class="spec"><dt>Made for</dt><dd>Parents of children aged about 3 to 12 who want a chore chart and allowance tracker</dd><dt>Platforms</dt><dd>iPhone and iPad (iOS 17 or later) · Android</dd>
+<dt>Languages</dt><dd>English</dd>
+<dt>Category</dt><dd>Productivity</dd><dt>Developer</dt><dd>Ho Van Dai</dd>
+<dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd></dl></div></section>
+<section class="alt cta"><div class="wrap narrow"><img class="icon" src="../assets/icons/chorejar.png" alt="" width="72" height="72" loading="lazy">
+<h2>Set up this week&#x27;s chores in five minutes</h2><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6818087666"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.chorejar&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 Ho Van Dai</div><div><a href="../">Home</a> &nbsp;·&nbsp; <a href="privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="support/">Support</a></div></div></footer>
+</body>
+</html>

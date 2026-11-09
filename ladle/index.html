@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ladle — Recipe box, meal planner and grocery list from anything you paste</title>
+<meta name="description" content="Ladle turns whatever you paste — text, a photo of a page, a share from the browser — into a recipe with real ingredients and steps, read on your phone. Plan the week, get one grocery list grouped like a store, cook with several timers. No account, no feed.">
+<link rel="canonical" href="https://dahasolutions.github.io/ladle/">
+<meta name="apple-itunes-app" content="app-id=6803971181">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ladle — Recipe box, meal planner and grocery list from anything you paste">
+<meta property="og:description" content="Ladle turns whatever you paste — text, a photo of a page, a share from the browser — into a recipe with real ingredients and steps, read on your phone. Plan the week, get one grocery list grouped like a store, cook with several timers. No account, no feed.">
+<meta property="og:url" content="https://dahasolutions.github.io/ladle/">
+<meta property="og:image" content="https://dahasolutions.github.io/ladle/img/shot-1.webp">
+<link rel="icon" href="../assets/icons/ladle.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Ladle: Recipe Box & Planner", "alternateName": "Ladle", "description": "Ladle turns whatever you paste — text, a photo of a page, a share from the browser — into a recipe with real ingredients and steps, read on your phone. Plan the week, get one grocery list grouped like a store, cook with several timers. No account, no feed.", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS 18.0 or later, Android", "url": "https://dahasolutions.github.io/ladle/", "image": "https://dahasolutions.github.io/assets/icons/ladle.png", "screenshot": ["https://dahasolutions.github.io/ladle/img/shot-1.webp", "https://dahasolutions.github.io/ladle/img/shot-2.webp", "https://dahasolutions.github.io/ladle/img/shot-3.webp", "https://dahasolutions.github.io/ladle/img/shot-4.webp"], "downloadUrl": ["https://apps.apple.com/app/id6803971181", "https://play.google.com/store/apps/details?id=vn.bm.ladle"], "inLanguage": ["de", "en", "fr", "ja", "ko", "vi", "zh"], "audience": {"@type": "Audience", "audienceType": "Home cooks who save recipes from screenshots, photos and web pages and plan meals for the week"}, "author": {"@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/"}, "featureList": ["Paste, snap or share", "Read on your phone", "Plan the week", "A list laid out like a store", "Several timers at once", "Shop together"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I add a recipe to Ladle?", "acceptedAnswer": {"@type": "Answer", "text": "Paste text, take a photo of a page, or share a page from your browser. Ladle turns it into a recipe with ingredients and steps."}}, {"@type": "Question", "name": "Does recipe import need the internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. The reading happens on your phone, so it works in a kitchen with no signal."}}, {"@type": "Question", "name": "Does Ladle make a grocery list?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Plan the week and every ingredient lands in one grocery list, grouped the way a store is laid out."}}, {"@type": "Question", "name": "Can two people use the same grocery list?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Share the list with whoever else shops and tick things off from either phone."}}, {"@type": "Question", "name": "Do I need an account?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no account, no server and no feed."}}, {"@type": "Question", "name": "Which devices and languages does Ladle support?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone (iOS 18 or later) and Android. The app is available in 7 languages: English, Chinese, French, German, Japanese, Korean, Vietnamese."}}]}</script>
+<style>
+  :root { --bg: #FBF6EF; --paper: #FFFFFF; --ink: #1B1A18; --alt: #F1ECE5; --line: #E0DCD5; --muted: #676561; --accent: #388051; --accent-ink: #327248; --accent-soft: #E1E7DA; --on-accent: #FFFFFF; --head: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif; --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --r: 22px; --rs: 14px;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 14px 40px rgba(20,20,20,.09); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #141917; --paper: #212624; --ink: #F3F2EF; --alt: #292E2C; --line: #353937; --muted: #A9A6A1; --accent: #4EB271; --accent-ink: #63BB82; --accent-soft: #1C3024; --on-accent: #101112; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45); } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+  .strip { height: 6px; } .strip.tall { height: 14px; } .strip.bands { display: flex; } .strip.bands i { flex: 1; }
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .hero { padding: 28px 0 72px; }
+  .hero.split .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero.center { text-align: center; padding-bottom: 0; }
+  .hero.center .app, .hero.center .stores { justify-content: center; }
+  .hero.center .lead { margin-left: auto; margin-right: auto; max-width: 640px; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; text-align: left; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1, h2 { font-family: var(--head); font-weight: 700; letter-spacing: -.02em; text-transform: none; }
+  h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.07; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  h2 { font-size: clamp(25px, 3.5vw, 36px); line-height: 1.15; margin-top: 8px; }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px;
+    border-radius: var(--rs); text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; text-align: left; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--accent); color: var(--on-accent); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .phones { position: relative; height: 560px; }
+  .phones img { position: absolute; width: 262px; border-radius: 26px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--alt); }
+  .phones img:nth-child(1) { right: 6%; top: 44px; transform: rotate(4deg); }
+  .phones img:nth-child(2) { left: 6%; top: 0; transform: rotate(-3deg); }
+  .row3 { display: flex; justify-content: center; gap: 22px; margin-top: 48px; align-items: flex-end; overflow: hidden; height: 470px; }
+  .row3 img { width: 250px; border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); background: var(--alt); align-self: flex-start; }
+  .row3 img:nth-child(2) { margin-top: 0; } .row3 img:nth-child(1), .row3 img:nth-child(3) { margin-top: 46px; }
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-family: var(--sans); }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 640px; }
+  .feat h3, .step h3 { font-size: 17px; letter-spacing: -.01em; }
+  .feat p, .step p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .feat .n { font-family: var(--head); color: var(--accent-ink); font-size: 15px; display: block; margin-bottom: 6px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+  .feats.ruled { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feats.ruled .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feats.cards { gap: 18px; }
+  .feats.cards .feat { padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); }
+  .feats.rows { grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .feats.rows .feat { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; }
+  .feats.rows .feat .n { grid-row: span 2; font-size: 20px; }
+  .extra { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .extra div { border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+  section.alt .extra div { background: var(--bg); }
+  .extra b { display: block; font-size: 16px; } .extra span { color: var(--muted); font-size: 15px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 12px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 24px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); } .spec dt { color: var(--muted); }
+  .cta { text-align: center; } .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  @media (max-width: 880px) {
+    .hero.split .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .phones { height: 480px; max-width: 420px; margin: 0 auto; width: 100%; } .phones img { width: 220px; }
+    .feats, .feats.rows { grid-template-columns: repeat(2, 1fr); } .feats.rows { gap: 0 32px; }
+    .steps { grid-template-columns: 1fr; } .shots { grid-template-columns: repeat(2, 1fr); }
+    .row3 { height: 380px; gap: 14px; } .row3 img { width: 200px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .feats, .feats.rows, .extra { grid-template-columns: 1fr; }
+    .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .phones { height: 400px; } .phones img { width: 180px; }
+    .row3 { height: 300px; } .row3 img { width: 150px; border-radius: 18px 18px 0 0; } .row3 img:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="strip" style="background:linear-gradient(90deg,#F8C8D0,#FBE3A1,#BFE3C0,#B9D8F2)" aria-hidden="true"></div>
+<header class="top"><div class="wrap"><a class="brand" href="../">Ho Van Dai</a><a class="all" href="../">All apps</a></div></header>
+<main>
+<section class="hero center"><div class="wrap"><div class="app"><img src="../assets/icons/ladle.png" alt="Ladle app icon" width="56" height="56"><div><b>Ladle</b><span>Recipe box and meal planner</span></div></div><h1>Paste anything. Get <em>a recipe you can cook from.</em></h1><p class="lead">A recipe you actually cook rarely arrives in a tidy format: a screenshot from a friend, a photo of a page, a wall of text buried under someone&#x27;s life story. Ladle takes whatever you paste and turns it into a recipe with real ingredients and real steps. The reading happens on your phone, so it works in a kitchen with no signal.</p><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6803971181"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.ladle&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div><p class="facts">iPhone and Android · Reads recipes on your phone · No account</p><div class="row3"><img src="img/shot-2.webp" width="660" height="1434" alt="Ladle screenshot 2"><img src="img/shot-1.webp" width="660" height="1434" alt="Ladle screenshot 1"><img src="img/shot-3.webp" width="660" height="1434" alt="Ladle screenshot 3"></div></div></section>
+<section class="alt"><div class="wrap"><p class="eyebrow">What it does</p><h2>A cookbook that pulls its weight</h2>
+
+<div class="feats rows"><div class="feat"><span class="n">01</span><h3>Paste, snap or share</h3><p>Text, a photo, or a share from your browser becomes a recipe with ingredients and steps.</p></div><div class="feat"><span class="n">02</span><h3>Read on your phone</h3><p>The recipe is parsed on the device. Nothing leaves it, and it works with no signal.</p></div><div class="feat"><span class="n">03</span><h3>Plan the week</h3><p>Drop recipes onto days and every ingredient lands in one grocery list.</p></div><div class="feat"><span class="n">04</span><h3>A list laid out like a store</h3><p>Ingredients are grouped the way a store is laid out, so you walk the aisles once.</p></div><div class="feat"><span class="n">05</span><h3>Several timers at once</h3><p>Cook with more than one timer running. On iPhone they show on the Lock Screen, so you do not unlock with wet hands.</p></div><div class="feat"><span class="n">06</span><h3>Shop together</h3><p>Share the list with whoever else shops and tick things off from either phone.</p></div></div></div></section>
+
+<section><div class="wrap"><p class="eyebrow">How it works</p><h2>From a screenshot to dinner</h2><div class="steps"><div class="step"><h3>Save it</h3><p>Paste the text, snap the page or share the link.</p></div><div class="step"><h3>Plan it</h3><p>Pick the days. The grocery list builds itself.</p></div><div class="step"><h3>Cook it</h3><p>Step by step, timers running.</p></div></div><div class="shots"><figure><img src="img/shot-1.webp" width="660" height="1434" alt="Ladle screenshot 1" loading="lazy"><figcaption>Ladle screenshot 1</figcaption></figure><figure><img src="img/shot-2.webp" width="660" height="1434" alt="Ladle screenshot 2" loading="lazy"><figcaption>Ladle screenshot 2</figcaption></figure><figure><img src="img/shot-3.webp" width="660" height="1434" alt="Ladle screenshot 3" loading="lazy"><figcaption>Ladle screenshot 3</figcaption></figure><figure><img src="img/shot-4.webp" width="660" height="1434" alt="Ladle screenshot 4" loading="lazy"><figcaption>Ladle screenshot 4</figcaption></figure></div></div></section>
+<section class="alt"><div class="wrap narrow"><p class="eyebrow">Your data</p><h2>A cookbook that sits on the shelf and waits</h2>
+<ul class="ticks"><li><b>No account, no server, no feed.</b></li><li><b>Recipes are read on your phone</b> — nothing is sent away to be parsed.</li><li><b>On iPhone, recipes sync across your own devices through iCloud.</b></li></ul></div></section>
+<section><div class="wrap narrow"><p class="eyebrow">Questions</p><h2>Before you download</h2>
+<div class="faq"><details open><summary>How do I add a recipe to Ladle?</summary><p>Paste text, take a photo of a page, or share a page from your browser. Ladle turns it into a recipe with ingredients and steps.</p></details><details><summary>Does recipe import need the internet?</summary><p>No. The reading happens on your phone, so it works in a kitchen with no signal.</p></details><details><summary>Does Ladle make a grocery list?</summary><p>Yes. Plan the week and every ingredient lands in one grocery list, grouped the way a store is laid out.</p></details><details><summary>Can two people use the same grocery list?</summary><p>Yes. Share the list with whoever else shops and tick things off from either phone.</p></details><details><summary>Do I need an account?</summary><p>No. There is no account, no server and no feed.</p></details><details><summary>Which devices and languages does Ladle support?</summary><p>iPhone (iOS 18 or later) and Android. The app is available in 7 languages: English, Chinese, French, German, Japanese, Korean, Vietnamese.</p></details></div>
+<dl class="spec"><dt>Made for</dt><dd>Home cooks who save recipes from screenshots, photos and web pages and plan meals for the week</dd><dt>Platforms</dt><dd>iPhone (iOS 18 or later) · Android</dd>
+<dt>Languages</dt><dd>English, Chinese, French, German, Japanese, Korean, Vietnamese</dd>
+<dt>Category</dt><dd>Food &amp; Drink</dd><dt>Developer</dt><dd>Ho Van Dai</dd>
+<dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd></dl></div></section>
+<section class="alt cta"><div class="wrap narrow"><img class="icon" src="../assets/icons/ladle.png" alt="" width="72" height="72" loading="lazy">
+<h2>Save the next recipe you find</h2><div class="stores"><a class="ios" href="https://apps.apple.com/app/id6803971181"><small>Download on the</small>App Store</a><a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.ladle&amp;referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a></div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 Ho Van Dai</div><div><a href="../">Home</a> &nbsp;·&nbsp; <a href="../privacy-page/">Privacy Policy</a> &nbsp;·&nbsp; <a href="../support/">Support</a></div></div></footer>
+</body>
+</html>

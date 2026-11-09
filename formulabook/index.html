@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula Book — Hair color formulas and client notes for stylists</title>
+<meta name="description" content="Formula Book is a hair color formula app for independent stylists and colorists on iPhone and Android. Client cards, formulas by the bowl, before and after photos, allergy flags and patch test dates. Works offline, no account, backups you keep.">
+<link rel="canonical" href="https://dahasolutions.github.io/formulabook/">
+<meta name="apple-itunes-app" content="app-id=6810034654">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Formula Book — Hair color formulas and client notes">
+<meta property="og:description" content="Every client and every color formula, one tap away while your gloves are still on. iPhone and Android, offline, no account.">
+<meta property="og:url" content="https://dahasolutions.github.io/formulabook/">
+<meta property="og:image" content="https://dahasolutions.github.io/formulabook/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icons/formulabook.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Formula Book: Hair Color Notes",
+  "alternateName": "Formula Book",
+  "description": "Hair color formula and client notes app for independent hairstylists and colorists. Client cards, formulas recorded bowl by bowl, a built-in shade catalog, before and after photos, allergy flags and dated patch tests. Works offline without an account; backups are files the user keeps.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS 17 or later, Android 8.0 or later",
+  "url": "https://dahasolutions.github.io/formulabook/",
+  "image": "https://dahasolutions.github.io/assets/icons/formulabook.png",
+  "screenshot": [
+    "https://dahasolutions.github.io/formulabook/img/profile.webp",
+    "https://dahasolutions.github.io/formulabook/img/builder.webp",
+    "https://dahasolutions.github.io/formulabook/img/shades.webp",
+    "https://dahasolutions.github.io/formulabook/img/clients.webp"
+  ],
+  "downloadUrl": [
+    "https://apps.apple.com/app/id6810034654",
+    "https://play.google.com/store/apps/details?id=vn.bm.formulabook"
+  ],
+  "inLanguage": ["en", "de", "es", "fr", "it", "ja", "ko", "nl", "pt-BR", "ru", "vi", "zh-Hans", "zh-Hant"],
+  "audience": { "@type": "Audience", "audienceType": "Hairstylists, hair colorists, booth renters, salon suite owners" },
+  "author": { "@type": "Person", "name": "Ho Van Dai", "url": "https://dahasolutions.github.io/" },
+  "featureList": [
+    "Client cards with phone, tags, notes and visit history",
+    "Hair color formulas recorded bowl by bowl: brand, line, shade, grams, developer, ratio, timing, zone",
+    "Free-text formulas when a form does not fit",
+    "Repeat last visit",
+    "Shade catalog: Wella, Redken, L'Oréal, Schwarzkopf, plus custom shades",
+    "Before and after photos for every visit",
+    "Allergy flag and dated patch test records",
+    "Saved formulas reusable for any client",
+    "Import clients from Contacts or CSV",
+    "PDF client card",
+    "Automatic backups to iCloud Drive or a chosen folder; export and restore, also between iPhone and Android",
+    "Works offline, no account",
+    "Face ID or fingerprint lock"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need an account to use Formula Book?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. There is no sign-up and no login. You open the app and add your first client." } },
+    { "@type": "Question", "name": "Does Formula Book work offline?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Client cards, formulas and photos are stored on your phone, so everything works with no signal in the salon." } },
+    { "@type": "Question", "name": "Where are my client records kept, and how do I back them up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Records are stored on your phone. On iPhone, automatic backups go to your own iCloud Drive; on Android, to a folder you choose. You can also export everything as one file at any time and restore it later." } },
+    { "@type": "Question", "name": "Can I move my client book from iPhone to Android, or the other way?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export a backup file on one phone and restore it on the other. Clients, visits, formulas and photos come across." } },
+    { "@type": "Question", "name": "Is Formula Book a booking or salon management system?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It has no calendar, no online booking and no payments. It keeps the record of your color work and sits alongside whatever you already use for appointments." } },
+    { "@type": "Question", "name": "Which color lines are in the shade catalog?",
+      "acceptedAnswer": { "@type": "Answer", "text": "687 shades across 11 lines: Wella Koleston Perfect, Color Touch, Illumina Color and Blondor; Redken Shades EQ Gloss and Color Gels Lacquers; L'Oréal Majirel, INOA and Dia Light; Schwarzkopf Igora Royal and Igora Vibrance. You can add your own shades for any other brand, or type a formula in your own words." } },
+    { "@type": "Question", "name": "Can I record allergies and patch tests?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each client card has an allergy flag with a note, and a patch test history with the date, the product and the result. The app shows when the last test is getting old." } },
+    { "@type": "Question", "name": "Can I bring in my existing clients?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Import clients from your phone's Contacts, or from a CSV file with a preview of the columns before anything is saved." } },
+    { "@type": "Question", "name": "Which phones and languages does Formula Book support?",
+      "acceptedAnswer": { "@type": "Answer", "text": "iPhone with iOS 17 or later and Android phones with Android 8.0 or later. The app is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Portuguese (Brazil), Russian, Vietnamese, Simplified Chinese and Traditional Chinese." } }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #F7F6F3; --paper: #FFFFFF; --alt: #F1F0EC; --fill: #EAE8E3; --line: #E3E1DB;
+    --ink: #1A1918; --muted: #666360; --faint: #706D69;
+    --accent: #1D7B84; --accent-ink: #18656C; --accent-soft: #E3F0F1; --on-accent: #FFFFFF;
+    --ok: #226742; --ok-soft: #E2F1E8; --danger: #A53127; --danger-soft: #F8E4E1;
+    --shadow: 0 1px 2px rgba(26,25,24,.05), 0 14px 40px rgba(26,25,24,.09);
+    --serif: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121313; --paper: #1C1E1E; --alt: #242727; --fill: #2A2D2D; --line: #2C2F2F;
+      --ink: #F3F2EF; --muted: #A8A5A0; --faint: #8F8D89;
+      --accent: #4FB8C1; --accent-ink: #69C3CA; --accent-soft: #17302F; --on-accent: #0B1A1C;
+      --ok: #6BCD98; --ok-soft: #17291F; --danger: #FF9990; --danger-soft: #331A18;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+
+  /* Dải mười level màu tóc — dấu hiệu riêng của trang */
+  .levels { display: flex; height: 6px; }
+  .levels i { flex: 1; }
+  .levels i:nth-child(1) { background: #100C0A; } .levels i:nth-child(2) { background: #1F1613; }
+  .levels i:nth-child(3) { background: #30211A; } .levels i:nth-child(4) { background: #47301F; }
+  .levels i:nth-child(5) { background: #5F4227; } .levels i:nth-child(6) { background: #7A5836; }
+  .levels i:nth-child(7) { background: #987650; } .levels i:nth-child(8) { background: #B79A6F; }
+  .levels i:nth-child(9) { background: #D4BE97; } .levels i:nth-child(10) { background: #E9DCBF; }
+
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top a.all { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .top a.all:hover { color: var(--accent-ink); }
+
+  .hero { padding: 40px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .app { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .app img { width: 56px; height: 56px; border-radius: 13px; box-shadow: var(--shadow); }
+  .app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+  .app span { font-size: 14px; color: var(--muted); }
+  h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 5.2vw, 54px); line-height: 1.06; letter-spacing: -.025em; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 520px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores a { display: inline-flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 22px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1.2; }
+  .stores a small { font-weight: 500; font-size: 11px; opacity: .8; }
+  .stores a.ios { background: var(--ink); color: var(--bg); }
+  .stores a.play { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+  .stores a:hover { transform: translateY(-1px); }
+  .facts { margin-top: 18px; font-size: 14px; color: var(--faint); }
+
+  /* Thẻ khách dựng bằng chữ thật */
+  .cardwrap { position: relative; }
+  .cardwrap::before { content: ""; position: absolute; inset: 14px -12px -14px 12px; background: var(--alt); border: 1px solid var(--line); border-radius: 24px; transform: rotate(2.2deg); }
+  .client { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); padding: 22px 22px 20px; }
+  .who { display: flex; align-items: center; gap: 12px; }
+  .avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; font-weight: 700; }
+  .who b { font-size: 18px; letter-spacing: -.01em; }
+  .who span { display: block; font-size: 13px; color: var(--muted); }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 16px; }
+  .pill { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--fill); color: var(--muted); }
+  .pill.ok { background: var(--ok-soft); color: var(--ok); }
+  .pill.danger { background: var(--danger-soft); color: var(--danger); }
+  .repeat { display: block; text-align: center; background: var(--accent); color: var(--on-accent); font-weight: 600; border-radius: 12px; padding: 11px; }
+  .visit { margin-top: 16px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 12px; padding: 12px 14px; }
+  .visit .meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .visit .meta b { color: var(--ink); letter-spacing: .04em; text-transform: uppercase; font-size: 11px; }
+  .bowl { list-style: none; font-variant-numeric: tabular-nums; }
+  .bowl li { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 15px; }
+  .bowl li:first-child { border-top: 0; }
+  .sw { width: 26px; height: 26px; border-radius: 7px; flex: none; }
+  .bowl .code { font-weight: 700; min-width: 42px; }
+  .bowl .name { color: var(--muted); font-size: 13px; flex: 1; }
+  .bowl .g { font-weight: 600; }
+  .next { margin-top: 10px; font-size: 13px; color: var(--muted); }
+  .next b { color: var(--ink); }
+
+  section { padding: 72px 0; }
+  section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -.02em; line-height: 1.15; margin-top: 8px; }
+  .sub { margin-top: 12px; color: var(--muted); font-size: 17px; max-width: 620px; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 40px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .feat { padding: 26px 24px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feat .n { font-family: var(--serif); font-style: italic; color: var(--accent-ink); font-size: 15px; }
+  .feat h3 { font-size: 17px; letter-spacing: -.01em; margin: 6px 0 6px; }
+  .feat p { color: var(--muted); font-size: 15px; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+  .step h3 { font-size: 17px; margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: 15px; }
+
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .shots figure { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: var(--alt); }
+  .shots figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .ticks { list-style: none; margin-top: 24px; }
+  .ticks li { position: relative; padding: 10px 0 10px 30px; border-top: 1px solid var(--line); color: var(--muted); }
+  .ticks li:first-child { border-top: 0; }
+  .ticks li::before { content: ""; position: absolute; left: 4px; top: 17px; width: 12px; height: 6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ticks b { color: var(--ink); font-weight: 600; }
+  .catalog { margin-top: 24px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--paper); }
+  .catalog div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 15px; }
+  .catalog div:first-child { border-top: 0; }
+  .catalog b { font-weight: 600; }
+  .catalog span { color: var(--muted); }
+
+  .faq { margin-top: 32px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; font-size: 17px; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 22px; font-weight: 400; color: var(--accent-ink); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { padding: 0 36px 20px 0; color: var(--muted); }
+
+  .spec { margin-top: 28px; display: grid; grid-template-columns: 160px 1fr; gap: 0; border-top: 1px solid var(--line); font-size: 15px; }
+  .spec dt, .spec dd { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .spec dt { color: var(--faint); }
+
+  .cta { text-align: center; }
+  .cta .stores { justify-content: center; }
+  .cta img.icon { width: 72px; height: 72px; border-radius: 17px; margin: 0 auto 18px; box-shadow: var(--shadow); }
+
+  footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent-ink); }
+
+  @media (max-width: 880px) {
+    .hero .wrap, .two { grid-template-columns: 1fr; gap: 40px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr; }
+    .catalog div { grid-template-columns: 1fr; gap: 2px; }
+    .spec { grid-template-columns: 1fr; }
+    .spec dt { border-bottom: 0; padding-bottom: 0; }
+    .cardwrap::before { inset: 10px -6px -10px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="levels" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../">Ho Van Dai</a>
+    <a class="all" href="../">All apps</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding-top:28px">
+  <div class="wrap">
+    <div>
+      <div class="app">
+        <img src="../assets/icons/formulabook.png" alt="Formula Book app icon" width="56" height="56">
+        <div><b>Formula Book</b><span>Hair color notes for stylists and colorists</span></div>
+      </div>
+      <h1>Every client, every <em>color formula</em>, one tap away.</h1>
+      <p class="lead">Formula Book is a hair color formula app for independent stylists and colorists. It keeps a card
+      for each client — the formula from last time, the before and after photos, the allergy flag and patch test dates —
+      on your phone, with backups you keep.</p>
+      <div class="stores">
+        <a class="ios" href="https://apps.apple.com/app/id6810034654"><small>Download on the</small>App Store</a>
+        <a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.formulabook&referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a>
+      </div>
+      <p class="facts">iPhone and Android · Works offline · No account</p>
+    </div>
+
+    <div class="cardwrap">
+      <div class="client">
+        <div class="who">
+          <div class="avatar" aria-hidden="true">MD</div>
+          <div><b>Marisol Delgado</b><span>Last visit 6 weeks ago · Root retouch</span></div>
+        </div>
+        <div class="pills">
+          <span class="pill">Regular</span>
+          <span class="pill ok">Patch test · Sep 21</span>
+          <span class="pill danger">Allergy · latex</span>
+        </div>
+        <span class="repeat">Repeat last visit</span>
+        <div class="visit">
+          <div class="meta"><b>Bowl 1 · Roots</b><span>35 min · no heat</span></div>
+          <ul class="bowl">
+            <li><span class="sw" style="background:#7A5836"></span><span class="code">6/0</span><span class="name">Dark Blonde Natural</span><span class="g">30 g</span></li>
+            <li><span class="sw" style="background:#8A6A3A"></span><span class="code">6/73</span><span class="name">Dark Blonde Brown Gold</span><span class="g">10 g</span></li>
+            <li><span class="sw" style="background:#B79A6F"></span><span class="code">8/0</span><span class="name">Light Blonde Natural</span><span class="g">10 g</span></li>
+            <li><span class="sw" style="background:var(--fill)"></span><span class="code">6 %</span><span class="name">Developer · 20 vol · 1:1</span><span class="g">50 g</span></li>
+          </ul>
+          <p class="next"><b>Next time:</b> go half a level lighter at the hairline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow">What it keeps</p>
+    <h2>The record of your color work, the way you already think about it</h2>
+    <p class="sub">Built for stylists who rent a chair or a suite and keep their own book. Open a client and the last
+    formula is there before the cape is fastened.</p>
+
+    <div class="grid">
+      <div class="feat"><span class="n">01</span><h3>Client cards</h3>
+        <p>Name, phone, tags and notes, with every visit underneath. Search by name, phone or tag; recent clients sit on top.</p></div>
+      <div class="feat"><span class="n">02</span><h3>Formulas by the bowl</h3>
+        <p>Brand, line, shade, grams, developer, ratio, timing and zone for each bowl. Big number keys you can hit with gloves on.</p></div>
+      <div class="feat"><span class="n">03</span><h3>Or type it your way</h3>
+        <p>When a form does not fit, write the bowl in your own words. It is shown exactly as you wrote it.</p></div>
+      <div class="feat"><span class="n">04</span><h3>Repeat last visit</h3>
+        <p>One tap copies the previous formula and services into today's visit. Change only what changed.</p></div>
+      <div class="feat"><span class="n">05</span><h3>Before and after photos</h3>
+        <p>Photos belong to the visit they were taken at, side by side, and can be shared as one image.</p></div>
+      <div class="feat"><span class="n">06</span><h3>Allergies and patch tests</h3>
+        <p>A red allergy flag on the list and the card, and a patch test history with date, product and result.</p></div>
+      <div class="feat"><span class="n">07</span><h3>Saved formulas</h3>
+        <p>Keep your go-to toners and root mixes as templates and drop them into any client's visit.</p></div>
+      <div class="feat"><span class="n">08</span><h3>Bring your clients</h3>
+        <p>Import from Contacts or a CSV file, with a preview of the columns before anything is saved.</p></div>
+      <div class="feat"><span class="n">09</span><h3>PDF client card</h3>
+        <p>A clean card with the client's history, ready to print or hand over when a client asks for their record.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">At the chair</p>
+    <h2>Two seconds to the last formula</h2>
+    <div class="steps">
+      <div class="step"><h3>Open the client</h3><p>Type two letters or tap a recent name. The allergy flag and the note you left for next time are the first things you see.</p></div>
+      <div class="step"><h3>Repeat, then adjust</h3><p>Start from last time's bowls. Nudge the grams, swap a shade, change the timing.</p></div>
+      <div class="step"><h3>Save with photos</h3><p>Add the before and after, the price and a note for the next visit. Done before the next client sits down.</p></div>
+    </div>
+
+    <div class="shots">
+      <figure><img src="img/profile.webp" width="660" height="1434" loading="lazy" alt="Formula Book client profile on iPhone: Repeat last visit button and a history of root retouch formulas with grams, developer and timing"><figcaption>Client profile with visit history</figcaption></figure>
+      <figure><img src="img/builder.webp" width="660" height="1434" loading="lazy" alt="Formula Book formula builder: a roots bowl with four Wella Koleston Perfect shades in grams and Welloxon 6% developer"><figcaption>Formula builder, bowl by bowl</figcaption></figure>
+      <figure><img src="img/shades.webp" width="660" height="1434" loading="lazy" alt="Formula Book shade catalog: Wella, Redken, L'Oréal and Schwarzkopf shades shown as color swatches by level"><figcaption>Built-in shade catalog</figcaption></figure>
+      <figure><img src="img/clients.webp" width="660" height="1434" loading="lazy" alt="Formula Book client list with search, recent clients and allergy flags"><figcaption>Client list</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Shade catalog</p>
+      <h2>687 shades across 11 professional lines</h2>
+      <p class="sub">Pick a shade by its swatch instead of typing the code. Add your own shades for any other brand.</p>
+      <div class="catalog">
+        <div><b>Wella</b><span>Koleston Perfect · Color Touch · Illumina Color · Blondor</span></div>
+        <div><b>Redken</b><span>Shades EQ Gloss · Color Gels Lacquers</span></div>
+        <div><b>L'Oréal</b><span>Majirel · INOA · Dia Light</span></div>
+        <div><b>Schwarzkopf</b><span>Igora Royal · Igora Vibrance</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Your book stays yours</p>
+      <h2>On your phone, backed up to files you keep</h2>
+      <ul class="ticks">
+        <li><b>Works offline.</b> Everything is stored on your phone, so it works with no signal in the salon.</li>
+        <li><b>No account.</b> No sign-up, no login, nobody else holding your client book.</li>
+        <li><b>Automatic backups</b> to your own iCloud Drive on iPhone, or to a folder you choose on Android.</li>
+        <li><b>Export everything as one file</b> and restore it on a new phone — including from iPhone to Android and back.</li>
+        <li><b>Face ID or fingerprint lock</b> for the phone that sits on your trolley.</li>
+        <li><b>Not a booking system.</b> No calendar, no payments. It works alongside whatever you already use for appointments.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <p class="eyebrow">Questions</p>
+    <h2>Before you download</h2>
+    <div class="faq">
+      <details open><summary>Do I need an account to use Formula Book?</summary>
+        <p>No. There is no sign-up and no login. You open the app and add your first client.</p></details>
+      <details><summary>Does Formula Book work offline?</summary>
+        <p>Yes. Client cards, formulas and photos are stored on your phone, so everything works with no signal in the salon.</p></details>
+      <details><summary>Where are my client records kept, and how do I back them up?</summary>
+        <p>Records are stored on your phone. On iPhone, automatic backups go to your own iCloud Drive; on Android, to a folder you choose. You can also export everything as one file at any time and restore it later.</p></details>
+      <details><summary>Can I move my client book from iPhone to Android, or the other way?</summary>
+        <p>Yes. Export a backup file on one phone and restore it on the other. Clients, visits, formulas and photos come across.</p></details>
+      <details><summary>Is Formula Book a booking or salon management system?</summary>
+        <p>No. It has no calendar, no online booking and no payments. It keeps the record of your color work and sits alongside whatever you already use for appointments.</p></details>
+      <details><summary>Which color lines are in the shade catalog?</summary>
+        <p>687 shades across 11 lines: Wella Koleston Perfect, Color Touch, Illumina Color and Blondor; Redken Shades EQ Gloss and Color Gels Lacquers; L'Oréal Majirel, INOA and Dia Light; Schwarzkopf Igora Royal and Igora Vibrance. You can add your own shades for any other brand, or type a formula in your own words.</p></details>
+      <details><summary>Can I record allergies and patch tests?</summary>
+        <p>Yes. Each client card has an allergy flag with a note, and a patch test history with the date, the product and the result. The app shows when the last test is getting old.</p></details>
+      <details><summary>Can I bring in my existing clients?</summary>
+        <p>Yes. Import clients from your phone's Contacts, or from a CSV file with a preview of the columns before anything is saved.</p></details>
+      <details><summary>Which phones and languages does Formula Book support?</summary>
+        <p>iPhone with iOS 17 or later and Android phones with Android 8.0 or later. The app is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Portuguese (Brazil), Russian, Vietnamese, Simplified Chinese and Traditional Chinese.</p></details>
+    </div>
+
+    <dl class="spec">
+      <dt>Made for</dt><dd>Independent hairstylists, colorists, booth renters and salon suite owners</dd>
+      <dt>Platforms</dt><dd>iPhone (iOS 17 or later) · Android (8.0 or later)</dd>
+      <dt>Languages</dt><dd>13, including English, Spanish, German, French, Portuguese and Japanese</dd>
+      <dt>Category</dt><dd>Business</dd>
+      <dt>Developer</dt><dd>Ho Van Dai</dd>
+      <dt>Page updated</dt><dd><time datetime="2026-11-09">November 9, 2026</time></dd>
+    </dl>
+  </div>
+</section>
+
+<section class="alt cta">
+  <div class="wrap narrow">
+    <img class="icon" src="../assets/icons/formulabook.png" alt="" width="72" height="72" loading="lazy">
+    <h2>Stop guessing what you mixed last time</h2>
+    <div class="stores">
+      <a class="ios" href="https://apps.apple.com/app/id6810034654"><small>Download on the</small>App Store</a>
+      <a class="play" href="https://play.google.com/store/apps/details?id=vn.bm.formulabook&referrer=utm_source%3Ddahasolutions%26utm_medium%3Dsite"><small>Get it on</small>Google Play</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ho Van Dai</div>
+    <div>
+      <a href="../">Home</a>
+      &nbsp;·&nbsp;
+      <a href="../privacy-page/">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="../support/">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
